@@ -1,0 +1,816 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		779B40D31DE86175004894FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D21DE86175004894FE /* AppDelegate.swift */; };
+		779B40D51DE86175004894FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D41DE86175004894FE /* ViewController.swift */; };
+		779B40D81DE86175004894FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40D61DE86175004894FE /* Main.storyboard */; };
+		779B40DA1DE86175004894FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779B40D91DE86175004894FE /* Assets.xcassets */; };
+		779B40DD1DE86175004894FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40DB1DE86175004894FE /* LaunchScreen.storyboard */; };
+		779B40E81DE86175004894FE /* PetcareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40E71DE86175004894FE /* PetcareTests.swift */; };
+		779B40F31DE86175004894FE /* PetcareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40F21DE86175004894FE /* PetcareUITests.swift */; };
+		779B40F81DE86175004894FE /* Petcare WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 779B40F71DE86175004894FE /* Petcare WatchKit App.app */; };
+		779B40FE1DE86175004894FE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40FC1DE86175004894FE /* Interface.storyboard */; };
+		779B41001DE86175004894FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779B40FF1DE86175004894FE /* Assets.xcassets */; };
+		779B41071DE86175004894FE /* Petcare WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 779B41061DE86175004894FE /* Petcare WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		779B410E1DE86175004894FE /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B410D1DE86175004894FE /* InterfaceController.swift */; };
+		779B41101DE86175004894FE /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B410F1DE86175004894FE /* ExtensionDelegate.swift */; };
+		779B41121DE86175004894FE /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B41111DE86175004894FE /* NotificationController.swift */; };
+		779B41141DE86175004894FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779B41131DE86175004894FE /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		779B40E41DE86175004894FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 779B40C71DE86174004894FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 779B40CE1DE86174004894FE;
+			remoteInfo = Petcare;
+		};
+		779B40EF1DE86175004894FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 779B40C71DE86174004894FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 779B40CE1DE86174004894FE;
+			remoteInfo = Petcare;
+		};
+		779B40F91DE86175004894FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 779B40C71DE86174004894FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 779B40F61DE86175004894FE;
+			remoteInfo = "Petcare WatchKit App";
+		};
+		779B41081DE86175004894FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 779B40C71DE86174004894FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 779B41051DE86175004894FE;
+			remoteInfo = "Petcare WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		779B411B1DE86175004894FE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				779B41071DE86175004894FE /* Petcare WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B411F1DE86175004894FE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				779B40F81DE86175004894FE /* Petcare WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		779B40CF1DE86175004894FE /* Petcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		779B40D21DE86175004894FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		779B40D41DE86175004894FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		779B40D71DE86175004894FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		779B40D91DE86175004894FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		779B40DC1DE86175004894FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		779B40DE1DE86175004894FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		779B40E31DE86175004894FE /* PetcareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetcareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		779B40E71DE86175004894FE /* PetcareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetcareTests.swift; sourceTree = "<group>"; };
+		779B40E91DE86175004894FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		779B40EE1DE86175004894FE /* PetcareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetcareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		779B40F21DE86175004894FE /* PetcareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetcareUITests.swift; sourceTree = "<group>"; };
+		779B40F41DE86175004894FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		779B40F71DE86175004894FE /* Petcare WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Petcare WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		779B40FD1DE86175004894FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		779B40FF1DE86175004894FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		779B41011DE86175004894FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		779B41061DE86175004894FE /* Petcare WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Petcare WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		779B410C1DE86175004894FE /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		779B410D1DE86175004894FE /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		779B410F1DE86175004894FE /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		779B41111DE86175004894FE /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		779B41131DE86175004894FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		779B41151DE86175004894FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		779B40CC1DE86174004894FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B40E01DE86175004894FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B40EB1DE86175004894FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B41031DE86175004894FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		779B40C61DE86174004894FE = {
+			isa = PBXGroup;
+			children = (
+				779B40D11DE86175004894FE /* Petcare */,
+				779B40E61DE86175004894FE /* PetcareTests */,
+				779B40F11DE86175004894FE /* PetcareUITests */,
+				779B40FB1DE86175004894FE /* Petcare WatchKit App */,
+				779B410A1DE86175004894FE /* Petcare WatchKit Extension */,
+				779B40D01DE86175004894FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		779B40D01DE86175004894FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				779B40CF1DE86175004894FE /* Petcare.app */,
+				779B40E31DE86175004894FE /* PetcareTests.xctest */,
+				779B40EE1DE86175004894FE /* PetcareUITests.xctest */,
+				779B40F71DE86175004894FE /* Petcare WatchKit App.app */,
+				779B41061DE86175004894FE /* Petcare WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		779B40D11DE86175004894FE /* Petcare */ = {
+			isa = PBXGroup;
+			children = (
+				779B40D21DE86175004894FE /* AppDelegate.swift */,
+				779B40D41DE86175004894FE /* ViewController.swift */,
+				779B40D61DE86175004894FE /* Main.storyboard */,
+				779B40D91DE86175004894FE /* Assets.xcassets */,
+				779B40DB1DE86175004894FE /* LaunchScreen.storyboard */,
+				779B40DE1DE86175004894FE /* Info.plist */,
+			);
+			path = Petcare;
+			sourceTree = "<group>";
+		};
+		779B40E61DE86175004894FE /* PetcareTests */ = {
+			isa = PBXGroup;
+			children = (
+				779B40E71DE86175004894FE /* PetcareTests.swift */,
+				779B40E91DE86175004894FE /* Info.plist */,
+			);
+			path = PetcareTests;
+			sourceTree = "<group>";
+		};
+		779B40F11DE86175004894FE /* PetcareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				779B40F21DE86175004894FE /* PetcareUITests.swift */,
+				779B40F41DE86175004894FE /* Info.plist */,
+			);
+			path = PetcareUITests;
+			sourceTree = "<group>";
+		};
+		779B40FB1DE86175004894FE /* Petcare WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				779B40FC1DE86175004894FE /* Interface.storyboard */,
+				779B40FF1DE86175004894FE /* Assets.xcassets */,
+				779B41011DE86175004894FE /* Info.plist */,
+			);
+			path = "Petcare WatchKit App";
+			sourceTree = "<group>";
+		};
+		779B410A1DE86175004894FE /* Petcare WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				779B410D1DE86175004894FE /* InterfaceController.swift */,
+				779B410F1DE86175004894FE /* ExtensionDelegate.swift */,
+				779B41111DE86175004894FE /* NotificationController.swift */,
+				779B41131DE86175004894FE /* Assets.xcassets */,
+				779B41151DE86175004894FE /* Info.plist */,
+				779B410B1DE86175004894FE /* Supporting Files */,
+			);
+			path = "Petcare WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		779B410B1DE86175004894FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				779B410C1DE86175004894FE /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		779B40CE1DE86174004894FE /* Petcare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 779B41201DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare" */;
+			buildPhases = (
+				779B40CB1DE86174004894FE /* Sources */,
+				779B40CC1DE86174004894FE /* Frameworks */,
+				779B40CD1DE86174004894FE /* Resources */,
+				779B411F1DE86175004894FE /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				779B40FA1DE86175004894FE /* PBXTargetDependency */,
+			);
+			name = Petcare;
+			productName = Petcare;
+			productReference = 779B40CF1DE86175004894FE /* Petcare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		779B40E21DE86175004894FE /* PetcareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 779B41231DE86175004894FE /* Build configuration list for PBXNativeTarget "PetcareTests" */;
+			buildPhases = (
+				779B40DF1DE86175004894FE /* Sources */,
+				779B40E01DE86175004894FE /* Frameworks */,
+				779B40E11DE86175004894FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				779B40E51DE86175004894FE /* PBXTargetDependency */,
+			);
+			name = PetcareTests;
+			productName = PetcareTests;
+			productReference = 779B40E31DE86175004894FE /* PetcareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		779B40ED1DE86175004894FE /* PetcareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 779B41261DE86175004894FE /* Build configuration list for PBXNativeTarget "PetcareUITests" */;
+			buildPhases = (
+				779B40EA1DE86175004894FE /* Sources */,
+				779B40EB1DE86175004894FE /* Frameworks */,
+				779B40EC1DE86175004894FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				779B40F01DE86175004894FE /* PBXTargetDependency */,
+			);
+			name = PetcareUITests;
+			productName = PetcareUITests;
+			productReference = 779B40EE1DE86175004894FE /* PetcareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		779B40F61DE86175004894FE /* Petcare WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 779B411C1DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare WatchKit App" */;
+			buildPhases = (
+				779B40F51DE86175004894FE /* Resources */,
+				779B411B1DE86175004894FE /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				779B41091DE86175004894FE /* PBXTargetDependency */,
+			);
+			name = "Petcare WatchKit App";
+			productName = "Petcare WatchKit App";
+			productReference = 779B40F71DE86175004894FE /* Petcare WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		779B41051DE86175004894FE /* Petcare WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 779B41181DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare WatchKit Extension" */;
+			buildPhases = (
+				779B41021DE86175004894FE /* Sources */,
+				779B41031DE86175004894FE /* Frameworks */,
+				779B41041DE86175004894FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Petcare WatchKit Extension";
+			productName = "Petcare WatchKit Extension";
+			productReference = 779B41061DE86175004894FE /* Petcare WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		779B40C71DE86174004894FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Felipe Borges";
+				TargetAttributes = {
+					779B40CE1DE86174004894FE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HYM62FH7NW;
+						ProvisioningStyle = Automatic;
+					};
+					779B40E21DE86175004894FE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HYM62FH7NW;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 779B40CE1DE86174004894FE;
+					};
+					779B40ED1DE86175004894FE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HYM62FH7NW;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 779B40CE1DE86174004894FE;
+					};
+					779B40F61DE86175004894FE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HYM62FH7NW;
+						ProvisioningStyle = Automatic;
+					};
+					779B41051DE86175004894FE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = HYM62FH7NW;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 779B40CA1DE86174004894FE /* Build configuration list for PBXProject "Petcare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 779B40C61DE86174004894FE;
+			productRefGroup = 779B40D01DE86175004894FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				779B40CE1DE86174004894FE /* Petcare */,
+				779B40E21DE86175004894FE /* PetcareTests */,
+				779B40ED1DE86175004894FE /* PetcareUITests */,
+				779B40F61DE86175004894FE /* Petcare WatchKit App */,
+				779B41051DE86175004894FE /* Petcare WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		779B40CD1DE86174004894FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779B40DD1DE86175004894FE /* LaunchScreen.storyboard in Resources */,
+				779B40DA1DE86175004894FE /* Assets.xcassets in Resources */,
+				779B40D81DE86175004894FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B40E11DE86175004894FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B40EC1DE86175004894FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B40F51DE86175004894FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779B41001DE86175004894FE /* Assets.xcassets in Resources */,
+				779B40FE1DE86175004894FE /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B41041DE86175004894FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779B41141DE86175004894FE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		779B40CB1DE86174004894FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779B40D51DE86175004894FE /* ViewController.swift in Sources */,
+				779B40D31DE86175004894FE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B40DF1DE86175004894FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779B40E81DE86175004894FE /* PetcareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B40EA1DE86175004894FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779B40F31DE86175004894FE /* PetcareUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		779B41021DE86175004894FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				779B41121DE86175004894FE /* NotificationController.swift in Sources */,
+				779B41101DE86175004894FE /* ExtensionDelegate.swift in Sources */,
+				779B410E1DE86175004894FE /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		779B40E51DE86175004894FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 779B40CE1DE86174004894FE /* Petcare */;
+			targetProxy = 779B40E41DE86175004894FE /* PBXContainerItemProxy */;
+		};
+		779B40F01DE86175004894FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 779B40CE1DE86174004894FE /* Petcare */;
+			targetProxy = 779B40EF1DE86175004894FE /* PBXContainerItemProxy */;
+		};
+		779B40FA1DE86175004894FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 779B40F61DE86175004894FE /* Petcare WatchKit App */;
+			targetProxy = 779B40F91DE86175004894FE /* PBXContainerItemProxy */;
+		};
+		779B41091DE86175004894FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 779B41051DE86175004894FE /* Petcare WatchKit Extension */;
+			targetProxy = 779B41081DE86175004894FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		779B40D61DE86175004894FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				779B40D71DE86175004894FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		779B40DB1DE86175004894FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				779B40DC1DE86175004894FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		779B40FC1DE86175004894FE /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				779B40FD1DE86175004894FE /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		779B41161DE86175004894FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		779B41171DE86175004894FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		779B41191DE86175004894FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				INFOPLIST_FILE = "Petcare WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		779B411A1DE86175004894FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				INFOPLIST_FILE = "Petcare WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		779B411D1DE86175004894FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				IBSC_MODULE = Petcare_WatchKit_Extension;
+				INFOPLIST_FILE = "Petcare WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		779B411E1DE86175004894FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				IBSC_MODULE = Petcare_WatchKit_Extension;
+				INFOPLIST_FILE = "Petcare WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		779B41211DE86175004894FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				INFOPLIST_FILE = Petcare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		779B41221DE86175004894FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				INFOPLIST_FILE = Petcare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		779B41241DE86175004894FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				INFOPLIST_FILE = PetcareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.PetcareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Petcare.app/Petcare";
+			};
+			name = Debug;
+		};
+		779B41251DE86175004894FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				INFOPLIST_FILE = PetcareTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.PetcareTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Petcare.app/Petcare";
+			};
+			name = Release;
+		};
+		779B41271DE86175004894FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				INFOPLIST_FILE = PetcareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.PetcareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Petcare;
+			};
+			name = Debug;
+		};
+		779B41281DE86175004894FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
+				INFOPLIST_FILE = PetcareUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.PetcareUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Petcare;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		779B40CA1DE86174004894FE /* Build configuration list for PBXProject "Petcare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				779B41161DE86175004894FE /* Debug */,
+				779B41171DE86175004894FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		779B41181DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				779B41191DE86175004894FE /* Debug */,
+				779B411A1DE86175004894FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		779B411C1DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				779B411D1DE86175004894FE /* Debug */,
+				779B411E1DE86175004894FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		779B41201DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				779B41211DE86175004894FE /* Debug */,
+				779B41221DE86175004894FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		779B41231DE86175004894FE /* Build configuration list for PBXNativeTarget "PetcareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				779B41241DE86175004894FE /* Debug */,
+				779B41251DE86175004894FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		779B41261DE86175004894FE /* Build configuration list for PBXNativeTarget "PetcareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				779B41271DE86175004894FE /* Debug */,
+				779B41281DE86175004894FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 779B40C71DE86174004894FE /* Project object */;
+}
