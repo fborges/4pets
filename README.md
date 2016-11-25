@@ -65,7 +65,7 @@ Gomes](https://github.com/gustavogomesdeoliveira), the sunglasses team!
 [GPL-3.0](https://opensource.org/licenses/GPL-3.0) © [GNU](https://www.gnu.org)
 
 <p align="center">
-    <img src="img/representative.gif" alt="demo gif" style="width: 70%">
+    <img src="img/representative.gif" alt="demo gif" style="width: 100%">
 </p>
 
 
