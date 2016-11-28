@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class PetController: UIViewController {
+class PetController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let dao = CoreDataDAO<Pet>()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    @IBOutlet weak var imagePicked: UIImageView!
     
     override func viewDidLoad() {
         
@@ -72,5 +73,48 @@ class PetController: UIViewController {
         return dao.getByID(id)
     }
     
+    // MARK: - Get camera Image
     
+    @IBAction func openCameraButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func openPhotoLibraryButton(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePicked.contentMode = .scaleToFill
+            imagePicked.image = pickedImage
+        }
+        
+        self.dismiss(animated: true, completion: nil);
+        
+    }
+    
+    @IBAction func saveButt(sender: AnyObject) {
+        let imageData = UIImageJPEGRepresentation(imagePicked.image!, 0.6)
+        let compressedJPGImage = UIImage(data: imageData!)
+        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
+        
+        let alert = UIAlertView(title: "Wow",
+                                message: "Your image has been saved to Photo Library!",
+                                delegate: nil,
+                                cancelButtonTitle: "Ok")
+        alert.show()
+    }
 }
