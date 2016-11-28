@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,7 +75,7 @@
         <!--My pets-->
         <scene sceneID="PbM-7o-C2J">
             <objects>
-                <viewController id="KB7-A9-4UH" sceneMemberID="viewController">
+                <viewController id="KB7-A9-4UH" customClass="AnimalsViewController" customModule="Petcare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mAD-ZR-nTV"/>
                         <viewControllerLayoutGuide type="bottom" id="Tv2-XJ-FQ0"/>
@@ -82,18 +83,54 @@
                     <view key="view" contentMode="scaleToFill" id="Ew6-md-Cdi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="264" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jPh-mx-uVa">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="264" id="1on-UW-HJf">
+                                        <rect key="frame" x="0.0" y="89" width="375" height="264"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1on-UW-HJf" id="amy-D9-deS">
+                                            <frame key="frameInset" width="375" height="263"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-qF-Pwt"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pFT-BV-4t9">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="Ljl-1j-qKb"/>
+                                                        <constraint firstAttribute="height" constant="40" id="NCI-Nx-guN"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pFT-BV-4t9" firstAttribute="leading" secondItem="amy-D9-deS" secondAttribute="leadingMargin" constant="10" id="7s3-hi-De8"/>
+                                                <constraint firstItem="i4E-qF-Pwt" firstAttribute="top" secondItem="amy-D9-deS" secondAttribute="top" id="Gdg-wb-8Vo"/>
+                                                <constraint firstItem="i4E-qF-Pwt" firstAttribute="centerX" secondItem="amy-D9-deS" secondAttribute="centerX" id="Hek-S0-vFa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="i4E-qF-Pwt" secondAttribute="bottom" constant="51" id="KE7-Qp-AIw"/>
+                                                <constraint firstAttribute="trailing" secondItem="i4E-qF-Pwt" secondAttribute="trailing" id="lJk-Uw-R4X"/>
+                                                <constraint firstItem="pFT-BV-4t9" firstAttribute="top" secondItem="i4E-qF-Pwt" secondAttribute="bottom" constant="10" id="obF-fD-rO7"/>
+                                                <constraint firstItem="i4E-qF-Pwt" firstAttribute="leading" secondItem="amy-D9-deS" secondAttribute="leading" id="sV0-2u-Xsl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jPh-mx-uVa" secondAttribute="trailing" id="8ep-nr-ey5"/>
+                            <constraint firstItem="jPh-mx-uVa" firstAttribute="top" secondItem="mAD-ZR-nTV" secondAttribute="bottom" id="DRg-wi-AxW"/>
+                            <constraint firstItem="Tv2-XJ-FQ0" firstAttribute="top" secondItem="jPh-mx-uVa" secondAttribute="bottom" id="LLn-L4-yEb"/>
+                            <constraint firstItem="jPh-mx-uVa" firstAttribute="leading" secondItem="Ew6-md-Cdi" secondAttribute="leading" id="fuu-S9-xdA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My pets" id="XKl-qw-3vc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2SH-0V-9vz"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="barTintColor" value="" localized="YES"/>
-                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spf-Uh-gUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="136"/>
+            <point key="canvasLocation" x="1776.8" y="135.38230884557723"/>
         </scene>
     </scenes>
     <resources>
