@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		062891171DEC4DDE001390B8 /* Petcare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 062891151DEC4DDE001390B8 /* Petcare.xcdatamodeld */; };
+		770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */; };
 		779B40D31DE86175004894FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D21DE86175004894FE /* AppDelegate.swift */; };
 		779B40D51DE86175004894FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D41DE86175004894FE /* ViewController.swift */; };
 		779B40D81DE86175004894FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40D61DE86175004894FE /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		062891161DEC4DDE001390B8 /* Petcare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Petcare.xcdatamodel; sourceTree = "<group>"; };
+		770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		779B40CF1DE86175004894FE /* Petcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		779B40D21DE86175004894FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		779B40D41DE86175004894FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		770AE5291DEC55F0007AF924 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		779B40C61DE86174004894FE = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +178,7 @@
 		779B40D11DE86175004894FE /* Petcare */ = {
 			isa = PBXGroup;
 			children = (
+				770AE5291DEC55F0007AF924 /* Controllers */,
 				779B40D21DE86175004894FE /* AppDelegate.swift */,
 				779B40D41DE86175004894FE /* ViewController.swift */,
 				779B40D61DE86175004894FE /* Main.storyboard */,
@@ -432,6 +443,7 @@
 			files = (
 				779B40D51DE86175004894FE /* ViewController.swift in Sources */,
 				062891171DEC4DDE001390B8 /* Petcare.xcdatamodeld in Sources */,
+				770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */,
 				779B40D31DE86175004894FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
