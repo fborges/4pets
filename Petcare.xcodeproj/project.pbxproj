@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062891171DEC4DDE001390B8 /* Petcare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 062891151DEC4DDE001390B8 /* Petcare.xcdatamodeld */; };
 		779B40D31DE86175004894FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D21DE86175004894FE /* AppDelegate.swift */; };
 		779B40D51DE86175004894FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D41DE86175004894FE /* ViewController.swift */; };
 		779B40D81DE86175004894FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40D61DE86175004894FE /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		062891161DEC4DDE001390B8 /* Petcare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Petcare.xcdatamodel; sourceTree = "<group>"; };
 		779B40CF1DE86175004894FE /* Petcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		779B40D21DE86175004894FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		779B40D41DE86175004894FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				779B40D91DE86175004894FE /* Assets.xcassets */,
 				779B40DB1DE86175004894FE /* LaunchScreen.storyboard */,
 				779B40DE1DE86175004894FE /* Info.plist */,
+				062891151DEC4DDE001390B8 /* Petcare.xcdatamodeld */,
 			);
 			path = Petcare;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				779B40D51DE86175004894FE /* ViewController.swift in Sources */,
+				062891171DEC4DDE001390B8 /* Petcare.xcdatamodeld in Sources */,
 				779B40D31DE86175004894FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -777,6 +781,7 @@
 				779B411A1DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779B411C1DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -785,6 +790,7 @@
 				779B411E1DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779B41201DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare" */ = {
 			isa = XCConfigurationList;
@@ -793,6 +799,7 @@
 				779B41221DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779B41231DE86175004894FE /* Build configuration list for PBXNativeTarget "PetcareTests" */ = {
 			isa = XCConfigurationList;
@@ -801,6 +808,7 @@
 				779B41251DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779B41261DE86175004894FE /* Build configuration list for PBXNativeTarget "PetcareUITests" */ = {
 			isa = XCConfigurationList;
@@ -809,8 +817,22 @@
 				779B41281DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		062891151DEC4DDE001390B8 /* Petcare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				062891161DEC4DDE001390B8 /* Petcare.xcdatamodel */,
+			);
+			currentVersion = 062891161DEC4DDE001390B8 /* Petcare.xcdatamodel */;
+			path = Petcare.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 779B40C71DE86174004894FE /* Project object */;
 }
