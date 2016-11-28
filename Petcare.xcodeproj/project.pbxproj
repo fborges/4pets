@@ -777,6 +777,7 @@
 				779B411A1DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779B411C1DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -785,6 +786,7 @@
 				779B411E1DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779B41201DE86175004894FE /* Build configuration list for PBXNativeTarget "Petcare" */ = {
 			isa = XCConfigurationList;
@@ -793,6 +795,7 @@
 				779B41221DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779B41231DE86175004894FE /* Build configuration list for PBXNativeTarget "PetcareTests" */ = {
 			isa = XCConfigurationList;
@@ -801,6 +804,7 @@
 				779B41251DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		779B41261DE86175004894FE /* Build configuration list for PBXNativeTarget "PetcareUITests" */ = {
 			isa = XCConfigurationList;
@@ -809,6 +813,7 @@
 				779B41281DE86175004894FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
