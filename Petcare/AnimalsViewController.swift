@@ -10,9 +10,14 @@ import UIKit
 
 class AnimalsViewController: UIViewController {
 
+    let dao = CoreDataDAO<Pet>()
+    var petList: [Pet] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        petList = dao.getAll()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -31,5 +36,19 @@ class AnimalsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - TableView
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return petList.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 
 }
