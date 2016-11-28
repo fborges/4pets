@@ -35,7 +35,7 @@ open class CoreDataDAO<Element: NSManagedObject>: DAO {
         save()
     }
     
-    public func getByID(_ id: NSManagedObjectID) -> Element {
+    open func getByID(_ id: NSManagedObjectID) -> Element {
         
         return context.object(with: id) as! Element
     }
