@@ -155,6 +155,13 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		770AE52C1DEC5730007AF924 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		779B40C61DE86174004894FE = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +189,7 @@
 		779B40D11DE86175004894FE /* Petcare */ = {
 			isa = PBXGroup;
 			children = (
+				770AE52C1DEC5730007AF924 /* View */,
 				770AE5291DEC55F0007AF924 /* Controllers */,
 				779B40D21DE86175004894FE /* AppDelegate.swift */,
 				0628911D1DEC5D57001390B8 /* DAO.swift */,
