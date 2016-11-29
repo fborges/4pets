@@ -570,7 +570,7 @@
 				TargetAttributes = {
 					779B40CE1DE86174004894FE = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = J5ZWQ2W9CE;
+						DevelopmentTeam = HYM62FH7NW;
 						ProvisioningStyle = Automatic;
 					};
 					779B40E21DE86175004894FE = {
@@ -1159,7 +1159,7 @@
 			baseConfigurationReference = 7CB1FB67D5FFAF518ADC35AB /* Pods-Petcare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J5ZWQ2W9CE;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
 				INFOPLIST_FILE = Petcare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare;
@@ -1173,7 +1173,7 @@
 			baseConfigurationReference = 4BE665200DD1FF7092FB324E /* Pods-Petcare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J5ZWQ2W9CE;
+				DEVELOPMENT_TEAM = HYM62FH7NW;
 				INFOPLIST_FILE = Petcare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare;
