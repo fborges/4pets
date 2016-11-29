@@ -150,6 +150,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KB7-A9-4UH" id="fKn-wW-WNk"/>
+                                    <outlet property="delegate" destination="KB7-A9-4UH" id="NkP-VR-Rce"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,12 +165,37 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My pets" id="XKl-qw-3vc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2SH-0V-9vz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2SH-0V-9vz">
+                            <connections>
+                                <segue destination="tdU-6r-0M9" kind="show" id="UOC-rg-3MU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spf-Uh-gUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1776.8" y="135.38230884557723"/>
+        </scene>
+        <!--New pet-->
+        <scene sceneID="HTE-N6-FBV">
+            <objects>
+                <viewController id="tdU-6r-0M9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="StN-kB-Qc5"/>
+                        <viewControllerLayoutGuide type="bottom" id="V0i-w6-hIL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Mh-w6-lhV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New pet" id="f8p-PG-TCr">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="cnZ-sG-6NC"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OVV-N5-aq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="-155"/>
         </scene>
     </scenes>
     <resources>
