@@ -1,0 +1,1172 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0511A32389A88D9A821273E368C1B6EF /* CKCircleMenuView.h in Headers */ = {isa = PBXBuildFile; fileRef = AE69B21CB80205EC9BAF946C1968E483 /* CKCircleMenuView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08B1DB95B74E6DE9601D0B4B3987549A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7752798AED75D2190758A21548AB728 /* Foundation.framework */; };
+		25C79977D62A8147742A1D665ADDF395 /* Pods-PetcareTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7B747388D1FADA1D11F5F577989D809 /* Pods-PetcareTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C769C91A3D0AB61C44BCF72C9F49D89 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		55BB92189B23BDAE1925C7B3AA8BD6EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		6086DA69DA6F2458F53E8D3E5FA0999C /* CKCircleMenuView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 65DB5672F188ED43B12E716590D547C0 /* CKCircleMenuView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		658D3CBAD1A0082B160D7344C0E7F85A /* Pods-Petcare WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDBCFB05A625D1E59D6737042132AAFA /* Pods-Petcare WatchKit Extension-dummy.m */; };
+		6606964D71AE1DFCA45F9D3D9DB64694 /* Pods-Petcare-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54CEDFD3D78E16EB906ECCC90A9BF202 /* Pods-Petcare-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BBD4A901CAC312D8E6454D515C877D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		7C33C20D223052B3D0A5A7AACD519E58 /* CKCircleMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 475F99B5400A6178A8D07656D5C89D8C /* CKCircleMenuView.m */; };
+		80C519AF9853C9A75368C215EC432C5E /* Pods-Petcare WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4727008BAD1D175FB0A6A94A0B5EAEAB /* Pods-Petcare WatchKit App-dummy.m */; };
+		8B65C5E7308F791C05781CF2F14A5711 /* Pods-Petcare WatchKit App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E1C9F66693BE3FFECCCA8260F67B27 /* Pods-Petcare WatchKit App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		976CD50BC701A1D1961A71C34B26F17A /* CKCircleMenuView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A25127009EE15D237888C3548F92B381 /* CKCircleMenuView-dummy.m */; };
+		9B212F2BBC14A2FC4384CED7889FB4C9 /* Pods-PetcareTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D5900E866FFEAC6167C15A101DEC09 /* Pods-PetcareTests-dummy.m */; };
+		A0785E2CDD96DF4C9E890C131D6BED91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7752798AED75D2190758A21548AB728 /* Foundation.framework */; };
+		B4A03A070CEAC35F3F7D611AACB5BBB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */; };
+		C0C2CC8843923130286CB6A0493B68DE /* Pods-PetcareUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F482CBCCF900D605D356E8C85C05B34A /* Pods-PetcareUITests-dummy.m */; };
+		CF4F30C7278B0DF0D9AD75E1CC48D890 /* Pods-Petcare WatchKit Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45E647D7C75D50037AB7DC8D82DA2621 /* Pods-Petcare WatchKit Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D15CD0EF97B36589E81BB69F9BC7847C /* Pods-PetcareUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B1125832BC65F12844B082622A6A8729 /* Pods-PetcareUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA2EC58654FB491F7152C064BF9D2540 /* Pods-Petcare-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 319F803B14E16194DAD7A30548E8AA9D /* Pods-Petcare-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		333B846175BE57FC632A394ECD5036A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4510FDBEFF7431393F1BBC116955EFC4;
+			remoteInfo = CKCircleMenuView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E1C9F66693BE3FFECCCA8260F67B27 /* Pods-Petcare WatchKit App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Petcare WatchKit App-umbrella.h"; sourceTree = "<group>"; };
+		068B1B295645BBBA43436E108851A311 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07C84B3A6F4B8AB6CF627BC6E6A1657F /* Pods-PetcareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetcareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		08F1F37124C7B18FE96BF7694B25BACF /* Pods-PetcareUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetcareUITests-resources.sh"; sourceTree = "<group>"; };
+		094A5F7F6E3CE589145D158344C98A14 /* Pods-PetcareTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetcareTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0A90BF5FE4ACA0EBC93DF7B4F6D1E4CF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10D8E3AF5A1CCA9869F3C75BF7633ED9 /* CKCircleMenuView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = CKCircleMenuView.modulemap; sourceTree = "<group>"; };
+		110EE3D22B6CE648E432D62894181868 /* CKCircleMenuView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CKCircleMenuView-prefix.pch"; sourceTree = "<group>"; };
+		13935CFC9FF0FE85F21D175BD36178C6 /* Pods-Petcare WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Petcare WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		19F5C3F0E688893A537B93D0A9BA1283 /* Pods-Petcare-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Petcare-resources.sh"; sourceTree = "<group>"; };
+		1DBA9AF24A50B7FD2F1C585CFFA5944B /* Pods-Petcare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Petcare.release.xcconfig"; sourceTree = "<group>"; };
+		2139E7BAD23174F8A94D624CDB41C3F0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21D5900E866FFEAC6167C15A101DEC09 /* Pods-PetcareTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PetcareTests-dummy.m"; sourceTree = "<group>"; };
+		23AE065B092B977BA49281A221DC38DB /* Pods-PetcareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetcareUITests.release.xcconfig"; sourceTree = "<group>"; };
+		293084AD57B818A0CC635E6D89E41F36 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29FB6AB1DF633E59CFC6A99A9B3AD46C /* CKCircleMenuView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CKCircleMenuView.xcconfig; sourceTree = "<group>"; };
+		2E354B1E1D97F5FECCB080D21C6E304A /* Pods-PetcareUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PetcareUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		319F803B14E16194DAD7A30548E8AA9D /* Pods-Petcare-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Petcare-dummy.m"; sourceTree = "<group>"; };
+		41F89426D2DFDCF45C6D33AC3840D7B5 /* Pods_PetcareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PetcareTests.framework; path = "Pods-PetcareTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4389C5624CECAE3575834C0716B56BED /* Pods_Petcare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Petcare.framework; path = "Pods-Petcare.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45E647D7C75D50037AB7DC8D82DA2621 /* Pods-Petcare WatchKit Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Petcare WatchKit Extension-umbrella.h"; sourceTree = "<group>"; };
+		4727008BAD1D175FB0A6A94A0B5EAEAB /* Pods-Petcare WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Petcare WatchKit App-dummy.m"; sourceTree = "<group>"; };
+		475F99B5400A6178A8D07656D5C89D8C /* CKCircleMenuView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CKCircleMenuView.m; path = CKCircleMenuView/CKCircleMenuView.m; sourceTree = "<group>"; };
+		4787A25EBF401852BF0C64D72297DEDD /* Pods-Petcare WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Petcare WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		54A9913FDE10A2880871E1C2BD5CF182 /* Pods-Petcare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Petcare.debug.xcconfig"; sourceTree = "<group>"; };
+		54CEDFD3D78E16EB906ECCC90A9BF202 /* Pods-Petcare-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Petcare-umbrella.h"; sourceTree = "<group>"; };
+		57F981BE6275407A26456EFFB1525B90 /* Pods-PetcareTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PetcareTests.modulemap"; sourceTree = "<group>"; };
+		5BD6AE90841291CF44DB9C0D9C7CC0AD /* Pods-Petcare WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Petcare WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
+		5FA7C723FF7EEA252BD0F5D2B40B8B1B /* Pods-Petcare WatchKit App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Petcare WatchKit App.modulemap"; sourceTree = "<group>"; };
+		65DB5672F188ED43B12E716590D547C0 /* CKCircleMenuView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CKCircleMenuView-umbrella.h"; sourceTree = "<group>"; };
+		67CE57F0C1547CE440302B1553F5A136 /* Pods-PetcareUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetcareUITests-frameworks.sh"; sourceTree = "<group>"; };
+		6A184E1E25D07E74A95921ED4E59E427 /* Pods-Petcare-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Petcare-acknowledgements.markdown"; sourceTree = "<group>"; };
+		710AF01DA4C3B4380AA0B5FF6034E626 /* Pods_Petcare_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Petcare_WatchKit_Extension.framework; path = "Pods-Petcare WatchKit Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		774AD59BB2F657ED3DFEB2FBD047211A /* Pods-PetcareUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PetcareUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7CBB385A2B1F25CC3136CC24D9EE602A /* Pods-PetcareTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PetcareTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7E1C9C2EF91EFBE36B2FF7CC9E30AEA8 /* Pods-Petcare WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Petcare WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7F8C0431E1577BBC0A96172F2FA8C3A1 /* Pods_Petcare_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Petcare_WatchKit_App.framework; path = "Pods-Petcare WatchKit App.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CF3F0581DE4A6705BEE3173134DCCB2 /* Pods-Petcare.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Petcare.modulemap"; sourceTree = "<group>"; };
+		903BFA1BCDA8745CFDD792E49C47BEF6 /* Pods-Petcare WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Petcare WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98AED8C5D8656862670D2DF44B2D85F3 /* Pods-Petcare WatchKit App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Petcare WatchKit App-frameworks.sh"; sourceTree = "<group>"; };
+		98B3920ED45451F541757B6AE1AA0421 /* Pods-Petcare-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Petcare-acknowledgements.plist"; sourceTree = "<group>"; };
+		9A13779A6B0F1614CB9B9B306F7EB7CD /* Pods-Petcare-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Petcare-frameworks.sh"; sourceTree = "<group>"; };
+		9B08EBC187F3C8BBC3BC62FC6CFC0172 /* Pods-Petcare WatchKit Extension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Petcare WatchKit Extension-resources.sh"; sourceTree = "<group>"; };
+		A00DAE32F7D85EC392C92871098FE113 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A25127009EE15D237888C3548F92B381 /* CKCircleMenuView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CKCircleMenuView-dummy.m"; sourceTree = "<group>"; };
+		ACBF74BE2AEEEF62C1704C8B5937DD10 /* Pods-PetcareTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetcareTests-frameworks.sh"; sourceTree = "<group>"; };
+		AE69B21CB80205EC9BAF946C1968E483 /* CKCircleMenuView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CKCircleMenuView.h; path = CKCircleMenuView/CKCircleMenuView.h; sourceTree = "<group>"; };
+		AF4272B0956D0703C08A90E968331DC0 /* CKCircleMenuView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CKCircleMenuView.framework; path = CKCircleMenuView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1125832BC65F12844B082622A6A8729 /* Pods-PetcareUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PetcareUITests-umbrella.h"; sourceTree = "<group>"; };
+		B16365929DA47E00432F87FBE82C9593 /* Pods-Petcare WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Petcare WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		B1FD3515F93A888FA05F521461989F79 /* Pods-PetcareUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-PetcareUITests.modulemap"; sourceTree = "<group>"; };
+		B7752798AED75D2190758A21548AB728 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS3.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BB347B9EC2BBF4F5FADB6E5ED6730B70 /* Pods-Petcare WatchKit Extension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Petcare WatchKit Extension-frameworks.sh"; sourceTree = "<group>"; };
+		BFD7D02E137B7F0CFEA18EC462AB43D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3C46DA47F8E79978527E97E21626A0A /* Pods-Petcare WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Petcare WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		C43966C609D5158A25B535C7CE6A6F69 /* Pods-Petcare WatchKit Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Petcare WatchKit Extension.modulemap"; sourceTree = "<group>"; };
+		C69ADA0DBFAB2CB239DFA3E96733CE35 /* Pods-Petcare WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Petcare WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		C7B747388D1FADA1D11F5F577989D809 /* Pods-PetcareTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PetcareTests-umbrella.h"; sourceTree = "<group>"; };
+		E50886FB6D7886CD385F1DB96264767C /* Pods_PetcareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PetcareUITests.framework; path = "Pods-PetcareUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB76DDCAB21BBC49FF1931ADDCEB2373 /* Pods-PetcareTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PetcareTests-resources.sh"; sourceTree = "<group>"; };
+		EDBCFB05A625D1E59D6737042132AAFA /* Pods-Petcare WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Petcare WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
+		EEA111BF2F845D59014E65CFBF3C1362 /* Pods-PetcareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetcareTests.release.xcconfig"; sourceTree = "<group>"; };
+		F3558BCB2647FD81A83A7D7A7A269EFA /* Pods-Petcare WatchKit App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Petcare WatchKit App-resources.sh"; sourceTree = "<group>"; };
+		F482CBCCF900D605D356E8C85C05B34A /* Pods-PetcareUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PetcareUITests-dummy.m"; sourceTree = "<group>"; };
+		F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		FCC48B6BE133A69F169348C4075FE38A /* Pods-PetcareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PetcareTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F74D14226489BF2ACE12D77332CE64A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0785E2CDD96DF4C9E890C131D6BED91 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A0F20A621B2678AF850E900684DDA90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BBD4A901CAC312D8E6454D515C877D9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8840759C7EE1C32477710B21CE3D7BB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08B1DB95B74E6DE9601D0B4B3987549A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8848793B7C550E7884E5263E8A362E25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4A03A070CEAC35F3F7D611AACB5BBB0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C915C59DA55995F550C4C01E7497FF08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C769C91A3D0AB61C44BCF72C9F49D89 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE3358EF819093BC714AA320336CC23A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55BB92189B23BDAE1925C7B3AA8BD6EF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7729394E943D8E66F08B594CC62585C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C4390785D5F360D8E1C44361D7A766E /* CKCircleMenuView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		78F039419AA224701F9D904CD4736340 /* Pods-PetcareTests */ = {
+			isa = PBXGroup;
+			children = (
+				068B1B295645BBBA43436E108851A311 /* Info.plist */,
+				57F981BE6275407A26456EFFB1525B90 /* Pods-PetcareTests.modulemap */,
+				7CBB385A2B1F25CC3136CC24D9EE602A /* Pods-PetcareTests-acknowledgements.markdown */,
+				094A5F7F6E3CE589145D158344C98A14 /* Pods-PetcareTests-acknowledgements.plist */,
+				21D5900E866FFEAC6167C15A101DEC09 /* Pods-PetcareTests-dummy.m */,
+				ACBF74BE2AEEEF62C1704C8B5937DD10 /* Pods-PetcareTests-frameworks.sh */,
+				EB76DDCAB21BBC49FF1931ADDCEB2373 /* Pods-PetcareTests-resources.sh */,
+				C7B747388D1FADA1D11F5F577989D809 /* Pods-PetcareTests-umbrella.h */,
+				FCC48B6BE133A69F169348C4075FE38A /* Pods-PetcareTests.debug.xcconfig */,
+				EEA111BF2F845D59014E65CFBF3C1362 /* Pods-PetcareTests.release.xcconfig */,
+			);
+			name = "Pods-PetcareTests";
+			path = "Target Support Files/Pods-PetcareTests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				8F91EE078EA3977443D1BDC2601132EF /* Frameworks */,
+				7729394E943D8E66F08B594CC62585C6 /* Pods */,
+				F81756BABF09F3F84B33D6BC6375685F /* Products */,
+				865DF3046302C69554121B42C118D90F /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		865DF3046302C69554121B42C118D90F /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CEF43D591D660A51E8652F2888AA88D8 /* Pods-Petcare */,
+				F387CAC583008C8BD8EB6117D27D35BA /* Pods-Petcare WatchKit App */,
+				97BE700A1C00D0EFCB0BD4CD28A9934B /* Pods-Petcare WatchKit Extension */,
+				78F039419AA224701F9D904CD4736340 /* Pods-PetcareTests */,
+				BF82C105BEDA5B2AF644A9BB2F15A530 /* Pods-PetcareUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8F91EE078EA3977443D1BDC2601132EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE50AB4B3645EA9432322BA2E72BE2F9 /* iOS */,
+				9880A75209637E3915A438772C6A676D /* watchOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97BE700A1C00D0EFCB0BD4CD28A9934B /* Pods-Petcare WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				293084AD57B818A0CC635E6D89E41F36 /* Info.plist */,
+				C43966C609D5158A25B535C7CE6A6F69 /* Pods-Petcare WatchKit Extension.modulemap */,
+				7E1C9C2EF91EFBE36B2FF7CC9E30AEA8 /* Pods-Petcare WatchKit Extension-acknowledgements.markdown */,
+				4787A25EBF401852BF0C64D72297DEDD /* Pods-Petcare WatchKit Extension-acknowledgements.plist */,
+				EDBCFB05A625D1E59D6737042132AAFA /* Pods-Petcare WatchKit Extension-dummy.m */,
+				BB347B9EC2BBF4F5FADB6E5ED6730B70 /* Pods-Petcare WatchKit Extension-frameworks.sh */,
+				9B08EBC187F3C8BBC3BC62FC6CFC0172 /* Pods-Petcare WatchKit Extension-resources.sh */,
+				45E647D7C75D50037AB7DC8D82DA2621 /* Pods-Petcare WatchKit Extension-umbrella.h */,
+				13935CFC9FF0FE85F21D175BD36178C6 /* Pods-Petcare WatchKit Extension.debug.xcconfig */,
+				C69ADA0DBFAB2CB239DFA3E96733CE35 /* Pods-Petcare WatchKit Extension.release.xcconfig */,
+			);
+			name = "Pods-Petcare WatchKit Extension";
+			path = "Target Support Files/Pods-Petcare WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		9880A75209637E3915A438772C6A676D /* watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				B7752798AED75D2190758A21548AB728 /* Foundation.framework */,
+			);
+			name = watchOS;
+			sourceTree = "<group>";
+		};
+		9C4390785D5F360D8E1C44361D7A766E /* CKCircleMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				AE69B21CB80205EC9BAF946C1968E483 /* CKCircleMenuView.h */,
+				475F99B5400A6178A8D07656D5C89D8C /* CKCircleMenuView.m */,
+				D72ACC7DF636A9DE4A96014D07C94253 /* Support Files */,
+			);
+			name = CKCircleMenuView;
+			path = CKCircleMenuView;
+			sourceTree = "<group>";
+		};
+		BE50AB4B3645EA9432322BA2E72BE2F9 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F9AE61DEB7F70B8D5B09290911F0E1C8 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		BF82C105BEDA5B2AF644A9BB2F15A530 /* Pods-PetcareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2139E7BAD23174F8A94D624CDB41C3F0 /* Info.plist */,
+				B1FD3515F93A888FA05F521461989F79 /* Pods-PetcareUITests.modulemap */,
+				774AD59BB2F657ED3DFEB2FBD047211A /* Pods-PetcareUITests-acknowledgements.markdown */,
+				2E354B1E1D97F5FECCB080D21C6E304A /* Pods-PetcareUITests-acknowledgements.plist */,
+				F482CBCCF900D605D356E8C85C05B34A /* Pods-PetcareUITests-dummy.m */,
+				67CE57F0C1547CE440302B1553F5A136 /* Pods-PetcareUITests-frameworks.sh */,
+				08F1F37124C7B18FE96BF7694B25BACF /* Pods-PetcareUITests-resources.sh */,
+				B1125832BC65F12844B082622A6A8729 /* Pods-PetcareUITests-umbrella.h */,
+				07C84B3A6F4B8AB6CF627BC6E6A1657F /* Pods-PetcareUITests.debug.xcconfig */,
+				23AE065B092B977BA49281A221DC38DB /* Pods-PetcareUITests.release.xcconfig */,
+			);
+			name = "Pods-PetcareUITests";
+			path = "Target Support Files/Pods-PetcareUITests";
+			sourceTree = "<group>";
+		};
+		CEF43D591D660A51E8652F2888AA88D8 /* Pods-Petcare */ = {
+			isa = PBXGroup;
+			children = (
+				0A90BF5FE4ACA0EBC93DF7B4F6D1E4CF /* Info.plist */,
+				8CF3F0581DE4A6705BEE3173134DCCB2 /* Pods-Petcare.modulemap */,
+				6A184E1E25D07E74A95921ED4E59E427 /* Pods-Petcare-acknowledgements.markdown */,
+				98B3920ED45451F541757B6AE1AA0421 /* Pods-Petcare-acknowledgements.plist */,
+				319F803B14E16194DAD7A30548E8AA9D /* Pods-Petcare-dummy.m */,
+				9A13779A6B0F1614CB9B9B306F7EB7CD /* Pods-Petcare-frameworks.sh */,
+				19F5C3F0E688893A537B93D0A9BA1283 /* Pods-Petcare-resources.sh */,
+				54CEDFD3D78E16EB906ECCC90A9BF202 /* Pods-Petcare-umbrella.h */,
+				54A9913FDE10A2880871E1C2BD5CF182 /* Pods-Petcare.debug.xcconfig */,
+				1DBA9AF24A50B7FD2F1C585CFFA5944B /* Pods-Petcare.release.xcconfig */,
+			);
+			name = "Pods-Petcare";
+			path = "Target Support Files/Pods-Petcare";
+			sourceTree = "<group>";
+		};
+		D72ACC7DF636A9DE4A96014D07C94253 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				10D8E3AF5A1CCA9869F3C75BF7633ED9 /* CKCircleMenuView.modulemap */,
+				29FB6AB1DF633E59CFC6A99A9B3AD46C /* CKCircleMenuView.xcconfig */,
+				A25127009EE15D237888C3548F92B381 /* CKCircleMenuView-dummy.m */,
+				110EE3D22B6CE648E432D62894181868 /* CKCircleMenuView-prefix.pch */,
+				65DB5672F188ED43B12E716590D547C0 /* CKCircleMenuView-umbrella.h */,
+				BFD7D02E137B7F0CFEA18EC462AB43D3 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CKCircleMenuView";
+			sourceTree = "<group>";
+		};
+		F387CAC583008C8BD8EB6117D27D35BA /* Pods-Petcare WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				A00DAE32F7D85EC392C92871098FE113 /* Info.plist */,
+				5FA7C723FF7EEA252BD0F5D2B40B8B1B /* Pods-Petcare WatchKit App.modulemap */,
+				903BFA1BCDA8745CFDD792E49C47BEF6 /* Pods-Petcare WatchKit App-acknowledgements.markdown */,
+				5BD6AE90841291CF44DB9C0D9C7CC0AD /* Pods-Petcare WatchKit App-acknowledgements.plist */,
+				4727008BAD1D175FB0A6A94A0B5EAEAB /* Pods-Petcare WatchKit App-dummy.m */,
+				98AED8C5D8656862670D2DF44B2D85F3 /* Pods-Petcare WatchKit App-frameworks.sh */,
+				F3558BCB2647FD81A83A7D7A7A269EFA /* Pods-Petcare WatchKit App-resources.sh */,
+				00E1C9F66693BE3FFECCCA8260F67B27 /* Pods-Petcare WatchKit App-umbrella.h */,
+				C3C46DA47F8E79978527E97E21626A0A /* Pods-Petcare WatchKit App.debug.xcconfig */,
+				B16365929DA47E00432F87FBE82C9593 /* Pods-Petcare WatchKit App.release.xcconfig */,
+			);
+			name = "Pods-Petcare WatchKit App";
+			path = "Target Support Files/Pods-Petcare WatchKit App";
+			sourceTree = "<group>";
+		};
+		F81756BABF09F3F84B33D6BC6375685F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF4272B0956D0703C08A90E968331DC0 /* CKCircleMenuView.framework */,
+				4389C5624CECAE3575834C0716B56BED /* Pods_Petcare.framework */,
+				7F8C0431E1577BBC0A96172F2FA8C3A1 /* Pods_Petcare_WatchKit_App.framework */,
+				710AF01DA4C3B4380AA0B5FF6034E626 /* Pods_Petcare_WatchKit_Extension.framework */,
+				41F89426D2DFDCF45C6D33AC3840D7B5 /* Pods_PetcareTests.framework */,
+				E50886FB6D7886CD385F1DB96264767C /* Pods_PetcareUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		49FE7A91D4F9C9834F84DEB54C59183E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6606964D71AE1DFCA45F9D3D9DB64694 /* Pods-Petcare-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9466D920A9245A7E4177A91EEC059364 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B65C5E7308F791C05781CF2F14A5711 /* Pods-Petcare WatchKit App-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8B001D2CF4A902D3644834BB8E6526B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6086DA69DA6F2458F53E8D3E5FA0999C /* CKCircleMenuView-umbrella.h in Headers */,
+				0511A32389A88D9A821273E368C1B6EF /* CKCircleMenuView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E68D5344D2A8B98EB12D047682F311B9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF4F30C7278B0DF0D9AD75E1CC48D890 /* Pods-Petcare WatchKit Extension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0EECCD01AEBDE67987A7402836525DC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D15CD0EF97B36589E81BB69F9BC7847C /* Pods-PetcareUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDDEFDA892798DF30C1CE76B89100AAD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25C79977D62A8147742A1D665ADDF395 /* Pods-PetcareTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0B92AA9B5EF85667567C8D5DEEC03A04 /* Pods-Petcare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8DC7E8305D3BF3E59AE02CD91B74C6FF /* Build configuration list for PBXNativeTarget "Pods-Petcare" */;
+			buildPhases = (
+				0A3E569AD7832B8D16CF00782B0B6271 /* Sources */,
+				DE3358EF819093BC714AA320336CC23A /* Frameworks */,
+				49FE7A91D4F9C9834F84DEB54C59183E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9149187F04AD2FE56E0230034C9F5CAA /* PBXTargetDependency */,
+			);
+			name = "Pods-Petcare";
+			productName = "Pods-Petcare";
+			productReference = 4389C5624CECAE3575834C0716B56BED /* Pods_Petcare.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1BD69CA5AC66608DB87F5EAC17A9D1B3 /* Pods-Petcare WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C91B22FF40F3AA16A89C7F90D6B3F72 /* Build configuration list for PBXNativeTarget "Pods-Petcare WatchKit App" */;
+			buildPhases = (
+				0611F97E08961060D37562DB8815548D /* Sources */,
+				8840759C7EE1C32477710B21CE3D7BB1 /* Frameworks */,
+				9466D920A9245A7E4177A91EEC059364 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Petcare WatchKit App";
+			productName = "Pods-Petcare WatchKit App";
+			productReference = 7F8C0431E1577BBC0A96172F2FA8C3A1 /* Pods_Petcare_WatchKit_App.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4510FDBEFF7431393F1BBC116955EFC4 /* CKCircleMenuView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA7536E155BA0894239B99BCAD242EA /* Build configuration list for PBXNativeTarget "CKCircleMenuView" */;
+			buildPhases = (
+				39877E86D0D79301DC9A10051177DED0 /* Sources */,
+				8848793B7C550E7884E5263E8A362E25 /* Frameworks */,
+				A8B001D2CF4A902D3644834BB8E6526B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CKCircleMenuView;
+			productName = CKCircleMenuView;
+			productReference = AF4272B0956D0703C08A90E968331DC0 /* CKCircleMenuView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		464944198BC19A20857340BA4EFEC659 /* Pods-PetcareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 905B837C06A11CA9EF35BB850D7A4B4F /* Build configuration list for PBXNativeTarget "Pods-PetcareUITests" */;
+			buildPhases = (
+				E6357478FFE80E1FA451D07DE53FBD41 /* Sources */,
+				C915C59DA55995F550C4C01E7497FF08 /* Frameworks */,
+				F0EECCD01AEBDE67987A7402836525DC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PetcareUITests";
+			productName = "Pods-PetcareUITests";
+			productReference = E50886FB6D7886CD385F1DB96264767C /* Pods_PetcareUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA9FA011BA6D08B51D7D21EBDBD8BE0C /* Pods-Petcare WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C94C3BF5487F281D55D5E6468FD0765 /* Build configuration list for PBXNativeTarget "Pods-Petcare WatchKit Extension" */;
+			buildPhases = (
+				751E84639044428EA71EE000669D791C /* Sources */,
+				5F74D14226489BF2ACE12D77332CE64A /* Frameworks */,
+				E68D5344D2A8B98EB12D047682F311B9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Petcare WatchKit Extension";
+			productName = "Pods-Petcare WatchKit Extension";
+			productReference = 710AF01DA4C3B4380AA0B5FF6034E626 /* Pods_Petcare_WatchKit_Extension.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BC64E9CA097A504101B018E85664659D /* Pods-PetcareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DE885FB4D553452C508230A3BF406F5 /* Build configuration list for PBXNativeTarget "Pods-PetcareTests" */;
+			buildPhases = (
+				1D4800A0589725C0A81E87E0C7EC2042 /* Sources */,
+				6A0F20A621B2678AF850E900684DDA90 /* Frameworks */,
+				FDDEFDA892798DF30C1CE76B89100AAD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-PetcareTests";
+			productName = "Pods-PetcareTests";
+			productReference = 41F89426D2DFDCF45C6D33AC3840D7B5 /* Pods_PetcareTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = F81756BABF09F3F84B33D6BC6375685F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4510FDBEFF7431393F1BBC116955EFC4 /* CKCircleMenuView */,
+				0B92AA9B5EF85667567C8D5DEEC03A04 /* Pods-Petcare */,
+				1BD69CA5AC66608DB87F5EAC17A9D1B3 /* Pods-Petcare WatchKit App */,
+				BA9FA011BA6D08B51D7D21EBDBD8BE0C /* Pods-Petcare WatchKit Extension */,
+				BC64E9CA097A504101B018E85664659D /* Pods-PetcareTests */,
+				464944198BC19A20857340BA4EFEC659 /* Pods-PetcareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0611F97E08961060D37562DB8815548D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80C519AF9853C9A75368C215EC432C5E /* Pods-Petcare WatchKit App-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A3E569AD7832B8D16CF00782B0B6271 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA2EC58654FB491F7152C064BF9D2540 /* Pods-Petcare-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D4800A0589725C0A81E87E0C7EC2042 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B212F2BBC14A2FC4384CED7889FB4C9 /* Pods-PetcareTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39877E86D0D79301DC9A10051177DED0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				976CD50BC701A1D1961A71C34B26F17A /* CKCircleMenuView-dummy.m in Sources */,
+				7C33C20D223052B3D0A5A7AACD519E58 /* CKCircleMenuView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		751E84639044428EA71EE000669D791C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				658D3CBAD1A0082B160D7344C0E7F85A /* Pods-Petcare WatchKit Extension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6357478FFE80E1FA451D07DE53FBD41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0C2CC8843923130286CB6A0493B68DE /* Pods-PetcareUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9149187F04AD2FE56E0230034C9F5CAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CKCircleMenuView;
+			target = 4510FDBEFF7431393F1BBC116955EFC4 /* CKCircleMenuView */;
+			targetProxy = 333B846175BE57FC632A394ECD5036A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0900BC15C9F66FFA249B6F56E665FE05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29FB6AB1DF633E59CFC6A99A9B3AD46C /* CKCircleMenuView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CKCircleMenuView/CKCircleMenuView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CKCircleMenuView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CKCircleMenuView/CKCircleMenuView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = CKCircleMenuView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1FA62B54CA3DC76D0750E20B12B1A675 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B16365929DA47E00432F87FBE82C9593 /* Pods-Petcare WatchKit App.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Petcare WatchKit App/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Petcare WatchKit App/Pods-Petcare WatchKit App.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Petcare_WatchKit_App;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		20323FAF99249895EC039F89B7BF9669 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54A9913FDE10A2880871E1C2BD5CF182 /* Pods-Petcare.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Petcare/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Petcare/Pods-Petcare.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Petcare;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2A2136848CC4E513596EB7DA146A5F08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29FB6AB1DF633E59CFC6A99A9B3AD46C /* CKCircleMenuView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CKCircleMenuView/CKCircleMenuView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CKCircleMenuView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/CKCircleMenuView/CKCircleMenuView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = CKCircleMenuView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2C7C920A2CE4BDB901253C7761AD42F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		5B413E05369CD7261AB06FD4EA687BDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07C84B3A6F4B8AB6CF627BC6E6A1657F /* Pods-PetcareUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PetcareUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetcareUITests/Pods-PetcareUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PetcareUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7329696C750C71EA6C49D7F8A0D82840 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		8CAC4C8EFD5C950CF0E1725D9482686D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCC48B6BE133A69F169348C4075FE38A /* Pods-PetcareTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PetcareTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetcareTests/Pods-PetcareTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PetcareTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A2FC7522109BBC9A6AF06FB21889C8CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DBA9AF24A50B7FD2F1C585CFFA5944B /* Pods-Petcare.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Petcare/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Petcare/Pods-Petcare.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Petcare;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B5C238C9C2978666B402852A1B83C377 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13935CFC9FF0FE85F21D175BD36178C6 /* Pods-Petcare WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Petcare WatchKit Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Petcare WatchKit Extension/Pods-Petcare WatchKit Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Petcare_WatchKit_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+		BC61967CAB4AEA3131E07A950A6CDD20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69ADA0DBFAB2CB239DFA3E96733CE35 /* Pods-Petcare WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Petcare WatchKit Extension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Petcare WatchKit Extension/Pods-Petcare WatchKit Extension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Petcare_WatchKit_Extension;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Release;
+		};
+		D8F8AF618C5AF60FE6D253E77C5593A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEA111BF2F845D59014E65CFBF3C1362 /* Pods-PetcareTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PetcareTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetcareTests/Pods-PetcareTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PetcareTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EC7965853DDA71F2699945C490A1735D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23AE065B092B977BA49281A221DC38DB /* Pods-PetcareUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-PetcareUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PetcareUITests/Pods-PetcareUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_PetcareUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FBCACACB851AB3DE46708C21BFF4495C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3C46DA47F8E79978527E97E21626A0A /* Pods-Petcare WatchKit App.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Petcare WatchKit App/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Petcare WatchKit App/Pods-Petcare WatchKit App.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Petcare_WatchKit_App;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 3.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C91B22FF40F3AA16A89C7F90D6B3F72 /* Build configuration list for PBXNativeTarget "Pods-Petcare WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBCACACB851AB3DE46708C21BFF4495C /* Debug */,
+				1FA62B54CA3DC76D0750E20B12B1A675 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C7C920A2CE4BDB901253C7761AD42F4 /* Debug */,
+				7329696C750C71EA6C49D7F8A0D82840 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8DC7E8305D3BF3E59AE02CD91B74C6FF /* Build configuration list for PBXNativeTarget "Pods-Petcare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20323FAF99249895EC039F89B7BF9669 /* Debug */,
+				A2FC7522109BBC9A6AF06FB21889C8CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		905B837C06A11CA9EF35BB850D7A4B4F /* Build configuration list for PBXNativeTarget "Pods-PetcareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B413E05369CD7261AB06FD4EA687BDD /* Debug */,
+				EC7965853DDA71F2699945C490A1735D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C94C3BF5487F281D55D5E6468FD0765 /* Build configuration list for PBXNativeTarget "Pods-Petcare WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C238C9C2978666B402852A1B83C377 /* Debug */,
+				BC61967CAB4AEA3131E07A950A6CDD20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DE885FB4D553452C508230A3BF406F5 /* Build configuration list for PBXNativeTarget "Pods-PetcareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CAC4C8EFD5C950CF0E1725D9482686D /* Debug */,
+				D8F8AF618C5AF60FE6D253E77C5593A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FA7536E155BA0894239B99BCAD242EA /* Build configuration list for PBXNativeTarget "CKCircleMenuView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2136848CC4E513596EB7DA146A5F08 /* Debug */,
+				0900BC15C9F66FFA249B6F56E665FE05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
