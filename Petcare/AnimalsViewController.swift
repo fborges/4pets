@@ -8,10 +8,13 @@
 
 import UIKit
 
-class AnimalsViewController: UIViewController {
+class AnimalsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let dao = CoreDataDAO<Pet>()
     var petList: [Pet] = []
+    
+    @IBOutlet weak var talbeViewAnimals: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +40,22 @@ class AnimalsViewController: UIViewController {
     
     // MARK: - TableView
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return petList.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let data = petList[indexPath.row].photo as! Data
+        
+        let image : UIImage = UIImage(data: data)!
+
+        
+        let cell:AnimalTableViewCell = self.talbeViewAnimals.dequeueReusableCell(withIdentifier: "animalCell") as! AnimalTableViewCell
+        
+        cell.petImageView.image = image
+        cell.nameLabel.text = petList[indexPath.row].name
+        
         return UITableViewCell()
     }
     
