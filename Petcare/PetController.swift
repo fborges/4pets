@@ -9,14 +9,30 @@
 import UIKit
 import CoreData
 
-class PetController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PetController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     let dao = CoreDataDAO<Pet>()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     @IBOutlet weak var imagePicked: UIImageView!
     
+    @IBOutlet weak var name: UITextField!
+    
+    @IBOutlet weak var breed: UITextField!
+    
+    @IBOutlet weak var sex: UITextField!
+    
+    @IBOutlet weak var type: UITextField!
+    
+    @IBOutlet weak var birthdayPicker: UIDatePicker!
+    
+    
     override func viewDidLoad() {
+        
+        self.name.delegate = self
+        self.breed.delegate = self
+        self.sex.delegate = self
+        self.type.delegate = self
         
 //        let pet = Pet(name: "Wesley", birthdate: NSDate(), breed: "Safadão", photo: NSData(), sex: "Masculino", type: "Raparigueiro", context: self.context)
 //        self.create(pet: pet)
@@ -72,6 +88,21 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         return dao.getByID(id)
     }
+
+    
+    @IBAction func savePet(_ sender: UIButton) {
+        
+        let imageData: NSData = UIImagePNGRepresentation(imagePicked.image!)! as NSData
+        
+        let pet = Pet(name: self.name.text!, birthdate: birthdayPicker.date as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex.text!, type: self.type.text!, context: self.context)
+        
+        self.create(pet: pet)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
     // MARK: - Get camera Image
     
@@ -85,6 +116,18 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         }
     }
 
+    @IBAction func openLibrary(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    
     @IBAction func openPhotoLibraryButton(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -105,16 +148,5 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.dismiss(animated: true, completion: nil);
         
     }
-    
-    @IBAction func saveButt(sender: AnyObject) {
-        let imageData = UIImageJPEGRepresentation(imagePicked.image!, 0.6)
-        let compressedJPGImage = UIImage(data: imageData!)
-        UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
-        
-        let alert = UIAlertView(title: "Wow",
-                                message: "Your image has been saved to Photo Library!",
-                                delegate: nil,
-                                cancelButtonTitle: "Ok")
-        alert.show()
-    }
+
 }
