@@ -13,6 +13,7 @@
 		062891241DEC5ED0001390B8 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062891221DEC5ED0001390B8 /* Pet+CoreDataProperties.swift */; };
 		062891261DEC6441001390B8 /* PetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062891251DEC6441001390B8 /* PetController.swift */; };
 		770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */; };
+		770AE5321DEDC003007AF924 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */; };
 		779B40D31DE86175004894FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D21DE86175004894FE /* AppDelegate.swift */; };
 		779B40D51DE86175004894FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D41DE86175004894FE /* ViewController.swift */; };
 		779B40D81DE86175004894FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40D61DE86175004894FE /* Main.storyboard */; };
@@ -119,6 +120,7 @@
 		4BE665200DD1FF7092FB324E /* Pods-Petcare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petcare.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petcare/Pods-Petcare.release.xcconfig"; sourceTree = "<group>"; };
 		7670A41396A6F43A4352E2D4 /* Pods-Petcare WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petcare WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petcare WatchKit App/Pods-Petcare WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
+		770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
 		779B40CF1DE86175004894FE /* Petcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		779B40D21DE86175004894FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		779B40D41DE86175004894FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		770AE52C1DEC5730007AF924 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -890,6 +893,7 @@
 				C4D89F4A1DEDB6CA00CAB613 /* Deworming.swift in Sources */,
 				C4D89F4B1DEDB6CA00CAB613 /* Deworming+CoreDataProperties.swift in Sources */,
 				770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */,
+				770AE5321DEDC003007AF924 /* AnimalTableViewCell.swift in Sources */,
 				062891241DEC5ED0001390B8 /* Pet+CoreDataProperties.swift in Sources */,
 				C4D89F4F1DEDB6CA00CAB613 /* Recreation+CoreDataProperties.swift in Sources */,
 				C4D89F571DEDB6CB00CAB613 /* Bath+CoreDataProperties.swift in Sources */,
