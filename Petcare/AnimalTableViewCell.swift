@@ -10,6 +10,10 @@ import UIKit
 
 class AnimalTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var sexImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var petImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
