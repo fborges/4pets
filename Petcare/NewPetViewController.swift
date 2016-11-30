@@ -60,9 +60,50 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
     }
     
+    func validatePet(pet: Pet) -> Bool{
+        
+        var petIsOk = true
+        
+        
+        if (pet.name?.isEmpty)! {
+            
+            petIsOk = false
+            self.name.backgroundColor = UIColor.red
+            
+        }
+        
+        if (pet.breed?.isEmpty)! {
+            
+            petIsOk = false
+            self.name.backgroundColor = UIColor.red
+            
+        }
+        
+        if (pet.type?.isEmpty)! {
+            
+            petIsOk = false
+            self.name.backgroundColor = UIColor.red
+
+        }
+        
+        if (pet.sex?.isEmpty)! {
+            
+            petIsOk = false
+            self.name.backgroundColor = UIColor.red
+            
+        }
+        
+        return petIsOk
+        
+    }
+    
     func create(pet: Pet){
         
-        dao.insert(pet)
+        if validatePet(pet: pet){
+            
+            dao.insert(pet)
+        }
+        
     }
     
     func delete(pet: Pet){
