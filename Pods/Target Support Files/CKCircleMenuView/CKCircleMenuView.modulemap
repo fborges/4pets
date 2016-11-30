@@ -1,6 +1,0 @@
-framework module CKCircleMenuView {
-  umbrella header "CKCircleMenuView-umbrella.h"
-
-  export *
-  module * { export * }
-}
