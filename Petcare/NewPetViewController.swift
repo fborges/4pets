@@ -131,13 +131,15 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
 
     
-    @IBAction func savePet(_ sender: UIButton) {
+    func savePet() -> Pet {
         
         let imageData: NSData = UIImagePNGRepresentation(imagePicked.image!)! as NSData
         
-        let pet = Pet(name: self.name.text!, birthdate: birthdayPicker.date as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex, type: self.type.text!, context: self.context)
+        let pet = Pet(name: self.name.text!, birthdate: NSDate() as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex, type: self.type.text!, context: self.context)
         
         self.create(pet: pet)
+        
+        return pet
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -174,26 +176,26 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     
     
-    @IBAction func openCameraButton(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    
-    @IBAction func openPhotoLibraryButton(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-    }
+//    @IBAction func openCameraButton(sender: AnyObject) {
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+//            let imagePicker = UIImagePickerController()
+//            imagePicker.delegate = self
+//            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+//            imagePicker.allowsEditing = false
+//            self.present(imagePicker, animated: true, completion: nil)
+//        }
+//    }
+//    
+//    
+//    @IBAction func openPhotoLibraryButton(sender: AnyObject) {
+//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+//            let imagePicker = UIImagePickerController()
+//            imagePicker.delegate = self
+//            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+//            imagePicker.allowsEditing = true
+//            self.present(imagePicker, animated: true, completion: nil)
+//        }
+//    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -204,6 +206,15 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         self.dismiss(animated: true, completion: nil);
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let pet = savePet()
+        
+        let confirmPetController = segue.destination as! ConfirmPetViewController
+        
+        confirmPetController.pet = pet
     }
 
 }

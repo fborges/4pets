@@ -10,9 +10,10 @@ import UIKit
 
 class ConfirmPetViewController: UIViewController {
 
+    var pet: Pet!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
