@@ -60,9 +60,10 @@
         <scene sceneID="yNH-O3-YT7">
             <objects>
                 <navigationController id="Cxh-pz-n9Q" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y0G-fa-agK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="y0G-fa-agK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="KB7-A9-4UH" kind="relationship" relationship="rootViewController" id="oMO-w2-ns3"/>
@@ -166,6 +167,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My pets" id="XKl-qw-3vc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2SH-0V-9vz">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="tdU-6r-0M9" kind="show" id="UOC-rg-3MU"/>
                             </connections>
@@ -208,7 +210,7 @@
                                         <fragment content="+">
                                             <attributes>
                                                 <color key="NSColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                                                <font key="NSFont" size="80" name="TimesNewRomanPSMT"/>
+                                                <font key="NSFont" size="50" name="TimesNewRomanPSMT"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1" tighteningFactorForTruncation="0.0"/>
                                             </attributes>
                                         </fragment>
@@ -216,7 +218,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="40"/>
+                                        <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
@@ -231,23 +233,64 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcw-bT-s3c">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWm-Uj-Bxz">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Breed" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L8B-2Y-8UE">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVi-Id-vP9">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="axw-wN-RNc">
+                                <segments>
+                                    <segment title="Male"/>
+                                    <segment title="Female"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="axw-wN-RNc" firstAttribute="centerY" secondItem="UVi-Id-vP9" secondAttribute="centerY" id="2Es-SV-jch"/>
                             <constraint firstItem="KSA-R1-n2n" firstAttribute="width" secondItem="P6N-Wc-cZp" secondAttribute="width" id="8cS-CO-Ccw"/>
+                            <constraint firstItem="XWm-Uj-Bxz" firstAttribute="leading" secondItem="kcw-bT-s3c" secondAttribute="trailing" constant="25" id="A0a-eq-msO"/>
                             <constraint firstItem="fTt-Wq-8wA" firstAttribute="leading" secondItem="Q7B-fZ-DB9" secondAttribute="trailing" constant="-50" id="AEx-Az-z6G"/>
                             <constraint firstItem="P6N-Wc-cZp" firstAttribute="leading" secondItem="6Mh-w6-lhV" secondAttribute="leadingMargin" constant="20" id="GMg-it-5jM"/>
                             <constraint firstItem="fTt-Wq-8wA" firstAttribute="top" secondItem="Q7B-fZ-DB9" secondAttribute="bottom" constant="-50" id="MqB-al-Zxf"/>
-                            <constraint firstItem="KSA-R1-n2n" firstAttribute="top" secondItem="P6N-Wc-cZp" secondAttribute="bottom" constant="28" id="Obt-38-GS8"/>
+                            <constraint firstItem="UVi-Id-vP9" firstAttribute="top" secondItem="L8B-2Y-8UE" secondAttribute="bottom" constant="24" id="NXL-xg-4AL"/>
+                            <constraint firstItem="KSA-R1-n2n" firstAttribute="top" secondItem="P6N-Wc-cZp" secondAttribute="bottom" constant="19" id="Obt-38-GS8"/>
                             <constraint firstItem="KSA-R1-n2n" firstAttribute="centerX" secondItem="P6N-Wc-cZp" secondAttribute="centerX" id="Sru-4p-U4Y"/>
                             <constraint firstItem="P6N-Wc-cZp" firstAttribute="top" secondItem="Q7B-fZ-DB9" secondAttribute="bottom" constant="35" id="TKp-EA-6nC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="axw-wN-RNc" secondAttribute="trailing" constant="20" id="Tib-8a-Y4A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P6N-Wc-cZp" secondAttribute="trailing" constant="20" id="VLH-1S-HMW"/>
+                            <constraint firstItem="axw-wN-RNc" firstAttribute="leading" secondItem="kcw-bT-s3c" secondAttribute="trailing" constant="25" id="YP4-ik-m7W"/>
+                            <constraint firstItem="UVi-Id-vP9" firstAttribute="leading" secondItem="6Mh-w6-lhV" secondAttribute="leadingMargin" constant="20" id="bLs-HR-4vb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XWm-Uj-Bxz" secondAttribute="trailing" constant="20" id="dMg-ZU-nco"/>
+                            <constraint firstItem="L8B-2Y-8UE" firstAttribute="width" secondItem="KSA-R1-n2n" secondAttribute="width" id="dO8-Rf-mJu"/>
+                            <constraint firstItem="kcw-bT-s3c" firstAttribute="leading" secondItem="6Mh-w6-lhV" secondAttribute="leadingMargin" constant="20" id="iav-Dm-Oua"/>
                             <constraint firstItem="Q7B-fZ-DB9" firstAttribute="top" secondItem="StN-kB-Qc5" secondAttribute="bottom" constant="23" id="l9I-z1-wFA"/>
+                            <constraint firstItem="kcw-bT-s3c" firstAttribute="top" secondItem="KSA-R1-n2n" secondAttribute="bottom" constant="26" id="q9p-JF-p0d"/>
+                            <constraint firstItem="L8B-2Y-8UE" firstAttribute="top" secondItem="XWm-Uj-Bxz" secondAttribute="bottom" constant="22" id="rNi-yU-HmV"/>
                             <constraint firstItem="Q7B-fZ-DB9" firstAttribute="centerX" secondItem="6Mh-w6-lhV" secondAttribute="centerX" id="sAh-eX-9fl"/>
+                            <constraint firstItem="L8B-2Y-8UE" firstAttribute="centerX" secondItem="KSA-R1-n2n" secondAttribute="centerX" id="sc3-Vj-X01"/>
+                            <constraint firstItem="XWm-Uj-Bxz" firstAttribute="centerY" secondItem="kcw-bT-s3c" secondAttribute="centerY" id="wYm-y2-Sul"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New pet" id="f8p-PG-TCr">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="cnZ-sG-6NC"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="cnZ-sG-6NC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVV-N5-aq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
