@@ -14,24 +14,24 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     let dao = CoreDataDAO<Pet>()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    var sex: String = "Male"
+    
     @IBOutlet weak var imagePicked: UIImageView!
     
     @IBOutlet weak var name: UITextField!
     
     @IBOutlet weak var breed: UITextField!
     
-    @IBOutlet weak var sex: UITextField!
-    
     @IBOutlet weak var type: UITextField!
     
     @IBOutlet weak var birthdayPicker: UIDatePicker!
     
+    @IBOutlet weak var sexSegment: UISegmentedControl!
     
     override func viewDidLoad() {
         
         self.name.delegate = self
         self.breed.delegate = self
-        self.sex.delegate = self
         self.type.delegate = self
         
 //        let pet = Pet(name: "Wesley", birthdate: NSDate(), breed: "Safadão", photo: NSData(), sex: "Masculino", type: "Raparigueiro", context: self.context)
@@ -135,7 +135,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         let imageData: NSData = UIImagePNGRepresentation(imagePicked.image!)! as NSData
         
-        let pet = Pet(name: self.name.text!, birthdate: birthdayPicker.date as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex.text!, type: self.type.text!, context: self.context)
+        let pet = Pet(name: self.name.text!, birthdate: birthdayPicker.date as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex, type: self.type.text!, context: self.context)
         
         self.create(pet: pet)
     }
@@ -145,7 +145,34 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         return false
     }
     
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        
+        switch sexSegment.selectedSegmentIndex {
+        case 0:
+            self.sex = "Male"
+        case 1:
+            self.sex = "Female"
+        default:
+            break; 
+        }
+        
+    }
+    
+    
     // MARK: - Get camera Image
+    
+    
+    @IBAction func openLibraryButton(_ sender: UIButton) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
     
     @IBAction func openCameraButton(sender: AnyObject) {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
@@ -155,17 +182,6 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: true, completion: nil)
         }
-    }
-
-    @IBAction func openLibrary(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        
     }
     
     
