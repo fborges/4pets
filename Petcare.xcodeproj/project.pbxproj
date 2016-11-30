@@ -12,6 +12,7 @@
 		062891261DEC6441001390B8 /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062891251DEC6441001390B8 /* NewPetViewController.swift */; };
 		770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */; };
 		770AE5321DEDC003007AF924 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */; };
+		774624CF1DEF162300B78396 /* ConfirmPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */; };
 		779B40D31DE86175004894FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D21DE86175004894FE /* AppDelegate.swift */; };
 		779B40D51DE86175004894FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D41DE86175004894FE /* ViewController.swift */; };
 		779B40D81DE86175004894FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40D61DE86175004894FE /* Main.storyboard */; };
@@ -126,6 +127,7 @@
 		7670A41396A6F43A4352E2D4 /* Pods-Petcare WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petcare WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petcare WatchKit App/Pods-Petcare WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsViewController.swift; sourceTree = "<group>"; };
 		770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
+		774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPetViewController.swift; sourceTree = "<group>"; };
 		779B40CF1DE86175004894FE /* Petcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		779B40D21DE86175004894FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		779B40D41DE86175004894FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				C4E94E6E1DEEFCE1001C5624 /* DewormingViewController.swift */,
 				062891251DEC6441001390B8 /* NewPetViewController.swift */,
 				770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */,
+				774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -923,6 +926,7 @@
 				C44C964A1DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift in Sources */,
 				C44C963A1DEE3972004E09F9 /* Hair+CoreDataProperties.swift in Sources */,
 				C4E94E721DEEFCE1001C5624 /* RecreationViewController.swift in Sources */,
+				774624CF1DEF162300B78396 /* ConfirmPetViewController.swift in Sources */,
 				C4E94E6F1DEEFCE1001C5624 /* BathViewController.swift in Sources */,
 				C44C96421DEE398E004E09F9 /* Teeth+CoreDataProperties.swift in Sources */,
 				C44C96311DEE394D004E09F9 /* Bath.swift in Sources */,

@@ -290,12 +290,33 @@
                     <navigationItem key="navigationItem" title="New pet" id="f8p-PG-TCr">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="cnZ-sG-6NC">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="yFF-H4-zXx" kind="show" id="cqv-Td-evd"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVV-N5-aq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2552.8000000000002" y="-155.17241379310346"/>
+        </scene>
+        <!--Confirm Pet View Controller-->
+        <scene sceneID="h73-hD-DqN">
+            <objects>
+                <viewController id="yFF-H4-zXx" customClass="ConfirmPetViewController" customModule="Petcare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jhq-pj-Zvv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qkd-2F-B6j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5L4-L2-xVY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wv0-qY-TB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3268" y="-155"/>
         </scene>
     </scenes>
     <resources>
