@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import CZPicker
+import DatePickerDialog
 
 class PetController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, CZPickerViewDelegate, CZPickerViewDataSource {
     
@@ -19,6 +20,8 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     
     let czpicker = CZPickerView(headerTitle: "Species", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
+    
+   
     
     @IBOutlet weak var imagePicked: UIImageView!
     
@@ -247,7 +250,13 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         if textField.tag == 1 {
             czpicker?.show()
             return false
+        } else if textField.tag == 2 {
+            DatePickerDialog().show("Pet's birthday", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: Date(), datePickerMode: .date, callback: { (date) in
+                print(date)
+            })
+            return false
         }
+        
         return true
     }
     
