@@ -27,22 +27,22 @@
 		779B41101DE86175004894FE /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B410F1DE86175004894FE /* ExtensionDelegate.swift */; };
 		779B41121DE86175004894FE /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B41111DE86175004894FE /* NotificationController.swift */; };
 		779B41141DE86175004894FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779B41131DE86175004894FE /* Assets.xcassets */; };
-		C44C961C1DEDD0D3004E09F9 /* Nails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96071DEDD0D3004E09F9 /* Nails.swift */; };
-		C44C961D1DEDD0D3004E09F9 /* Nails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96081DEDD0D3004E09F9 /* Nails+CoreDataProperties.swift */; };
-		C44C961E1DEDD0D3004E09F9 /* Bath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C960A1DEDD0D3004E09F9 /* Bath.swift */; };
-		C44C961F1DEDD0D3004E09F9 /* Bath+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C960B1DEDD0D3004E09F9 /* Bath+CoreDataProperties.swift */; };
-		C44C96201DEDD0D3004E09F9 /* Vaccination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C960D1DEDD0D3004E09F9 /* Vaccination.swift */; };
-		C44C96211DEDD0D3004E09F9 /* Vaccination+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C960E1DEDD0D3004E09F9 /* Vaccination+CoreDataProperties.swift */; };
-		C44C96221DEDD0D3004E09F9 /* Recreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96101DEDD0D3004E09F9 /* Recreation.swift */; };
-		C44C96231DEDD0D3004E09F9 /* Recreation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96111DEDD0D3004E09F9 /* Recreation+CoreDataProperties.swift */; };
-		C44C96241DEDD0D3004E09F9 /* Teeth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96131DEDD0D3004E09F9 /* Teeth.swift */; };
-		C44C96251DEDD0D3004E09F9 /* Teeth+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96141DEDD0D3004E09F9 /* Teeth+CoreDataProperties.swift */; };
-		C44C96261DEDD0D3004E09F9 /* Deworming.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96161DEDD0D3004E09F9 /* Deworming.swift */; };
-		C44C96271DEDD0D3004E09F9 /* Deworming+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96171DEDD0D3004E09F9 /* Deworming+CoreDataProperties.swift */; };
-		C44C96281DEDD0D3004E09F9 /* Hair.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96191DEDD0D3004E09F9 /* Hair.swift */; };
-		C44C96291DEDD0D3004E09F9 /* Hair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C961A1DEDD0D3004E09F9 /* Hair+CoreDataProperties.swift */; };
 		C44C962D1DEDD122004E09F9 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C962B1DEDD122004E09F9 /* Pet.swift */; };
 		C44C962E1DEDD122004E09F9 /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C962C1DEDD122004E09F9 /* Pet+CoreDataProperties.swift */; };
+		C44C96311DEE394D004E09F9 /* Bath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C962F1DEE394D004E09F9 /* Bath.swift */; };
+		C44C96321DEE394D004E09F9 /* Bath+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96301DEE394D004E09F9 /* Bath+CoreDataProperties.swift */; };
+		C44C96351DEE395F004E09F9 /* Deworming.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96331DEE395F004E09F9 /* Deworming.swift */; };
+		C44C96361DEE395F004E09F9 /* Deworming+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96341DEE395F004E09F9 /* Deworming+CoreDataProperties.swift */; };
+		C44C96391DEE3972004E09F9 /* Hair.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96371DEE3972004E09F9 /* Hair.swift */; };
+		C44C963A1DEE3972004E09F9 /* Hair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96381DEE3972004E09F9 /* Hair+CoreDataProperties.swift */; };
+		C44C963D1DEE397C004E09F9 /* Nails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C963B1DEE397C004E09F9 /* Nails.swift */; };
+		C44C963E1DEE397C004E09F9 /* Nails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C963C1DEE397C004E09F9 /* Nails+CoreDataProperties.swift */; };
+		C44C96411DEE398E004E09F9 /* Teeth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C963F1DEE398E004E09F9 /* Teeth.swift */; };
+		C44C96421DEE398E004E09F9 /* Teeth+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96401DEE398E004E09F9 /* Teeth+CoreDataProperties.swift */; };
+		C44C96451DEE3998004E09F9 /* Recreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96431DEE3998004E09F9 /* Recreation.swift */; };
+		C44C96461DEE3998004E09F9 /* Recreation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96441DEE3998004E09F9 /* Recreation+CoreDataProperties.swift */; };
+		C44C96491DEE39A1004E09F9 /* Vaccination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96471DEE39A1004E09F9 /* Vaccination.swift */; };
+		C44C964A1DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96481DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift */; };
 		C4D89F5C1DEDB74300CAB613 /* Petcare.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4D89F5B1DEDB74300CAB613 /* Petcare.xcdatamodel */; };
 		C6DCB5E9C37180FEAB38DD44 /* Pods_Petcare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4BE8513E9948478F8E6E7E /* Pods_Petcare.framework */; };
 		CC0B93260D2AC8DF15BABEBA /* Pods_Petcare_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CADA92AA318E2B593DCED91 /* Pods_Petcare_WatchKit_Extension.framework */; };
@@ -146,22 +146,22 @@
 		7CB1FB67D5FFAF518ADC35AB /* Pods-Petcare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petcare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petcare/Pods-Petcare.debug.xcconfig"; sourceTree = "<group>"; };
 		8CADA92AA318E2B593DCED91 /* Pods_Petcare_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petcare_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A52780C83762FB4273BF00 /* Pods_PetcareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetcareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C44C96071DEDD0D3004E09F9 /* Nails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nails.swift; sourceTree = "<group>"; };
-		C44C96081DEDD0D3004E09F9 /* Nails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nails+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C44C960A1DEDD0D3004E09F9 /* Bath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bath.swift; sourceTree = "<group>"; };
-		C44C960B1DEDD0D3004E09F9 /* Bath+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bath+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C44C960D1DEDD0D3004E09F9 /* Vaccination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vaccination.swift; sourceTree = "<group>"; };
-		C44C960E1DEDD0D3004E09F9 /* Vaccination+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vaccination+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C44C96101DEDD0D3004E09F9 /* Recreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recreation.swift; sourceTree = "<group>"; };
-		C44C96111DEDD0D3004E09F9 /* Recreation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Recreation+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C44C96131DEDD0D3004E09F9 /* Teeth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teeth.swift; sourceTree = "<group>"; };
-		C44C96141DEDD0D3004E09F9 /* Teeth+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Teeth+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C44C96161DEDD0D3004E09F9 /* Deworming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deworming.swift; sourceTree = "<group>"; };
-		C44C96171DEDD0D3004E09F9 /* Deworming+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Deworming+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C44C96191DEDD0D3004E09F9 /* Hair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hair.swift; sourceTree = "<group>"; };
-		C44C961A1DEDD0D3004E09F9 /* Hair+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hair+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C44C962B1DEDD122004E09F9 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		C44C962C1DEDD122004E09F9 /* Pet+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pet+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C44C962F1DEE394D004E09F9 /* Bath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bath.swift; path = Petcare/Bath.swift; sourceTree = "<group>"; };
+		C44C96301DEE394D004E09F9 /* Bath+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bath+CoreDataProperties.swift"; path = "Petcare/Bath+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C44C96331DEE395F004E09F9 /* Deworming.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deworming.swift; path = Petcare/Deworming.swift; sourceTree = "<group>"; };
+		C44C96341DEE395F004E09F9 /* Deworming+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Deworming+CoreDataProperties.swift"; path = "Petcare/Deworming+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C44C96371DEE3972004E09F9 /* Hair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hair.swift; path = Petcare/Hair.swift; sourceTree = "<group>"; };
+		C44C96381DEE3972004E09F9 /* Hair+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hair+CoreDataProperties.swift"; path = "Petcare/Hair+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C44C963B1DEE397C004E09F9 /* Nails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nails.swift; path = Petcare/Nails.swift; sourceTree = "<group>"; };
+		C44C963C1DEE397C004E09F9 /* Nails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Nails+CoreDataProperties.swift"; path = "Petcare/Nails+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C44C963F1DEE398E004E09F9 /* Teeth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Teeth.swift; path = Petcare/Teeth.swift; sourceTree = "<group>"; };
+		C44C96401DEE398E004E09F9 /* Teeth+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Teeth+CoreDataProperties.swift"; path = "Petcare/Teeth+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C44C96431DEE3998004E09F9 /* Recreation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recreation.swift; path = Petcare/Recreation.swift; sourceTree = "<group>"; };
+		C44C96441DEE3998004E09F9 /* Recreation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recreation+CoreDataProperties.swift"; path = "Petcare/Recreation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C44C96471DEE39A1004E09F9 /* Vaccination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vaccination.swift; path = Petcare/Vaccination.swift; sourceTree = "<group>"; };
+		C44C96481DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Vaccination+CoreDataProperties.swift"; path = "Petcare/Vaccination+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C4D89F5B1DEDB74300CAB613 /* Petcare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Petcare.xcdatamodel; sourceTree = "<group>"; };
 		CB3278B5DB07D3AD800B3A5E /* Pods-Petcare WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petcare WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petcare WatchKit Extension/Pods-Petcare WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		E2D93F595733DD15D2318847 /* Pods-PetcareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetcareUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PetcareUITests/Pods-PetcareUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -374,8 +374,8 @@
 		C44C96091DEDD0D3004E09F9 /* Nails */ = {
 			isa = PBXGroup;
 			children = (
-				C44C96071DEDD0D3004E09F9 /* Nails.swift */,
-				C44C96081DEDD0D3004E09F9 /* Nails+CoreDataProperties.swift */,
+				C44C963B1DEE397C004E09F9 /* Nails.swift */,
+				C44C963C1DEE397C004E09F9 /* Nails+CoreDataProperties.swift */,
 			);
 			name = Nails;
 			path = ..;
@@ -384,8 +384,8 @@
 		C44C960C1DEDD0D3004E09F9 /* Bath */ = {
 			isa = PBXGroup;
 			children = (
-				C44C960A1DEDD0D3004E09F9 /* Bath.swift */,
-				C44C960B1DEDD0D3004E09F9 /* Bath+CoreDataProperties.swift */,
+				C44C962F1DEE394D004E09F9 /* Bath.swift */,
+				C44C96301DEE394D004E09F9 /* Bath+CoreDataProperties.swift */,
 			);
 			name = Bath;
 			path = ..;
@@ -394,8 +394,8 @@
 		C44C960F1DEDD0D3004E09F9 /* Vaccination */ = {
 			isa = PBXGroup;
 			children = (
-				C44C960D1DEDD0D3004E09F9 /* Vaccination.swift */,
-				C44C960E1DEDD0D3004E09F9 /* Vaccination+CoreDataProperties.swift */,
+				C44C96471DEE39A1004E09F9 /* Vaccination.swift */,
+				C44C96481DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift */,
 			);
 			name = Vaccination;
 			path = ..;
@@ -404,8 +404,8 @@
 		C44C96121DEDD0D3004E09F9 /* Recreation */ = {
 			isa = PBXGroup;
 			children = (
-				C44C96101DEDD0D3004E09F9 /* Recreation.swift */,
-				C44C96111DEDD0D3004E09F9 /* Recreation+CoreDataProperties.swift */,
+				C44C96431DEE3998004E09F9 /* Recreation.swift */,
+				C44C96441DEE3998004E09F9 /* Recreation+CoreDataProperties.swift */,
 			);
 			name = Recreation;
 			path = ..;
@@ -414,8 +414,8 @@
 		C44C96151DEDD0D3004E09F9 /* Teeth */ = {
 			isa = PBXGroup;
 			children = (
-				C44C96131DEDD0D3004E09F9 /* Teeth.swift */,
-				C44C96141DEDD0D3004E09F9 /* Teeth+CoreDataProperties.swift */,
+				C44C963F1DEE398E004E09F9 /* Teeth.swift */,
+				C44C96401DEE398E004E09F9 /* Teeth+CoreDataProperties.swift */,
 			);
 			name = Teeth;
 			path = ..;
@@ -424,8 +424,8 @@
 		C44C96181DEDD0D3004E09F9 /* Deworming */ = {
 			isa = PBXGroup;
 			children = (
-				C44C96161DEDD0D3004E09F9 /* Deworming.swift */,
-				C44C96171DEDD0D3004E09F9 /* Deworming+CoreDataProperties.swift */,
+				C44C96331DEE395F004E09F9 /* Deworming.swift */,
+				C44C96341DEE395F004E09F9 /* Deworming+CoreDataProperties.swift */,
 			);
 			name = Deworming;
 			path = ..;
@@ -434,8 +434,8 @@
 		C44C961B1DEDD0D3004E09F9 /* Hair */ = {
 			isa = PBXGroup;
 			children = (
-				C44C96191DEDD0D3004E09F9 /* Hair.swift */,
-				C44C961A1DEDD0D3004E09F9 /* Hair+CoreDataProperties.swift */,
+				C44C96371DEE3972004E09F9 /* Hair.swift */,
+				C44C96381DEE3972004E09F9 /* Hair+CoreDataProperties.swift */,
 			);
 			name = Hair;
 			path = ..;
@@ -889,27 +889,27 @@
 			files = (
 				779B40D51DE86175004894FE /* ViewController.swift in Sources */,
 				C4D89F5C1DEDB74300CAB613 /* Petcare.xcdatamodel in Sources */,
+				C44C96361DEE395F004E09F9 /* Deworming+CoreDataProperties.swift in Sources */,
+				C44C963D1DEE397C004E09F9 /* Nails.swift in Sources */,
 				770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */,
 				C44C962D1DEDD122004E09F9 /* Pet.swift in Sources */,
-				C44C96221DEDD0D3004E09F9 /* Recreation.swift in Sources */,
-				C44C96211DEDD0D3004E09F9 /* Vaccination+CoreDataProperties.swift in Sources */,
 				770AE5321DEDC003007AF924 /* AnimalTableViewCell.swift in Sources */,
-				C44C96201DEDD0D3004E09F9 /* Vaccination.swift in Sources */,
-				C44C96241DEDD0D3004E09F9 /* Teeth.swift in Sources */,
-				C44C96271DEDD0D3004E09F9 /* Deworming+CoreDataProperties.swift in Sources */,
-				C44C961C1DEDD0D3004E09F9 /* Nails.swift in Sources */,
+				C44C963E1DEE397C004E09F9 /* Nails+CoreDataProperties.swift in Sources */,
 				C44C962E1DEDD122004E09F9 /* Pet+CoreDataProperties.swift in Sources */,
-				C44C96281DEDD0D3004E09F9 /* Hair.swift in Sources */,
-				C44C961D1DEDD0D3004E09F9 /* Nails+CoreDataProperties.swift in Sources */,
-				C44C96251DEDD0D3004E09F9 /* Teeth+CoreDataProperties.swift in Sources */,
-				C44C96261DEDD0D3004E09F9 /* Deworming.swift in Sources */,
+				C44C964A1DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift in Sources */,
+				C44C963A1DEE3972004E09F9 /* Hair+CoreDataProperties.swift in Sources */,
+				C44C96421DEE398E004E09F9 /* Teeth+CoreDataProperties.swift in Sources */,
+				C44C96311DEE394D004E09F9 /* Bath.swift in Sources */,
 				779B40D31DE86175004894FE /* AppDelegate.swift in Sources */,
 				0628911E1DEC5D57001390B8 /* DAO.swift in Sources */,
-				C44C961E1DEDD0D3004E09F9 /* Bath.swift in Sources */,
-				C44C96291DEDD0D3004E09F9 /* Hair+CoreDataProperties.swift in Sources */,
+				C44C96451DEE3998004E09F9 /* Recreation.swift in Sources */,
 				062891261DEC6441001390B8 /* PetController.swift in Sources */,
-				C44C96231DEDD0D3004E09F9 /* Recreation+CoreDataProperties.swift in Sources */,
-				C44C961F1DEDD0D3004E09F9 /* Bath+CoreDataProperties.swift in Sources */,
+				C44C96391DEE3972004E09F9 /* Hair.swift in Sources */,
+				C44C96491DEE39A1004E09F9 /* Vaccination.swift in Sources */,
+				C44C96321DEE394D004E09F9 /* Bath+CoreDataProperties.swift in Sources */,
+				C44C96411DEE398E004E09F9 /* Teeth.swift in Sources */,
+				C44C96461DEE3998004E09F9 /* Recreation+CoreDataProperties.swift in Sources */,
+				C44C96351DEE395F004E09F9 /* Deworming.swift in Sources */,
 				062891201DEC5D65001390B8 /* CoreDataDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

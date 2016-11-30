@@ -21,6 +21,11 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         petList = dao.getAll()
         
+        if petList.isEmpty{
+            
+            petList = []
+        }
+        
         DispatchQueue.main.async{
             self.talbeViewAnimals.reloadData()
         }
