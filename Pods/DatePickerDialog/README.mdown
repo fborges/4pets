@@ -1,0 +1,84 @@
+# DatePickerDialog 1.1 - iOS - Swift
+
+DatePickerDialog is an iOS drop-in classe that displays an UIDatePicker within an UIAlertView.
+
+[![](https://raw.githubusercontent.com/squimer/DatePickerDialog-iOS-Swift/master/images/screen1.png)](https://github.com/squimer/DatePickerDialog-iOS-Swift/tree/master/images)
+
+## Requirements
+
+DatePickerDialog works on iOS 7, 8 and 9. It depends on the following Apple frameworks, which should already be included with most Xcode templates:
+
+* Foundation
+* UIKit
+* QuartzCore
+
+## Installation
+#### CocoaPods ⚠️ Coming soon ⚠️
+You can use [CocoaPods](http://cocoapods.org/) to install `DatePickerDialog` by adding it to your `Podfile`:
+
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+pod 'DatePickerDialog'
+```
+
+To get the full benefits import `DatePickerDialog` wherever you import UIKit
+
+``` swift
+import UIKit
+import DatePickerDialog
+```
+#### Carthage ⚠️ Coming soon ⚠️
+Create a `Cartfile` that lists the framework and run `carthage bootstrap`. Follow the [instructions](https://github.com/Carthage/Carthage#if-youre-building-for-ios) to add `$(SRCROOT)/Carthage/Build/iOS/DatePickerDialog.framework` to an iOS project.
+
+```
+github "squimer/DatePickerDialog-iOS-Swift"
+```
+
+#### Manually
+1. Download and drop ```DatePickerDialog.swift``` in your project.  
+2. Congratulations!  
+
+## Example
+
+```swift
+class ViewController: UIViewController {
+
+	@IBOutlet weak var textField: UITextField!
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+
+	/* IBActions */
+	@IBAction func datePickerTapped(sender: AnyObject) {
+		DatePickerDialog().show(title: "DatePicker", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .Date) {
+			(date) -> Void in
+			self.textField.text = "\(date)"
+		}
+	}
+
+}
+```
+
+## Show parameters
+
+- title: String **(Required)**
+- doneButtonTitle: String
+- cancelButtonTitle: String
+- defaultDate: NSDate
+- datePickerMode: UIDatePickerMode **(Required)**
+- callback: ((date: NSDate) -> Void) **(Required)**
+
+## Todo
+
+- Handle device orientation changes.
+- Improve performance.
+
+## Special thanks to
+
+* [@wimagguc](https://github.com/wimagguc) for the work with [ios-custom-alertview](https://github.com/wimagguc/ios-custom-alertview) library.
+
+## License
+
+This code is distributed under the terms and conditions of the [MIT license](LICENSE). 

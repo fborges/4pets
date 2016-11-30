@@ -8,7 +8,7 @@ target 'Petcare' do
   # Pods for Petcare
 
   pod 'CZPicker'
-
+  pod 'DatePickerDialog'
   target 'PetcareTests' do
     inherit! :search_paths
     # Pods for testing
