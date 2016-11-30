@@ -19,6 +19,11 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        petList = dao.getAll()
+        
+        DispatchQueue.main.async{
+            self.talbeViewAnimals.reloadData()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -56,10 +61,10 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.petImageView.image = image
         cell.nameLabel.text = petList[indexPath.row].name
         
-        return UITableViewCell()
+        return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
         
     }
 
