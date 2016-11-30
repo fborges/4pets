@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,11 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initialscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Epb-Qp-WCv">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="initialscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Epb-Qp-WCv"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzH-ls-3r7">
-                                <rect key="frame" x="58" y="572" width="259" height="35"/>
                                 <color key="backgroundColor" red="0.29411764705882354" green="0.42352941176470588" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="259" id="Y7l-Al-4vd"/>
@@ -91,31 +85,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="264" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jPh-mx-uVa">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="animalCell" rowHeight="264" id="1on-UW-HJf" customClass="AnimalTableViewCell" customModule="Petcare" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="264"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="264"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1on-UW-HJf" id="amy-D9-deS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="263"/>
+                                            <frame key="frameInset" width="375" height="263"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-qF-Pwt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="204.5"/>
-                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-qF-Pwt"/>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Fs-yL-Kx8">
-                                                    <rect key="frame" x="0.0" y="202" width="375" height="61.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pFT-BV-4t9">
-                                                            <rect key="frame" x="16" y="11" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="9sJ-kr-JSi"/>
                                                                 <constraint firstAttribute="width" constant="40" id="YHN-aC-jrX"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqs-kQ-RbD">
-                                                            <rect key="frame" x="76" y="18" width="252" height="25.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -202,7 +190,27 @@
                     <view key="view" contentMode="scaleToFill" id="6Mh-w6-lhV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Q7B-fZ-DB9">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="eOF-Lf-BI5"/>
+                                    <constraint firstAttribute="width" constant="180" id="vC6-hy-C7K"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTt-Wq-8wA">
+                                <frame key="frameInset" minX="231" minY="220" width="46" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="n5H-c0-2ia"/>
+                                    <constraint firstAttribute="height" constant="50" id="xCI-rd-Y5W"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q7B-fZ-DB9" firstAttribute="top" secondItem="StN-kB-Qc5" secondAttribute="bottom" constant="23" id="l9I-z1-wFA"/>
+                            <constraint firstItem="Q7B-fZ-DB9" firstAttribute="centerX" secondItem="6Mh-w6-lhV" secondAttribute="centerX" id="sAh-eX-9fl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New pet" id="f8p-PG-TCr">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="cnZ-sG-6NC"/>
@@ -210,10 +218,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVV-N5-aq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2554" y="-155"/>
+            <point key="canvasLocation" x="2552.8000000000002" y="-155.17241379310346"/>
         </scene>
     </scenes>
     <resources>
         <image name="initialscreen" width="642" height="1138"/>
+        <image name="photoIcon" width="376" height="376"/>
     </resources>
 </document>
