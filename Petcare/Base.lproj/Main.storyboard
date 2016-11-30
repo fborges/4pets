@@ -60,7 +60,7 @@
         <scene sceneID="yNH-O3-YT7">
             <objects>
                 <navigationController id="Cxh-pz-n9Q" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="y0G-fa-agK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y0G-fa-agK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="264"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1on-UW-HJf" id="amy-D9-deS">
-                                            <frame key="frameInset" width="375" height="263"/>
+                                            <frame key="frameInset" width="375" height="263.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-qF-Pwt"/>
@@ -237,7 +237,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Animal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSA-R1-n2n">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Animal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KSA-R1-n2n">
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -301,9 +301,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="New pet" id="f8p-PG-TCr">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="cnZ-sG-6NC">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="yFF-H4-zXx" kind="show" id="cqv-Td-evd"/>
+                                <segue destination="BPz-AI-PSM" kind="show" id="iTZ-bJ-cys"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -319,13 +319,28 @@
             </objects>
             <point key="canvasLocation" x="2552.8000000000002" y="-155.17241379310346"/>
         </scene>
-        <!--Confirm Pet View Controller-->
-        <scene sceneID="h73-hD-DqN">
+        <!--Preferences-->
+        <scene sceneID="bH5-YN-7w4">
             <objects>
-                <viewController id="yFF-H4-zXx" customClass="ConfirmPetViewController" customModule="Petcare" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wv0-qY-TB1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Preferences" id="BPz-AI-PSM" customClass="ConfirmPetViewController" customModule="Petcare" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GSI-Vz-TGY"/>
+                        <viewControllerLayoutGuide type="bottom" id="JNn-K7-qng"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AAn-9Y-YMO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Preferences" id="CDF-S4-keT">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="NKp-LM-cmB">
+                            <color key="tintColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRD-AO-4Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3362" y="-155"/>
+            <point key="canvasLocation" x="3338" y="-157"/>
         </scene>
     </scenes>
     <resources>

@@ -8,13 +8,17 @@
 
 import UIKit
 import CoreData
+import CZPicker
 
-class PetController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class PetController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, CZPickerViewDelegate, CZPickerViewDataSource {
     
     let dao = CoreDataDAO<Pet>()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    let pets = [["Cat": UIImage(named: "catIcon")], ["Dog": UIImage(named: "dogIcon")]]
     var sex: String = "Male"
+    
+    
+    let czpicker = CZPickerView(headerTitle: "Species", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
     
     @IBOutlet weak var imagePicked: UIImageView!
     
@@ -34,6 +38,12 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.breed.delegate = self
         self.type.delegate = self
         
+        czpicker?.delegate = self
+        czpicker?.dataSource = self
+        
+        czpicker?.allowMultipleSelection = false
+        
+        czpicker?.needFooterView = true
 //        let pet = Pet(name: "Wesley", birthdate: NSDate(), breed: "Safadão", photo: NSData(), sex: "Masculino", type: "Raparigueiro", context: self.context)
 //        self.create(pet: pet)
 //        
@@ -216,5 +226,30 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         confirmPetController.pet = pet
     }
+    
+    func numberOfRows(in pickerView: CZPickerView!) -> Int {
+        return pets.count
+    }
+    
+    func czpickerView(_ pickerView: CZPickerView!, titleForRow row: Int) -> String! {
+        return pets[row].keys.first
+    }
+    
+    func czpickerView(_ pickerView: CZPickerView!, imageForRow row: Int) -> UIImage! {
+        return pets[row].values.first!
+    }
+    
+    func czpickerView(_ pickerView: CZPickerView!, didConfirmWithItemAtRow row: Int) {
+        type.text = pets[row].keys.first
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.tag == 1 {
+            czpicker?.show()
+            return false
+        }
+        return true
+    }
+    
 
 }
