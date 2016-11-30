@@ -10,13 +10,15 @@ import UIKit
 
 class ConfirmPetViewController: UIViewController {
 
+
     let preferences = ["Nails", "Bath", "Vaccination", "Recreation", "Teeth", "Deworming", "Hair"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
+    var pet: Pet!
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
