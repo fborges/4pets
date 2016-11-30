@@ -24,6 +24,25 @@ class RecreationViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
 
+    @IBAction func add(_ sender: Any) {
+//        let dao = CoreDataDAO<Recreation>()
+//        let recreation = dao.new()
+//        
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//        
+//        recreation.date = dateFormatter.date(from: self.dateTf.text!) as NSDate?
+//        recreation.pet = self.pet
+//        
+//        // adding to pets array os baths
+//        let petBaths = pet?.recreation as! NSMutableOrderedSet
+//        petBaths.add(recreation)
+//        
+//        dao.insert(recreation)
+//        recreationArray.append(recreation)
+//        tableView.reloadData()
+        
+    }
     
 
     // MARK: - TableView methods
