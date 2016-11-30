@@ -31,7 +31,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     @IBOutlet weak var type: UITextField!
     
-    @IBOutlet weak var birthdayPicker: UIDatePicker!
+    
     
     @IBOutlet weak var sexSegment: UISegmentedControl!
     
@@ -47,6 +47,8 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         czpicker?.allowMultipleSelection = false
         
         czpicker?.needFooterView = true
+        
+        
 //        let pet = Pet(name: "Wesley", birthdate: NSDate(), breed: "Safadão", photo: NSData(), sex: "Masculino", type: "Raparigueiro", context: self.context)
 //        self.create(pet: pet)
 //        
@@ -246,18 +248,19 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         type.text = pets[row].keys.first
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField.tag == 1 {
-            czpicker?.show()
-            return false
-        } else if textField.tag == 2 {
-            DatePickerDialog().show("Pet's birthday", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: Date(), datePickerMode: .date, callback: { (date) in
-                print(date)
-            })
-            return false
-        }
+    
+    @IBAction func speciesFieldTouchDown(_ sender: UITextField) {
+        czpicker?.show()
         
-        return true
+    }
+   
+    
+    @IBAction func birthdayFieldTouchDown(_ sender: UITextField) {
+        DatePickerDialog().show("Pet's birthday", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: Date(), datePickerMode: .date, callback: { (date) in
+            print(date)
+        })
+        
+        sender.resignFirstResponder()
     }
     
 
