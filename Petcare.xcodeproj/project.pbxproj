@@ -14,6 +14,8 @@
 		06AB41B61DF04CAC0093EA9A /* Veterinary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41B41DF04CAC0093EA9A /* Veterinary+CoreDataProperties.swift */; };
 		06AB41B91DF04D4E0093EA9A /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41B71DF04D4E0093EA9A /* Appointment.swift */; };
 		06AB41BA1DF04D4E0093EA9A /* Appointment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41B81DF04D4E0093EA9A /* Appointment+CoreDataProperties.swift */; };
+		06AB41BE1DF0563A0093EA9A /* AppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41BD1DF0563A0093EA9A /* AppointmentController.swift */; };
+		06AB41C01DF0586A0093EA9A /* VeterinaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41BF1DF0586A0093EA9A /* VeterinaryViewController.swift */; };
 		770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */; };
 		770AE5321DEDC003007AF924 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */; };
 		774624CF1DEF162300B78396 /* ConfirmPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */; };
@@ -129,6 +131,8 @@
 		06AB41B41DF04CAC0093EA9A /* Veterinary+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Veterinary+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		06AB41B71DF04D4E0093EA9A /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		06AB41B81DF04D4E0093EA9A /* Appointment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Appointment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		06AB41BD1DF0563A0093EA9A /* AppointmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentController.swift; sourceTree = "<group>"; };
+		06AB41BF1DF0586A0093EA9A /* VeterinaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VeterinaryViewController.swift; sourceTree = "<group>"; };
 		1FDB8584CDD5000099B74081 /* Pods-Petcare WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petcare WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petcare WatchKit Extension/Pods-Petcare WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		2B4BE8513E9948478F8E6E7E /* Pods_Petcare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petcare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DDCAB02721558472E3307D7 /* Pods-PetcareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetcareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetcareUITests/Pods-PetcareUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 				770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */,
 				774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */,
 				774855871DF041FC00E38350 /* PetDashboardViewController.swift */,
+				06AB41BD1DF0563A0093EA9A /* AppointmentController.swift */,
+				06AB41BF1DF0586A0093EA9A /* VeterinaryViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -960,6 +966,7 @@
 				C4E94E721DEEFCE1001C5624 /* RecreationViewController.swift in Sources */,
 				774624CF1DEF162300B78396 /* ConfirmPetViewController.swift in Sources */,
 				06AB41B61DF04CAC0093EA9A /* Veterinary+CoreDataProperties.swift in Sources */,
+				06AB41BE1DF0563A0093EA9A /* AppointmentController.swift in Sources */,
 				06AB41B51DF04CAC0093EA9A /* Veterinary.swift in Sources */,
 				C4E94E6F1DEEFCE1001C5624 /* BathViewController.swift in Sources */,
 				C44C96421DEE398E004E09F9 /* Teeth+CoreDataProperties.swift in Sources */,
@@ -975,6 +982,7 @@
 				C44C96411DEE398E004E09F9 /* Teeth.swift in Sources */,
 				C44C96461DEE3998004E09F9 /* Recreation+CoreDataProperties.swift in Sources */,
 				06AB41BA1DF04D4E0093EA9A /* Appointment+CoreDataProperties.swift in Sources */,
+				06AB41C01DF0586A0093EA9A /* VeterinaryViewController.swift in Sources */,
 				C4E94E741DEEFCE1001C5624 /* HairViewController.swift in Sources */,
 				C44C96351DEE395F004E09F9 /* Deworming.swift in Sources */,
 				06AB41B91DF04D4E0093EA9A /* Appointment.swift in Sources */,
