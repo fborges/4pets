@@ -44,10 +44,6 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        petList = dao.getAll()
-        self.talbeViewAnimals.reloadData()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
