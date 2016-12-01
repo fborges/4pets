@@ -12,4 +12,18 @@ import CoreData
 @objc(Veterinary)
 public class Veterinary: NSManagedObject {
 
+    convenience init(name: String, phone: String, address: String, context: NSManagedObjectContext) {
+        
+        let entityName = "Veterinary"
+        
+        let entity = NSEntityDescription.entity(forEntityName: entityName, in: context)
+        
+        self.init(entity: entity!, insertInto: context)
+        
+        self.name = name
+        self.phone = phone
+        self.address = address
+        
+    }
+    
 }
