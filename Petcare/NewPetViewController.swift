@@ -32,7 +32,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var type: UITextField!
     
     
-    
+
     @IBOutlet weak var sexSegment: UISegmentedControl!
     
     override func viewDidLoad() {
