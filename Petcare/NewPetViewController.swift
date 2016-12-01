@@ -48,6 +48,8 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         czpicker?.needFooterView = true
         
+        self.type.allowsEditingTextAttributes = false
+        
         
 //        let pet = Pet(name: "Wesley", birthdate: NSDate(), breed: "Safadão", photo: NSData(), sex: "Masculino", type: "Raparigueiro", context: self.context)
 //        self.create(pet: pet)
