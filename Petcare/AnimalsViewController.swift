@@ -39,7 +39,10 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
     }
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> 5bfd77fc094c4066e7807c2c687db6610640cc5d
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

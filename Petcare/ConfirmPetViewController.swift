@@ -10,30 +10,131 @@ import UIKit
 
 class ConfirmPetViewController: UIViewController {
 
-
+    // outlets
+    @IBOutlet weak var bathTextField: UITextField!
+    @IBOutlet weak var hairTextField: UITextField!
+    @IBOutlet weak var nailsTextField: UITextField!
+    @IBOutlet weak var vaccinationTextField: UITextField!
+    @IBOutlet weak var teethTextField: UITextField!
+    @IBOutlet weak var dewormingTextField: UITextField!
+    @IBOutlet weak var recreationTextField: UITextField!
+    
+    // local atributes
     let preferences = ["Nails", "Bath", "Vaccination", "Recreation", "Teeth", "Deworming", "Hair"]
+    var pet: Pet!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    var pet: Pet!
+    
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        <#code#>
     }
-    */
 
+    func add() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        if let date = bathTextField.text {
+            let dao = CoreDataDAO<Bath>()
+            let bath = dao.new()
+            bath.date = dateFormatter.date(from: date) as NSDate?
+            bath.pet = self.pet
+            
+            // adding to pets array os baths
+            let petBaths = pet?.bath as! NSMutableOrderedSet
+            petBaths.add(bath)
+
+            dao.insert(bath)
+
+        }
+        
+        if let date = hairTextField.text {
+            let dao = CoreDataDAO<Hair>()
+            let hair = dao.new()
+            hair.date = dateFormatter.date(from: date) as NSDate?
+            hair.pet = self.pet
+            
+            // adding to pets array os baths
+            let petBaths = pet?.hair as! NSMutableOrderedSet
+            petBaths.add(hair)
+            
+            dao.insert(hair)
+            
+        }
+        
+        if let date = bathTextField.text {
+            let dao = CoreDataDAO<Bath>()
+            let bath = dao.new()
+            bath.date = dateFormatter.date(from: date) as NSDate?
+            bath.pet = self.pet
+            
+            // adding to pets array os baths
+            let petBaths = pet?.bath as! NSMutableOrderedSet
+            petBaths.add(bath)
+            
+            dao.insert(bath)
+            
+        }
+        
+        if let date = bathTextField.text {
+            let dao = CoreDataDAO<Bath>()
+            let bath = dao.new()
+            bath.date = dateFormatter.date(from: date) as NSDate?
+            bath.pet = self.pet
+            
+            // adding to pets array os baths
+            let petBaths = pet?.bath as! NSMutableOrderedSet
+            petBaths.add(bath)
+            
+            dao.insert(bath)
+            
+        }
+        
+        if let date = bathTextField.text {
+            let dao = CoreDataDAO<Bath>()
+            let bath = dao.new()
+            bath.date = dateFormatter.date(from: date) as NSDate?
+            bath.pet = self.pet
+            
+            // adding to pets array os baths
+            let petBaths = pet?.bath as! NSMutableOrderedSet
+            petBaths.add(bath)
+            
+            dao.insert(bath)
+            
+        }
+        
+        if let date = bathTextField.text {
+            let dao = CoreDataDAO<Bath>()
+            let bath = dao.new()
+            bath.date = dateFormatter.date(from: date) as NSDate?
+            bath.pet = self.pet
+            
+            // adding to pets array os baths
+            let petBaths = pet?.bath as! NSMutableOrderedSet
+            petBaths.add(bath)
+            
+            dao.insert(bath)
+            
+        }
+        
+        if let date = bathTextField.text {
+            let dao = CoreDataDAO<Bath>()
+            let bath = dao.new()
+            bath.date = dateFormatter.date(from: date) as NSDate?
+            bath.pet = self.pet
+            
+            // adding to pets array os baths
+            let petBaths = pet?.bath as! NSMutableOrderedSet
+            petBaths.add(bath)
+            
+            dao.insert(bath)
+            
+        }
+        
+    }
 }
