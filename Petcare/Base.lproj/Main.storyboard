@@ -384,6 +384,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="birthdayTextField" destination="XWm-Uj-Bxz" id="V5W-uH-8KX"/>
                         <outlet property="breed" destination="L8B-2Y-8UE" id="GsE-9s-EkI"/>
                         <outlet property="imagePicked" destination="Q7B-fZ-DB9" id="7Rr-3f-7Im"/>
                         <outlet property="name" destination="P6N-Wc-cZp" id="1It-cG-Oaj"/>
