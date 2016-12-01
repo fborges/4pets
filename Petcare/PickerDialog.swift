@@ -75,8 +75,18 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         return pickerData.count
     }
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]["display"]
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return pickerData[row]["display"]
+//    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel()
+        
+        label.font = UIFont.systemFont(ofSize: 30)
+        label.textAlignment = .center
+        label.text = pickerData[row]["display"]
+        
+        return label
     }
 
     /* Helper to find row of selected value */
@@ -202,14 +212,14 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         self.titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 280, height: 30))
         self.titleLabel.textAlignment = NSTextAlignment.center
         self.titleLabel.textColor = UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0)
-        self.titleLabel.font = UIFont(name: "AvenirNext-Medium", size: 16)
+        self.titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         dialogContainer.addSubview(self.titleLabel)
 
         self.picker = UIPickerView(frame: CGRect(x: 0, y: 30, width: 0, height: 0))
         self.picker.setValue(UIColor(red:0.20, green:0.20, blue:0.20, alpha:1.0), forKeyPath: "textColor")
         self.picker.autoresizingMask = UIViewAutoresizing.flexibleRightMargin
         self.picker.frame.size.width = 300
-
+        
         dialogContainer.addSubview(self.picker)
 
         // Add the buttons
@@ -231,7 +241,7 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         )
         self.cancelButton.setTitleColor(UIColor(red: 22/255.0, green: 131/255.0, blue: 251/255.0, alpha: 1.0), for: UIControlState.normal)
         self.cancelButton.setTitleColor(UIColor(red: 22/255.0, green: 131/255.0, blue: 251/255.0, alpha: 1.0), for: UIControlState.highlighted)
-        self.cancelButton.titleLabel!.font = UIFont(name: "AvenirNext-Medium", size: 15)
+        self.cancelButton.titleLabel!.font = UIFont.boldSystemFont(ofSize: 14)
         self.cancelButton.layer.cornerRadius = kPickerDialogCornerRadius
         self.cancelButton.addTarget(self, action: #selector(PickerDialog.buttonTapped(_:)), for: UIControlEvents.touchUpInside)
         container.addSubview(self.cancelButton)
@@ -245,8 +255,8 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         )
         self.doneButton.tag = kPickerDialogDoneButtonTag
         self.doneButton.setTitleColor(UIColor(red: 22/255.0, green: 131/255.0, blue: 251/255.0, alpha: 1.0), for: UIControlState.normal)
-        self.doneButton.setTitleColor(UIColor(red: 22/255.0, green: 131/255.0, blue: 251/255.0, alpha: 1.0), for: UIControlState.highlighted)
-        self.doneButton.titleLabel!.font = UIFont(name: "AvenirNext-Medium", size: 15)
+        self.doneButton.setTitleColor(UIColor.blue, for: UIControlState.highlighted)
+        self.doneButton.titleLabel!.font = UIFont.boldSystemFont(ofSize: 14)
         self.doneButton.layer.cornerRadius = kPickerDialogCornerRadius
         self.doneButton.addTarget(self, action: #selector(PickerDialog.buttonTapped(_:)), for: UIControlEvents.touchUpInside)
         container.addSubview(self.doneButton)
@@ -264,6 +274,7 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
 
     /* Helper function: count and return the screen's size */
     func countScreenSize() -> CGSize {
+    
         let screenWidth = UIScreen.main.applicationFrame.size.width
         let screenHeight = UIScreen.main.bounds.size.height
 
