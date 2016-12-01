@@ -15,24 +15,31 @@ class VeterinaryViewController: UIViewController {
     let dao = CoreDataDAO<Veterinary>()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func create(appointment: Veterinary){
+    func buildVeterinary() -> Veterinary{
         
-        dao.insert(appointment)
+        let veterinary = Veterinary(name: "", phone: "", address: "", context: context)
+        
+        return veterinary
+    }
+    
+    func create(veterinary: Veterinary){
+        
+        dao.insert(veterinary)
         
     }
     
-    func delete(appointment: Veterinary){
+    func delete(veterinary: Veterinary){
         
-        dao.delete(appointment)
+        dao.delete(veterinary)
     }
     
-    func update(appointment: Veterinary){
+    func update(veterinary: Veterinary){
         
-        var appointmentToUpdate = getByID(id: appointment.objectID)
+        var veterinaryToUpdate = getByID(id: veterinary.objectID)
         
-        appointmentToUpdate = appointment
+        veterinaryToUpdate = veterinary
         
-        dao.update(appointmentToUpdate)
+        dao.update(veterinaryToUpdate)
     }
     
     func getAll() -> [Veterinary] {
