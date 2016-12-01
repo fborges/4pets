@@ -32,6 +32,11 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        petList = dao.getAll()
+        self.talbeViewAnimals.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,8 +74,17 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "dashboard", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "dashboard" {
+            let indexPath = sender as! IndexPath
+            let viewController = segue.destination as! PetDashboardViewController
+            
+            viewController.pet = petList[indexPath.row]
+        }
     }
 
 }

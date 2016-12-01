@@ -8,21 +8,20 @@
 
 import UIKit
 
-class BathViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class BathViewController<T>: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     // outlets
     @IBOutlet weak var tableView: UITableView!
-
+    
     // class atributes
     var pet: Pet?
-    var bathsArray = [Bath]()
+    var bathsArray = [T]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bathsArray = pet?.bath!.array as! [Bath]
-
-
+        bathsArray = pet?.bath!.array as! [T]
+        
     }
     
     @IBAction func add(_ sender: Any) {
@@ -71,7 +70,7 @@ class BathViewController: UIViewController, UITableViewDelegate, UITableViewData
             let dao = CoreDataDAO<Bath>()
             let bath = bathsArray[indexPath.row]
             
-            dao.delete(bath)
+            //dao.delete(bath)
             bathsArray.remove(at: indexPath.row)
             //pet?.bath.a
             tableView.reloadData()
