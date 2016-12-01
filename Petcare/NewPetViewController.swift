@@ -37,7 +37,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var sexSegment: UISegmentedControl!
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
         self.name.delegate = self
         self.breed.delegate = self
         self.type.delegate = self
@@ -50,7 +50,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         czpicker?.needFooterView = true
         
         self.type.allowsEditingTextAttributes = false
-
+        
         
     }
     
