@@ -10,7 +10,14 @@ import UIKit
 
 class ConfirmPetViewController: UIViewController {
 
-
+    @IBOutlet weak var bathTextField: UITextField!
+    @IBOutlet weak var hairTextField: UITextField!
+    @IBOutlet weak var nailsTextField: UITextField!
+    @IBOutlet weak var vaccinationTextField: UITextField!
+    @IBOutlet weak var teethTextField: UITextField!
+    @IBOutlet weak var dewormingTextField: UITextField!
+    @IBOutlet weak var recreationTextField: UITextField!
+    
     let preferences = ["Nails", "Bath", "Vaccination", "Recreation", "Teeth", "Deworming", "Hair"]
     
     override func viewDidLoad() {
