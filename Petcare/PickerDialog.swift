@@ -30,7 +30,8 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     fileprivate var selectedPickerValue: String?
     fileprivate var callback:            PickerCallback?
 
-
+    public var itemsFont: UIFont?
+    
     /* Overrides */
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
@@ -74,7 +75,7 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
-
+    //old
 //    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 //        return pickerData[row]["display"]
 //    }
@@ -82,8 +83,14 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
         
-        label.font = UIFont.systemFont(ofSize: 30)
+        if (itemsFont != nil) {
+            label.font = itemsFont
+        } else {
+            label.font = UIFont.systemFont(ofSize: 30)
+        }
+        
         label.textAlignment = .center
+        label.numberOfLines = 2
         label.text = pickerData[row]["display"]
         
         return label
