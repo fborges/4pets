@@ -163,7 +163,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         let imageData: NSData = UIImagePNGRepresentation(imagePicked.image!)! as NSData
 
-        let pet = Pet(name: self.name.text!, birthdate: NSDate() as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex, type: self.type.text!, context: self.context)
+        let pet = Pet(name: self.name.text!, birthdate: self.date! as NSDate as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex, type: self.type.text!, context: self.context)
         
         return pet
     }
