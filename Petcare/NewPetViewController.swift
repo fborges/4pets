@@ -87,26 +87,42 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
             petIsOk = false
             self.name.backgroundColor = UIColor.red
             
+        } else {
+            
+            self.name.backgroundColor = UIColor.white
+
         }
         
         if (pet.breed?.isEmpty)! {
             
             petIsOk = false
-            self.name.backgroundColor = UIColor.red
+            self.breed.backgroundColor = UIColor.red
+            
+        } else {
+            
+            self.breed.backgroundColor = UIColor.white
             
         }
         
         if (pet.type?.isEmpty)! {
             
             petIsOk = false
-            self.name.backgroundColor = UIColor.red
+            self.type.backgroundColor = UIColor.red
 
+        } else {
+            
+            self.type.backgroundColor = UIColor.white
+            
         }
         
         if (pet.sex?.isEmpty)! {
             
             petIsOk = false
-            self.name.backgroundColor = UIColor.red
+            self.sexSegment.backgroundColor = UIColor.red
+            
+        } else {
+            
+            self.sexSegment.backgroundColor = UIColor.white
             
         }
         
@@ -148,17 +164,23 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
 
     
-    func savePet() -> Pet {
+    func buildPet() -> Pet{
         
         let imageData: NSData = UIImagePNGRepresentation(imagePicked.image!)! as NSData
-        
+
         let pet = Pet(name: self.name.text!, birthdate: NSDate() as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex, type: self.type.text!, context: self.context)
-        
-        self.create(pet: pet)
         
         return pet
     }
     
+    func savePet() {
+        
+        let pet = buildPet()
+        
+        self.create(pet: pet)
+        
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -177,7 +199,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
     }
     
-    
+
     // MARK: - Get camera Image
     
     
@@ -224,10 +246,27 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.dismiss(animated: true, completion: nil);
         
     }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        let pet = buildPet()
+        
+        var shouldSegue = false
+        
+        if identifier == "prefrerencesSegue" {
+            
+            shouldSegue =  validatePet(pet: pet)
+            
+        }
+        
+        return shouldSegue
+        
+    }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let pet = savePet()
+        let pet = buildPet()
         
         let confirmPetController = segue.destination as! ConfirmPetViewController
         
