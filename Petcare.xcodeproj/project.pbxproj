@@ -604,6 +604,7 @@
 					779B40CE1DE86174004894FE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = J5ZWQ2W9CE;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					779B40E21DE86175004894FE = {

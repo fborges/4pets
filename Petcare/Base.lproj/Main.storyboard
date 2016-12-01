@@ -291,6 +291,7 @@
                                     <segment title="Male"/>
                                     <segment title="Female"/>
                                 </segments>
+                                <color key="tintColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="indexChanged:" destination="tdU-6r-0M9" eventType="valueChanged" id="8Lu-8D-cmD"/>
                                 </connections>
