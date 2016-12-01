@@ -15,6 +15,13 @@ class AppointmentViewController: UIViewController {
     let dao = CoreDataDAO<Appointment>()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    func buildVeterinary(pet: Pet, veterinary: Veterinary) -> Appointment{
+        
+        let appointment = Appointment(price: NSDecimalNumber(), date: NSDate(), pet: pet, veterinary: veterinary, context: context)
+        
+        return appointment
+    }
+    
     func create(appointment: Appointment){
         
         dao.insert(appointment)
