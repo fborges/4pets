@@ -15,11 +15,6 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var talbeViewAnimals: UITableView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-        loadPetList()
-    }
-    
     
     func loadPetList(){
         
