@@ -266,10 +266,12 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         DatePickerDialog().show("Pet's birthday", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: Date(), datePickerMode: .date, callback: { (date) in
             let formatter = DateFormatter()
             formatter.dateFormat = "MM/dd/yyyy"
+            if let date = date {
+                self.birthdayTextField.text = formatter.string(from: date)
+                
+                self.date = date
+            }
             
-            self.birthdayTextField.text = formatter.string(from: date!)
-            
-            self.date = date
             
         })
         
