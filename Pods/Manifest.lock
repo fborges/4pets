@@ -1,15 +1,18 @@
 PODS:
   - CZPicker (0.4.2)
   - DatePickerDialog (1.1.3)
+  - QBPopupMenu (2.0)
 
 DEPENDENCIES:
   - CZPicker
   - DatePickerDialog
+  - QBPopupMenu (~> 2.0)
 
 SPEC CHECKSUMS:
   CZPicker: df3d8d0511595b7cd2f032263c82c611d45a9b8e
   DatePickerDialog: af729d1ea643d23f7976f10817234de6b030c361
+  QBPopupMenu: e370cbc7ad8a8d09afe1726117aa18f92696f66a
 
-PODFILE CHECKSUM: c7b8ef24f236b2cfc2ab4fddba1da7059f88b98d
+PODFILE CHECKSUM: f84d8d591b8c3271b76e6f49aa4aee52578f9dd4
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

@@ -9,6 +9,8 @@ target 'Petcare' do
 
   pod 'CZPicker'
   pod 'DatePickerDialog'
+  pod 'QBPopupMenu', '~> 2.0'
+  
   target 'PetcareTests' do
     inherit! :search_paths
     # Pods for testing

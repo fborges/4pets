@@ -12,7 +12,7 @@ class BathViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     // outlets
     @IBOutlet weak var tableView: UITableView!
-    
+
     // class atributes
     var pet: Pet?
     var bathsArray = [Bath]()
@@ -21,7 +21,8 @@ class BathViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         bathsArray = pet?.bath!.array as! [Bath]
-        
+
+
     }
     
     @IBAction func add(_ sender: Any) {
@@ -59,5 +60,21 @@ class BathViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let dao = CoreDataDAO<Bath>()
+            let bath = bathsArray[indexPath.row]
+            
+            dao.delete(bath)
+            bathsArray.remove(at: indexPath.row)
+            //pet?.bath.a
+            tableView.reloadData()
+        }
     }
 }
