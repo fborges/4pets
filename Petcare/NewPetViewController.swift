@@ -291,8 +291,15 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     
     @IBAction func speciesFieldTouchDown(_ sender: UITextField) {
-        czpicker?.show()
+       // czpicker?.show()
+        let options = [
+            ["value": "Cat", "display": "Cat"],
+            ["value": "Dog", "display": "Dog"]
+        ]
         
+        PickerDialog().show("Species", options: options) { (value) in
+            self.type.text = value
+        }
     }
    
     

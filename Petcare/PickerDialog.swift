@@ -94,6 +94,7 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     func show(_ title: String, doneButtonTitle: String = "Done", cancelButtonTitle: String = "Cancel", options: [[String: String]], selected: String? = nil, callback: @escaping PickerCallback) {
         self.titleLabel.text = title
         self.pickerData = options
+        self.doneButton.tintColor = 
         self.doneButton.setTitle(doneButtonTitle, for: UIControlState())
         self.cancelButton.setTitle(cancelButtonTitle, for: UIControlState())
         self.callback = callback
