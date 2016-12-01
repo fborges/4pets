@@ -94,10 +94,13 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
     func show(_ title: String, doneButtonTitle: String = "Done", cancelButtonTitle: String = "Cancel", options: [[String: String]], selected: String? = nil, callback: @escaping PickerCallback) {
         self.titleLabel.text = title
         self.pickerData = options
-        self.doneButton.tintColor = 
-        self.doneButton.setTitle(doneButtonTitle, for: UIControlState())
-        self.cancelButton.setTitle(cancelButtonTitle, for: UIControlState())
+        
+        self.doneButton.setTitle(doneButtonTitle, for: UIControlState.normal)
+        self.cancelButton.setTitle(cancelButtonTitle, for: UIControlState.normal)
         self.callback = callback
+        
+//        self.doneButton.tintColor = UIColor.blue
+//        self.cancelButton.tintColor = UIColor.blue
 
         if selected != nil {
             self.selectedPickerValue = selected
@@ -226,8 +229,8 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
             width: buttonWidth,
             height: kPickerDialogDefaultButtonHeight
         )
-        self.cancelButton.setTitleColor(UIColor(red:0.33, green:0.33, blue:0.33, alpha:1.0), for: UIControlState.normal)
-        self.cancelButton.setTitleColor(UIColor(red:0.33, green:0.33, blue:0.33, alpha:1.0), for: UIControlState.highlighted)
+        self.cancelButton.setTitleColor(UIColor(red: 22/255.0, green: 131/255.0, blue: 251/255.0, alpha: 1.0), for: UIControlState.normal)
+        self.cancelButton.setTitleColor(UIColor(red: 22/255.0, green: 131/255.0, blue: 251/255.0, alpha: 1.0), for: UIControlState.highlighted)
         self.cancelButton.titleLabel!.font = UIFont(name: "AvenirNext-Medium", size: 15)
         self.cancelButton.layer.cornerRadius = kPickerDialogCornerRadius
         self.cancelButton.addTarget(self, action: #selector(PickerDialog.buttonTapped(_:)), for: UIControlEvents.touchUpInside)
@@ -241,8 +244,8 @@ class PickerDialog: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
             height: kPickerDialogDefaultButtonHeight
         )
         self.doneButton.tag = kPickerDialogDoneButtonTag
-        self.doneButton.setTitleColor(UIColor(red:0.33, green:0.33, blue:0.33, alpha:1.0), for: UIControlState.normal)
-        self.doneButton.setTitleColor(UIColor(red:0.33, green:0.33, blue:0.33, alpha:1.0), for: UIControlState.highlighted)
+        self.doneButton.setTitleColor(UIColor(red: 22/255.0, green: 131/255.0, blue: 251/255.0, alpha: 1.0), for: UIControlState.normal)
+        self.doneButton.setTitleColor(UIColor(red: 22/255.0, green: 131/255.0, blue: 251/255.0, alpha: 1.0), for: UIControlState.highlighted)
         self.doneButton.titleLabel!.font = UIFont(name: "AvenirNext-Medium", size: 15)
         self.doneButton.layer.cornerRadius = kPickerDialogCornerRadius
         self.doneButton.addTarget(self, action: #selector(PickerDialog.buttonTapped(_:)), for: UIControlEvents.touchUpInside)
