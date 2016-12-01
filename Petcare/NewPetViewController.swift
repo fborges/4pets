@@ -17,7 +17,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let pets = [["Cat": UIImage(named: "catIcon")], ["Dog": UIImage(named: "dogIcon")]]
     var sex: String = "Male"
-    
+    var date: Date?
     
     let czpicker = CZPickerView(headerTitle: "Species", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
     
@@ -31,6 +31,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     @IBOutlet weak var type: UITextField!
     
+    @IBOutlet weak var birthdayTextField: UITextField!
     
 
     @IBOutlet weak var sexSegment: UISegmentedControl!
@@ -255,6 +256,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         ]
         
         PickerDialog().show("Species", options: options) { (value) in
+            
             self.type.text = value
         }
     }
@@ -262,7 +264,13 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     @IBAction func birthdayFieldTouchDown(_ sender: UITextField) {
         DatePickerDialog().show("Pet's birthday", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: Date(), datePickerMode: .date, callback: { (date) in
-            print(date)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/dd/yyyy"
+            
+            self.birthdayTextField.text = formatter.string(from: date!)
+            
+            self.date = date
+            
         })
         
         sender.resignFirstResponder()
