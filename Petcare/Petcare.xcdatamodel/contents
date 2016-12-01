@@ -3,8 +3,8 @@
     <entity name="Appointment" representedClassName="Appointment" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" syncable="YES"/>
-        <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Veterinary" syncable="YES"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" syncable="YES"/>
+        <relationship name="veterinary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Veterinary" syncable="YES"/>
     </entity>
     <entity name="Bath" representedClassName="Bath" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
