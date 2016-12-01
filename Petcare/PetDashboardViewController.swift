@@ -8,28 +8,44 @@
 
 import UIKit
 
+
 class PetDashboardViewController: UIViewController {
 
+    // outlets
+    @IBOutlet weak var petPhoto: UIImageView!
+    @IBOutlet weak var petName: UILabel!
+    @IBOutlet weak var petBreed: UILabel!
+    @IBOutlet weak var petBrithday: UILabel!
+    @IBOutlet weak var petSex: UILabel!
+    
+    // internal variables
+    var pet: Pet!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        // populatting outlets
+        self.petPhoto.image = UIImage(data: pet.photo as! Data)
+        self.petName.text = pet.name
+        self.petBreed.text = pet.breed
+        self.petBrithday.text = dateFormatter.string( from: pet.birthdate as! Date )
+        self.petSex.text = pet.sex
+        
+    }
+    
+    @IBAction func selectRoutine(_ sender: Any) {
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    func configurePopUpMenu() {
+        
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

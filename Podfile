@@ -9,7 +9,7 @@ target 'Petcare' do
 
   pod 'CZPicker'
   pod 'DatePickerDialog'
-  pod 'QBPopupMenu', '~> 2.0'
+  pod 'CKCircleMenuView', '~> 0.3'
   
   target 'PetcareTests' do
     inherit! :search_paths

@@ -1,18 +1,18 @@
 PODS:
+  - CKCircleMenuView (0.3.1)
   - CZPicker (0.4.2)
   - DatePickerDialog (1.1.3)
-  - QBPopupMenu (2.0)
 
 DEPENDENCIES:
+  - CKCircleMenuView (~> 0.3)
   - CZPicker
   - DatePickerDialog
-  - QBPopupMenu (~> 2.0)
 
 SPEC CHECKSUMS:
+  CKCircleMenuView: 2c4183c79c84cb94b8b27714d8e7ebcf4de67e5e
   CZPicker: df3d8d0511595b7cd2f032263c82c611d45a9b8e
   DatePickerDialog: af729d1ea643d23f7976f10817234de6b030c361
-  QBPopupMenu: e370cbc7ad8a8d09afe1726117aa18f92696f66a
 
-PODFILE CHECKSUM: f84d8d591b8c3271b76e6f49aa4aee52578f9dd4
+PODFILE CHECKSUM: 60a9e9eac7ff511db370f8f9fa1271e3be58ec4a
 
 COCOAPODS: 1.1.1
