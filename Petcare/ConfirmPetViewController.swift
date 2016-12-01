@@ -31,7 +31,7 @@ class ConfirmPetViewController: UIViewController {
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
+        
     }
 
     func add() {
