@@ -15,9 +15,13 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var talbeViewAnimals: UITableView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        loadPetList()
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func loadPetList(){
         
         petList = dao.getAll()
         
@@ -29,6 +33,14 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         DispatchQueue.main.async{
             self.talbeViewAnimals.reloadData()
         }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loadPetList()
+        
         // Do any additional setup after loading the view.
     }
     

@@ -21,7 +21,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     let czpicker = CZPickerView(headerTitle: "Species", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
     
-   
+    var petToCreate: Pet!
     
     @IBOutlet weak var imagePicked: UIImageView!
     
@@ -49,31 +49,25 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         czpicker?.needFooterView = true
         
         self.type.allowsEditingTextAttributes = false
+
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
         
-//        let pet = Pet(name: "Wesley", birthdate: NSDate(), breed: "Safadão", photo: NSData(), sex: "Masculino", type: "Raparigueiro", context: self.context)
-//        self.create(pet: pet)
-//        
-//        let pets = getAll()
-//        
-//        print(pets[0].name!)
-//        
-//        let petToUpdate = getByID(id: pets[0].objectID)
-//        
-//        petToUpdate.name = "Senhor Wesley"
-//        
-//        let petAfterUpdate = getAll()
-//        
-//        print(petAfterUpdate[0].name!)
-//        
-//        
-//        let petToDelete = getByID(id: petAfterUpdate[0].objectID)
-//        print(petToDelete.name!)
-//        self.delete(pet: petToDelete)
-//        
-//        let newPets = getAll()
-//        print(newPets[0].name!)
-        
+        switch sexSegment.selectedSegmentIndex {
+        case 0:
+            self.sex = "Male"
+        case 1:
+            self.sex = "Female"
+        default:
+            break;
+        }
         
     }
     
@@ -175,27 +169,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     func savePet() {
         
-        let pet = buildPet()
-        
-        self.create(pet: pet)
-        
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
-    @IBAction func indexChanged(_ sender: UISegmentedControl) {
-        
-        switch sexSegment.selectedSegmentIndex {
-        case 0:
-            self.sex = "Male"
-        case 1:
-            self.sex = "Female"
-        default:
-            break; 
-        }
+        self.create(pet: petToCreate)
         
     }
     
@@ -215,27 +189,6 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     
     
-//    @IBAction func openCameraButton(sender: AnyObject) {
-//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-//            let imagePicker = UIImagePickerController()
-//            imagePicker.delegate = self
-//            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-//            imagePicker.allowsEditing = false
-//            self.present(imagePicker, animated: true, completion: nil)
-//        }
-//    }
-//    
-//    
-//    @IBAction func openPhotoLibraryButton(sender: AnyObject) {
-//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-//            let imagePicker = UIImagePickerController()
-//            imagePicker.delegate = self
-//            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
-//            imagePicker.allowsEditing = true
-//            self.present(imagePicker, animated: true, completion: nil)
-//        }
-//    }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -246,15 +199,18 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.dismiss(animated: true, completion: nil);
         
     }
+    
+    // MARK: - Segue
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        let pet = buildPet()
+        petToCreate = buildPet()
         
         var shouldSegue = false
         
         if identifier == "prefrerencesSegue" {
             
-            shouldSegue =  validatePet(pet: pet)
+            shouldSegue =  validatePet(pet: petToCreate)
             
         }
         
@@ -262,16 +218,17 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let pet = buildPet()
+        savePet()
         
         let confirmPetController = segue.destination as! ConfirmPetViewController
         
-        confirmPetController.pet = pet
+        confirmPetController.pet = petToCreate
     }
+    
+    // MARK: -
+
     
     func numberOfRows(in pickerView: CZPickerView!) -> Int {
         return pets.count
