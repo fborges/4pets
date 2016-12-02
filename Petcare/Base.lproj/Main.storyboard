@@ -256,7 +256,7 @@
                         <outlet property="petName" destination="ngB-o8-i6r" id="Djc-iH-O4c"/>
                         <outlet property="petPhoto" destination="UR5-fO-teh" id="boB-Zc-54C"/>
                         <outlet property="petSex" destination="wje-K8-HNj" id="UGl-br-tYQ"/>
-                        <segue destination="pOI-hO-RkU" kind="show" id="aJg-Fg-Re2"/>
+                        <segue destination="pOI-hO-RkU" kind="show" identifier="toPreferences" id="aJg-Fg-Re2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tg-Kf-LC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
