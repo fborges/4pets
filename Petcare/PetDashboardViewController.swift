@@ -33,7 +33,7 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate {
         self.petPhoto.image = UIImage(data: pet.photo as! Data)
         self.petName.text = pet.name
         self.petBreed.text = pet.breed
-        //self.petBrithday.text = dateFormatter.string( from: pet.birthdate as! Date )
+        self.petBrithday.text = dateFormatter.string( from: pet.birthdate! as Date )
         self.petSex.text = pet.sex
         
     }
