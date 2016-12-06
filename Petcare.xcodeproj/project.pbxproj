@@ -128,6 +128,8 @@
 		0628911D1DEC5D57001390B8 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		0628911F1DEC5D65001390B8 /* CoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
 		062891251DEC6441001390B8 /* NewPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPetViewController.swift; sourceTree = "<group>"; };
+		066210301DF6DFF000091DCC /* Petcare WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Petcare WatchKit App.entitlements"; sourceTree = "<group>"; };
+		066210311DF6E11900091DCC /* Petcare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Petcare.entitlements; sourceTree = "<group>"; };
 		06AB41B31DF04CAC0093EA9A /* Veterinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Veterinary.swift; sourceTree = "<group>"; };
 		06AB41B41DF04CAC0093EA9A /* Veterinary+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Veterinary+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		06AB41B71DF04D4E0093EA9A /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		779B40D11DE86175004894FE /* Petcare */ = {
 			isa = PBXGroup;
 			children = (
+				066210311DF6E11900091DCC /* Petcare.entitlements */,
 				774855921DF0593500E38350 /* Helpers */,
 				C44C96041DEDD045004E09F9 /* Model */,
 				C4D89F5A1DEDB6EC00CAB613 /* DAO */,
@@ -386,6 +389,7 @@
 		779B40FB1DE86175004894FE /* Petcare WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				066210301DF6DFF000091DCC /* Petcare WatchKit App.entitlements */,
 				779B40FC1DE86175004894FE /* Interface.storyboard */,
 				779B40FF1DE86175004894FE /* Assets.xcassets */,
 				779B41011DE86175004894FE /* Info.plist */,
@@ -651,6 +655,11 @@
 						DevelopmentTeam = J5ZWQ2W9CE;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					779B40E21DE86175004894FE = {
 						CreatedOnToolsVersion = 8.0;
@@ -666,8 +675,13 @@
 					};
 					779B40F61DE86175004894FE = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HYM62FH7NW;
+						DevelopmentTeam = J5ZWQ2W9CE;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					779B41051DE86175004894FE = {
 						CreatedOnToolsVersion = 8.0;
@@ -1217,7 +1231,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HYM62FH7NW;
+				CODE_SIGN_ENTITLEMENTS = "Petcare WatchKit App/Petcare WatchKit App.entitlements";
+				DEVELOPMENT_TEAM = J5ZWQ2W9CE;
 				IBSC_MODULE = Petcare_WatchKit_Extension;
 				INFOPLIST_FILE = "Petcare WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare.watchkitapp;
@@ -1236,7 +1251,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HYM62FH7NW;
+				CODE_SIGN_ENTITLEMENTS = "Petcare WatchKit App/Petcare WatchKit App.entitlements";
+				DEVELOPMENT_TEAM = J5ZWQ2W9CE;
 				IBSC_MODULE = Petcare_WatchKit_Extension;
 				INFOPLIST_FILE = "Petcare WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kraken.Petcare.watchkitapp;
@@ -1254,6 +1270,7 @@
 			baseConfigurationReference = 7CB1FB67D5FFAF518ADC35AB /* Pods-Petcare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Petcare/Petcare.entitlements;
 				DEVELOPMENT_TEAM = J5ZWQ2W9CE;
 				INFOPLIST_FILE = Petcare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1268,6 +1285,7 @@
 			baseConfigurationReference = 4BE665200DD1FF7092FB324E /* Pods-Petcare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Petcare/Petcare.entitlements;
 				DEVELOPMENT_TEAM = J5ZWQ2W9CE;
 				INFOPLIST_FILE = Petcare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
