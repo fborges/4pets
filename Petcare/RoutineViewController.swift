@@ -16,7 +16,7 @@ class BathViewController: UIViewController, UITableViewDelegate, UITableViewData
     // class atributes
     var pet: Pet?
     var routineType: Int!
-    var routineArray = [Any]()
+    var routineArray = [Routine]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,35 +74,8 @@ class BathViewController: UIViewController, UITableViewDelegate, UITableViewData
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         
-        switch routineType {
-        case 0:
-            let item = routineArray[indexPath.row] as! Bath
-            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
-        case 1:
-            let item = routineArray[indexPath.row] as! Hair
-            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
-        case 2:
-            let item = routineArray[indexPath.row] as! Teeth
-            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
-        case 3:
-            let item = routineArray[indexPath.row] as! Nails
-            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
-        case 4:
-            let item = routineArray[indexPath.row] as! Recreation
-            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
-        case 5:
-            let item = routineArray[indexPath.row] as! Deworming
-            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
-        case 6:
-            let item = routineArray[indexPath.row] as! Vaccination
-            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
-        default:
-            print("error")
-        }
-        
-        
-        
-        
+        let item = routineArray[indexPath.row]
+        cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
         
         
         return cell
@@ -114,10 +87,10 @@ class BathViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let dao = CoreDataDAO<Bath>()
-            let bath = routineArray[indexPath.row]
+            let dao = CoreDataDAO<Routine>()
+            let routine = routineArray[indexPath.row]
             
-            //dao.delete(bath)
+            dao.delete(routine)
             routineArray.remove(at: indexPath.row)
             //pet?.bath.a
             tableView.reloadData()
