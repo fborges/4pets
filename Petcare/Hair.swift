@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Hair)
-public class Hair: NSManagedObject {
+public class Hair: Routine {
 
 }

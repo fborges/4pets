@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Vaccination)
-public class Vaccination: NSManagedObject {
+public class Vaccination: Routine {
 
 }

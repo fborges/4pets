@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Bath)
-public class Bath: NSManagedObject {
+public class Bath: Routine {
 
 }

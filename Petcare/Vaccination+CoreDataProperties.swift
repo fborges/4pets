@@ -16,7 +16,5 @@ extension Vaccination {
         return NSFetchRequest<Vaccination>(entityName: "Vaccination");
     }
 
-    @NSManaged public var date: NSDate?
-    @NSManaged public var pet: Pet?
 
 }

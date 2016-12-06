@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Nails)
-public class Nails: NSManagedObject {
+public class Nails: Routine {
 
 }

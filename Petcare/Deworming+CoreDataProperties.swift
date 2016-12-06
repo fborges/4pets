@@ -16,7 +16,5 @@ extension Deworming {
         return NSFetchRequest<Deworming>(entityName: "Deworming");
     }
 
-    @NSManaged public var date: NSDate?
-    @NSManaged public var pet: Pet?
 
 }

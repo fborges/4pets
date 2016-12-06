@@ -16,7 +16,6 @@ extension Hair {
         return NSFetchRequest<Hair>(entityName: "Hair");
     }
 
-    @NSManaged public var date: NSDate?
-    @NSManaged public var pet: Pet?
+
 
 }

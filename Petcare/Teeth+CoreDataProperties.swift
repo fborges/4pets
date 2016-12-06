@@ -16,7 +16,5 @@ extension Teeth {
         return NSFetchRequest<Teeth>(entityName: "Teeth");
     }
 
-    @NSManaged public var date: NSDate?
-    @NSManaged public var pet: Pet?
 
 }

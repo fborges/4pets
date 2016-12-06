@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Deworming)
-public class Deworming: NSManagedObject {
+public class Deworming: Routine {
 
 }

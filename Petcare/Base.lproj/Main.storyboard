@@ -278,10 +278,10 @@
             </objects>
             <point key="canvasLocation" x="2552.8000000000002" y="673.31334332833592"/>
         </scene>
-        <!--Bath View Controller-->
+        <!--Routine View Controller-->
         <scene sceneID="jM7-4W-zkM">
             <objects>
-                <viewController id="pOI-hO-RkU" customClass="BathViewController" customModule="Petcare" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pOI-hO-RkU" customClass="RoutineViewController" customModule="Petcare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4E6-AL-8TV"/>
                         <viewControllerLayoutGuide type="bottom" id="Og9-EV-pD5"/>

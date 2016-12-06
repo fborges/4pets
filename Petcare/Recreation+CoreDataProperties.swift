@@ -16,7 +16,5 @@ extension Recreation {
         return NSFetchRequest<Recreation>(entityName: "Recreation");
     }
 
-    @NSManaged public var date: NSDate?
-    @NSManaged public var pet: Pet?
 
 }

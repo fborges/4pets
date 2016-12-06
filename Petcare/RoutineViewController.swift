@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BathViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RoutineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // outlets
     @IBOutlet weak var tableView: UITableView!

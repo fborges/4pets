@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Recreation)
-public class Recreation: NSManagedObject {
+public class Recreation: Routine {
 
 }

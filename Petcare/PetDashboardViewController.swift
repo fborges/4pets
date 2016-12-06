@@ -80,7 +80,7 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "routineViewController" {
             let index =  Int(exactly: sender as! Int32)
-            let viewController = segue.destination as! BathViewController
+            let viewController = segue.destination as! RoutineViewController
             
             viewController.pet = self.pet
             viewController.routineType = index

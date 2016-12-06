@@ -9,7 +9,7 @@
 import UIKit
 
 class AnimalsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     let dao = CoreDataDAO<Pet>()
     var petList: [Pet] = []
     
@@ -54,7 +54,7 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         let data = petList[indexPath.row].photo as! Data
         
         let image : UIImage = UIImage(data: data)!
-
+        
         
         let cell:AnimalTableViewCell = self.talbeViewAnimals.dequeueReusableCell(withIdentifier: "animalCell") as! AnimalTableViewCell
         
@@ -68,6 +68,19 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         performSegue(withIdentifier: "dashboard", sender: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let dao = CoreDataDAO<Pet>()
+            let pet = petList[indexPath.row]
+            
+            dao.delete(pet)
+            petList.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    
+    // MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "dashboard" {
             let indexPath = sender as! IndexPath
@@ -76,5 +89,5 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
             viewController.pet = petList[indexPath.row]
         }
     }
-
+    
 }

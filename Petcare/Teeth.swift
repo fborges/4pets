@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Teeth)
-public class Teeth: NSManagedObject {
+public class Teeth: Routine {
 
 }

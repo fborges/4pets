@@ -16,7 +16,4 @@ extension Bath {
         return NSFetchRequest<Bath>(entityName: "Bath");
     }
 
-    @NSManaged public var date: NSDate?
-    @NSManaged public var pet: Pet?
-
 }

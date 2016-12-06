@@ -16,7 +16,5 @@ extension Nails {
         return NSFetchRequest<Nails>(entityName: "Nails");
     }
 
-    @NSManaged public var date: NSDate?
-    @NSManaged public var pet: Pet?
 
 }
