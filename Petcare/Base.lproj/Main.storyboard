@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -271,7 +271,7 @@
                         <outlet property="petName" destination="ngB-o8-i6r" id="Djc-iH-O4c"/>
                         <outlet property="petPhoto" destination="UR5-fO-teh" id="boB-Zc-54C"/>
                         <outlet property="petSex" destination="wje-K8-HNj" id="UGl-br-tYQ"/>
-                        <segue destination="pOI-hO-RkU" kind="show" identifier="toPreferences" id="aJg-Fg-Re2"/>
+                        <segue destination="pOI-hO-RkU" kind="show" identifier="routineViewController" id="aJg-Fg-Re2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tg-Kf-LC6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,7 +294,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="0HG-tX-Gjp" detailTextLabel="Y81-pH-Oar" style="IBUITableViewCellStyleSubtitle" id="NTh-B8-dVE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoutineCell" textLabel="0HG-tX-Gjp" detailTextLabel="Y81-pH-Oar" style="IBUITableViewCellStyleSubtitle" id="NTh-B8-dVE">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NTh-B8-dVE" id="x9L-G0-RHV">
@@ -319,6 +319,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pOI-hO-RkU" id="Dcg-2o-Lfh"/>
+                                    <outlet property="delegate" destination="pOI-hO-RkU" id="d7r-mx-IH7"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pFF-BB-sR8">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>

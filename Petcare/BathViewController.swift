@@ -8,19 +8,37 @@
 
 import UIKit
 
-class BathViewController<T>: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BathViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // outlets
     @IBOutlet weak var tableView: UITableView!
     
     // class atributes
     var pet: Pet?
-    var bathsArray = [T]()
+    var routineType: Int!
+    var routineArray = [Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bathsArray = pet?.bath!.array as! [T]
+        switch routineType {
+        case 0:
+            routineArray = pet?.bath!.array as! [Bath]
+        case 1:
+            routineArray = pet?.hair!.array as! [Hair]
+        case 2:
+            routineArray = pet?.teeth!.array as! [Teeth]
+        case 3:
+            routineArray = pet?.nails!.array as! [Nails]
+        case 4:
+            routineArray = pet?.recreation!.array as! [Recreation]
+        case 5:
+            routineArray = pet?.deworming!.array as! [Deworming]
+        case 6:
+            routineArray = pet?.vaccination!.array as! [Vaccination]
+        default:
+            print("error")
+        }
         
     }
     
@@ -47,14 +65,43 @@ class BathViewController<T>: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK: - TableView methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bathsArray.count
+        return routineArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellBath", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineCell", for: indexPath)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        switch routineType {
+        case 0:
+            let item = routineArray[indexPath.row] as! Bath
+            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
+        case 1:
+            let item = routineArray[indexPath.row] as! Hair
+            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
+        case 2:
+            let item = routineArray[indexPath.row] as! Teeth
+            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
+        case 3:
+            let item = routineArray[indexPath.row] as! Nails
+            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
+        case 4:
+            let item = routineArray[indexPath.row] as! Recreation
+            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
+        case 5:
+            let item = routineArray[indexPath.row] as! Deworming
+            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
+        case 6:
+            let item = routineArray[indexPath.row] as! Vaccination
+            cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )
+        default:
+            print("error")
+        }
+        
+        
+        
         
         
         
@@ -68,10 +115,10 @@ class BathViewController<T>: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let dao = CoreDataDAO<Bath>()
-            let bath = bathsArray[indexPath.row]
+            let bath = routineArray[indexPath.row]
             
             //dao.delete(bath)
-            bathsArray.remove(at: indexPath.row)
+            routineArray.remove(at: indexPath.row)
             //pet?.bath.a
             tableView.reloadData()
         }
