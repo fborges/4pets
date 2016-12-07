@@ -41,6 +41,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.name.delegate = self
         self.breed.delegate = self
         self.type.delegate = self
+        self.birthdayTextField.delegate = self
         
         czpicker?.delegate = self
         czpicker?.dataSource = self
@@ -130,6 +131,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         if validatePet(pet: pet){
             
             dao.insert(pet)
+
         }
         
     }

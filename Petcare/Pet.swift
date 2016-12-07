@@ -10,7 +10,6 @@ import Foundation
 import CoreData
 import UIKit
 
-
 @objc(Pet)
 public class Pet: NSManagedObject {
     
