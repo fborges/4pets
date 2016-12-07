@@ -7,134 +7,252 @@
 //
 
 import UIKit
+import CZPicker
+import DatePickerDialog
 
-class ConfirmPetViewController: UIViewController {
-
+class ConfirmPetViewController: UIViewController, CZPickerViewDelegate, CZPickerViewDataSource {
+    
     // outlets
-    @IBOutlet weak var bathTextField: UITextField!
-    @IBOutlet weak var hairTextField: UITextField!
-    @IBOutlet weak var nailsTextField: UITextField!
-    @IBOutlet weak var vaccinationTextField: UITextField!
-    @IBOutlet weak var teethTextField: UITextField!
-    @IBOutlet weak var dewormingTextField: UITextField!
-    @IBOutlet weak var recreationTextField: UITextField!
+    @IBOutlet weak var bathHourBtn: UIButton!
+    @IBOutlet weak var hairHourBtn: UIButton!
+    @IBOutlet weak var nailsHourBtn: UIButton!
+    @IBOutlet weak var vaccinationHourBtn: UIButton!
+    @IBOutlet weak var teethHourBtn: UIButton!
+    @IBOutlet weak var dewormingHourBtn: UIButton!
+    @IBOutlet weak var recreationHourBtn: UIButton!
+
+    @IBOutlet weak var bathFrequencyBtn: UIButton!
+    @IBOutlet weak var hairFrequencyBtn: UIButton!
+    @IBOutlet weak var nailsFrequencyBtn: UIButton!
+    @IBOutlet weak var vaccinationFrequencyBtn: UIButton!
+    @IBOutlet weak var teethFrequencyBtn: UIButton!
+    @IBOutlet weak var dewormingFrequencyBtn: UIButton!
+    @IBOutlet weak var recreationFrequencyBtn: UIButton!
+    
     
     // local atributes
-    let preferences = ["Nails", "Bath", "Vaccination", "Recreation", "Teeth", "Deworming", "Hair"]
+    let frequency = ["Daily", "3 times a week", "5 times a week", "Weekly", "Monthly", "Yearly"]
     var pet: Pet!
-    
+    let czpicker = CZPickerView(headerTitle: "Frequency", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
+    var buttonSender: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // picker settings
+        czpicker?.delegate = self
+        czpicker?.dataSource = self
+        czpicker?.allowMultipleSelection = false
+        czpicker?.needFooterView = true
+        
+        addButtonActions()
+
+    }
+    
+    func addButtonActions() {
+        // frequency buttons
+        bathFrequencyBtn.addTarget(self, action: #selector(pickFrequency(sender:)), for: .touchUpInside)
+        hairFrequencyBtn.addTarget(self, action: #selector(pickFrequency(sender:)), for: .touchUpInside)
+        nailsFrequencyBtn.addTarget(self, action: #selector(pickFrequency(sender:)), for: .touchUpInside)
+        vaccinationFrequencyBtn.addTarget(self, action: #selector(pickFrequency(sender:)), for: .touchUpInside)
+        teethFrequencyBtn.addTarget(self, action: #selector(pickFrequency(sender:)), for: .touchUpInside)
+        dewormingFrequencyBtn.addTarget(self, action: #selector(pickFrequency(sender:)), for: .touchUpInside)
+        recreationFrequencyBtn.addTarget(self, action: #selector(pickFrequency(sender:)), for: .touchUpInside)
+        
+        // hour buttons
+        bathHourBtn.addTarget(self, action: #selector(pickHour(sender:)), for: .touchUpInside)
+        hairHourBtn.addTarget(self, action: #selector(pickHour(sender:)), for: .touchUpInside)
+        nailsHourBtn.addTarget(self, action: #selector(pickHour(sender:)), for: .touchUpInside)
+        vaccinationHourBtn.addTarget(self, action: #selector(pickHour(sender:)), for: .touchUpInside)
+        teethHourBtn.addTarget(self, action: #selector(pickHour(sender:)), for: .touchUpInside)
+        dewormingHourBtn.addTarget(self, action: #selector(pickHour(sender:)), for: .touchUpInside)
+        recreationHourBtn.addTarget(self, action: #selector(pickHour(sender:)), for: .touchUpInside)
     }
     
     
-
-
+    func pickFrequency(sender: UIButton) {
+        buttonSender = sender
+        czpicker?.show()
+    }
+    
+    func pickHour(sender: UIButton) {
+        DatePickerDialog().show("Hour", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", defaultDate: Date(), datePickerMode: .time, callback: { (date) in
+            let formatter = DateFormatter()
+            formatter.dateFormat = "h:mm"
+            if let date = date {
+                sender.setTitle(formatter.string(from: date), for: .normal)
+                
+                var hour = Int(((self.bathHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+                var minute = Int(((self.bathHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+                print("\(hour):\(minute)")
+            }
+        })
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         saveOnDAO()
     }
+    
+    func dateForFequency(hour: Int, minute: Int, frequency: String) -> Date {
+        var dateComponent = DateComponents()
+        let calendar = Calendar.autoupdatingCurrent
+        var finalDate: Date!
+        let todayDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
 
+        switch frequency {
+        case "Daily":
+            dateComponent.day = 1
+        case "3 times a week":
+            dateComponent.day = 3
+        case "5 times a week":
+            dateComponent.day = 5
+        case "Weekly":
+            dateComponent.day = 7
+        case "Monthly":
+            dateComponent.day = 30
+        case "Yearly":
+            dateComponent.day = 365
+        default:
+            dateComponent.day = 0
+            
+        }
+   
+        dateComponent.hour = hour
+        dateComponent.minute = minute
+        finalDate = calendar.date(byAdding: dateComponent, to: todayDate!)
+        
+        print(finalDate)
+        return finalDate
+    }
+    
     func saveOnDAO() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        
-        if let date = bathTextField.text {
-            let dao = CoreDataDAO<Bath>()
-            let bath = dao.new()
-            bath.date = dateFormatter.date(from: date) as NSDate?
-            bath.pet = self.pet
-            
-            // adding to pets array os baths
-            let petBaths = pet?.bath as! NSMutableOrderedSet
-            petBaths.add(bath)
 
-            dao.insert(bath)
+        var hour: Int!
+        var minute: Int!
+        
+        //bath
+        let daoBath = CoreDataDAO<Bath>()
+        let bath = daoBath.new()
+    
+        hour = Int(((bathHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+        minute = Int(((bathHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
 
-        }
+        bath.date = dateForFequency(hour: hour!, minute: minute!, frequency: bathFrequencyBtn.title(for: .normal)!) as NSDate?
+        bath.pet = self.pet
+
+        // adding to pets array os baths
+        let petBaths = pet?.bath as! NSMutableOrderedSet
+        petBaths.add(bath)
         
-        if let date = hairTextField.text {
-            let dao = CoreDataDAO<Hair>()
-            let hair = dao.new()
-            hair.date = dateFormatter.date(from: date) as NSDate?
-            hair.pet = self.pet
-            
-            // adding to pets array os baths
-            let petBaths = pet?.hair as! NSMutableOrderedSet
-            petBaths.add(hair)
-            
-            dao.insert(hair)
-            
-        }
+        daoBath.insert(bath)
         
-        if let date = teethTextField.text {
-            let dao = CoreDataDAO<Teeth>()
-            let teeth = dao.new()
-            teeth.date = dateFormatter.date(from: date) as NSDate?
-            teeth.pet = self.pet
-            
-            // adding to pets array os baths
-            let petBaths = pet?.teeth as! NSMutableOrderedSet
-            petBaths.add(teeth)
-            
-            dao.insert(teeth)
-            
-        }
+        // Hair
+        let daoHair = CoreDataDAO<Hair>()
+        let hair = daoHair.new()
         
-        if let date = recreationTextField.text {
-            let dao = CoreDataDAO<Recreation>()
-            let recreation = dao.new()
-            recreation.date = dateFormatter.date(from: date) as NSDate?
-            recreation.pet = self.pet
-            
-            // adding to pets array os baths
-            let petBaths = pet?.recreation as! NSMutableOrderedSet
-            petBaths.add(recreation)
-            
-            dao.insert(recreation)
-            
-        }
+        hour = Int(((hairHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+        minute = Int(((hairHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
         
-        if let date = nailsTextField.text {
-            let dao = CoreDataDAO<Nails>()
-            let nails = dao.new()
-            nails.date = dateFormatter.date(from: date) as NSDate?
-            nails.pet = self.pet
-            
-            // adding to pets array os baths
-            let petBaths = pet?.nails as! NSMutableOrderedSet
-            petBaths.add(nails)
-            
-            dao.insert(nails)
-            
-        }
+        hair.date = dateForFequency(hour: hour!, minute: minute!, frequency: hairFrequencyBtn.title(for: .normal)!) as NSDate?
+        hair.pet = self.pet
         
-        if let date = vaccinationTextField.text {
-            let dao = CoreDataDAO<Vaccination>()
-            let vaccination = dao.new()
-            vaccination.date = dateFormatter.date(from: date) as NSDate?
-            vaccination.pet = self.pet
-            
-            // adding to pets array os baths
-            let petBaths = pet?.vaccination as! NSMutableOrderedSet
-            petBaths.add(vaccination)
-            
-            dao.insert(vaccination)
-            
-        }
+        // adding to pets array os baths
+        let petHair = pet?.hair as! NSMutableOrderedSet
+        petHair.add(hair)
         
-        if let date = dewormingTextField.text {
-            let dao = CoreDataDAO<Deworming>()
-            let deworming = dao.new()
-            deworming.date = dateFormatter.date(from: date) as NSDate?
-            deworming.pet = self.pet
-            
-            // adding to pets array os baths
-            let petBaths = pet?.deworming as! NSMutableOrderedSet
-            petBaths.add(deworming)
-            
-            dao.insert(deworming)
-            
-        }
+        daoHair.insert(hair)
         
+        //Teeth
+        let daoTeeth = CoreDataDAO<Teeth>()
+        let teeth = daoTeeth.new()
+        
+        hour = Int(((teethHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+        minute = Int(((teethHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+        
+        teeth.date = dateForFequency(hour: hour!, minute: minute!, frequency: teethFrequencyBtn.title(for: .normal)!) as NSDate?
+        teeth.pet = self.pet
+        
+        // adding to pets array os baths
+        let petTeeth = pet?.teeth as! NSMutableOrderedSet
+        petTeeth.add(teeth)
+        
+        daoTeeth.insert(teeth)
+        
+        //Nails
+        let daoNails = CoreDataDAO<Nails>()
+        let nails = daoNails.new()
+        
+        hour = Int(((nailsHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+        minute = Int(((nailsHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+        
+        nails.date = dateForFequency(hour: hour!, minute: minute!, frequency: nailsFrequencyBtn.title(for: .normal)!) as NSDate?
+        nails.pet = self.pet
+        
+        // adding to pets array os baths
+        let petNails = pet?.nails as! NSMutableOrderedSet
+        petNails.add(nails)
+        
+        daoNails.insert(nails)
+        
+        //Vaccination
+        let daoVaccination = CoreDataDAO<Vaccination>()
+        let vaccination = daoVaccination.new()
+        
+        hour = Int(((vaccinationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+        minute = Int(((vaccinationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+        
+        vaccination.date = dateForFequency(hour: hour!, minute: minute!, frequency: vaccinationFrequencyBtn.title(for: .normal)!) as NSDate?
+        vaccination.pet = self.pet
+        
+        // adding to pets array os baths
+        let petVaccination = pet?.vaccination as! NSMutableOrderedSet
+        petVaccination.add(vaccination)
+        
+        daoVaccination.insert(vaccination)
+        
+        //Deworming
+        let daoDeworming = CoreDataDAO<Deworming>()
+        let deworming = daoDeworming.new()
+        
+        hour = Int(((dewormingHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+        minute = Int(((dewormingHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+        
+        deworming.date = dateForFequency(hour: hour!, minute: minute!, frequency: dewormingFrequencyBtn.title(for: .normal)!) as NSDate?
+        deworming.pet = self.pet
+        
+        // adding to pets array os baths
+        let petDeworming = pet?.deworming as! NSMutableOrderedSet
+        petDeworming.add(deworming)
+        
+        daoDeworming.insert(deworming)
+        
+        //Recreation
+        let daoRecreation = CoreDataDAO<Recreation>()
+        let recreation = daoRecreation.new()
+        
+        hour = Int(((recreationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+        minute = Int(((recreationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+        
+        recreation.date = dateForFequency(hour: hour!, minute: minute!, frequency: recreationFrequencyBtn.title(for: .normal)!) as NSDate?
+        recreation.pet = self.pet
+        
+        // adding to pets array os baths
+        let petRecreation = pet?.recreation as! NSMutableOrderedSet
+        petRecreation.add(recreation)
+        
+        daoRecreation.insert(recreation)
+    }
+    
+    // MAERK : CZPicker
+    func numberOfRows(in pickerView: CZPickerView!) -> Int {
+        return frequency.count
+    }
+    
+    func czpickerView(_ pickerView: CZPickerView!, titleForRow row: Int) -> String! {
+        return frequency[row]
+    }
+    
+    func czpickerView(_ pickerView: CZPickerView!, didConfirmWithItemAtRow row: Int) {
+         buttonSender.setTitle(frequency[row], for: .normal)
     }
 }

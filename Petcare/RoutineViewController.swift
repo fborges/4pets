@@ -72,7 +72,7 @@ class RoutineViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineCell", for: indexPath)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "dd-MM-yyyy h:mm"
         
         let item = routineArray[indexPath.row]
         cell.textLabel?.text = dateFormatter.string( from: item.date as! Date )

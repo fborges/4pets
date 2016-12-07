@@ -12,6 +12,7 @@ import WatchConnectivity
 class AnimalsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WCSessionDelegate {
     
     var session: WCSession!
+
     
     let dao = CoreDataDAO<Pet>()
     var petList: [Pet] = []
@@ -35,7 +36,7 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         loadPetList()
         
         if (WCSession.isSupported()){
