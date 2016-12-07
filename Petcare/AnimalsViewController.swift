@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class AnimalsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let dao = CoreDataDAO<Pet>()
@@ -33,7 +34,7 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         loadPetList()
         
         // Do any additional setup after loading the view.

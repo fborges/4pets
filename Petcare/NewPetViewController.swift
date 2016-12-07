@@ -228,7 +228,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         confirmPetController.pet = petToCreate
     }
     
-    // MARK: -
+    // MARK: - CZPicker
 
     
     func numberOfRows(in pickerView: CZPickerView!) -> Int {
