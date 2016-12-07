@@ -9,6 +9,7 @@
 import UIKit
 import CZPicker
 import DatePickerDialog
+import UserNotifications
 
 class ConfirmPetViewController: UIViewController, CZPickerViewDelegate, CZPickerViewDataSource {
     
@@ -35,8 +36,13 @@ class ConfirmPetViewController: UIViewController, CZPickerViewDelegate, CZPicker
     var pet: Pet!
     let czpicker = CZPickerView(headerTitle: "Frequency", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
     var buttonSender: UIButton!
+    let notification = UNMutableNotificationContent()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // notification
+        notification.title = "PetCare"
         
         // picker settings
         czpicker?.delegate = self
@@ -125,122 +131,149 @@ class ConfirmPetViewController: UIViewController, CZPickerViewDelegate, CZPicker
         return finalDate
     }
     
+        
+    func scheduleNotification(at date: Date) -> DateComponents{
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents(in: .current, from: date)
+        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
+        return newComponents
+    }
+    
     func saveOnDAO() {
 
         var hour: Int!
         var minute: Int!
         
-        //bath
-        let daoBath = CoreDataDAO<Bath>()
-        let bath = daoBath.new()
-    
-        hour = Int(((bathHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-        minute = Int(((bathHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+        //BATH
+            let daoBath = CoreDataDAO<Bath>()
+            let bath = daoBath.new()
+        
+            hour = Int(((bathHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((bathHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
 
-        bath.date = dateForFequency(hour: hour!, minute: minute!, frequency: bathFrequencyBtn.title(for: .normal)!) as NSDate?
-        bath.pet = self.pet
+            let bathDate = dateForFequency(hour: hour!, minute: minute!, frequency: bathFrequencyBtn.title(for: .normal)!) as NSDate?
+            bath.date = bathDate
+            bath.pet = self.pet
 
-        // adding to pets array os baths
-        let petBaths = pet?.bath as! NSMutableOrderedSet
-        petBaths.add(bath)
+            // adding to pets array os baths
+            let petBaths = pet?.bath as! NSMutableOrderedSet
+            petBaths.add(bath)
+            
+            daoBath.insert(bath)
+            
+            // adding notification
+            notification.body = "Just remind you about \((self.pet.name)!) bath"
+            notification.badge = 1
+           // let trigger = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: bathDate as! Date), repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let request = UNNotificationRequest(identifier: "bath", content: notification, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
         
-        daoBath.insert(bath)
+        // HAIR
+            let daoHair = CoreDataDAO<Hair>()
+            let hair = daoHair.new()
+            
+            hour = Int(((hairHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((hairHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            
+            let hairDate = dateForFequency(hour: hour!, minute: minute!, frequency: hairFrequencyBtn.title(for: .normal)!) as NSDate?
+            hair.date = hairDate
+            hair.pet = self.pet
+            
+            // adding to pets array os baths
+            let petHair = pet?.hair as! NSMutableOrderedSet
+            petHair.add(hair)
+            
+            daoHair.insert(hair)
+            
+        //TEETH
+            let daoTeeth = CoreDataDAO<Teeth>()
+            let teeth = daoTeeth.new()
+            
+            hour = Int(((teethHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((teethHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            
+            let teethDate = dateForFequency(hour: hour!, minute: minute!, frequency: teethFrequencyBtn.title(for: .normal)!) as NSDate?
+            teeth.date = teethDate
+            teeth.pet = self.pet
+            
+            // adding to pets array os baths
+            let petTeeth = pet?.teeth as! NSMutableOrderedSet
+            petTeeth.add(teeth)
+            
+            daoTeeth.insert(teeth)
+            
+        //NAILS
+            let daoNails = CoreDataDAO<Nails>()
+            let nails = daoNails.new()
+            
+            hour = Int(((nailsHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((nailsHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            
+            let nailsDate = dateForFequency(hour: hour!, minute: minute!, frequency: nailsFrequencyBtn.title(for: .normal)!) as NSDate?
+            nails.date = nailsDate
+            nails.pet = self.pet
+            
+            // adding to pets array os baths
+            let petNails = pet?.nails as! NSMutableOrderedSet
+            petNails.add(nails)
+            
+            daoNails.insert(nails)
         
-        // Hair
-        let daoHair = CoreDataDAO<Hair>()
-        let hair = daoHair.new()
+        //VACCINATION
+            let daoVaccination = CoreDataDAO<Vaccination>()
+            let vaccination = daoVaccination.new()
+            
+            hour = Int(((vaccinationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((vaccinationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            
+            let vaccinationDate = dateForFequency(hour: hour!, minute: minute!, frequency: vaccinationFrequencyBtn.title(for: .normal)!) as NSDate?
+            vaccination.date = vaccinationDate
+            vaccination.pet = self.pet
+            
+            // adding to pets array os baths
+            let petVaccination = pet?.vaccination as! NSMutableOrderedSet
+            petVaccination.add(vaccination)
+            
+            daoVaccination.insert(vaccination)
         
-        hour = Int(((hairHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-        minute = Int(((hairHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+        //DEWORMING
+            let daoDeworming = CoreDataDAO<Deworming>()
+            let deworming = daoDeworming.new()
+            
+            hour = Int(((dewormingHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((dewormingHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            
+            let dewormingDate = dateForFequency(hour: hour!, minute: minute!, frequency: dewormingFrequencyBtn.title(for: .normal)!) as NSDate?
+            deworming.date = dewormingDate
+            deworming.pet = self.pet
+            
+            // adding to pets array os baths
+            let petDeworming = pet?.deworming as! NSMutableOrderedSet
+            petDeworming.add(deworming)
+            
+            daoDeworming.insert(deworming)
         
-        hair.date = dateForFequency(hour: hour!, minute: minute!, frequency: hairFrequencyBtn.title(for: .normal)!) as NSDate?
-        hair.pet = self.pet
-        
-        // adding to pets array os baths
-        let petHair = pet?.hair as! NSMutableOrderedSet
-        petHair.add(hair)
-        
-        daoHair.insert(hair)
-        
-        //Teeth
-        let daoTeeth = CoreDataDAO<Teeth>()
-        let teeth = daoTeeth.new()
-        
-        hour = Int(((teethHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-        minute = Int(((teethHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-        
-        teeth.date = dateForFequency(hour: hour!, minute: minute!, frequency: teethFrequencyBtn.title(for: .normal)!) as NSDate?
-        teeth.pet = self.pet
-        
-        // adding to pets array os baths
-        let petTeeth = pet?.teeth as! NSMutableOrderedSet
-        petTeeth.add(teeth)
-        
-        daoTeeth.insert(teeth)
-        
-        //Nails
-        let daoNails = CoreDataDAO<Nails>()
-        let nails = daoNails.new()
-        
-        hour = Int(((nailsHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-        minute = Int(((nailsHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-        
-        nails.date = dateForFequency(hour: hour!, minute: minute!, frequency: nailsFrequencyBtn.title(for: .normal)!) as NSDate?
-        nails.pet = self.pet
-        
-        // adding to pets array os baths
-        let petNails = pet?.nails as! NSMutableOrderedSet
-        petNails.add(nails)
-        
-        daoNails.insert(nails)
-        
-        //Vaccination
-        let daoVaccination = CoreDataDAO<Vaccination>()
-        let vaccination = daoVaccination.new()
-        
-        hour = Int(((vaccinationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-        minute = Int(((vaccinationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-        
-        vaccination.date = dateForFequency(hour: hour!, minute: minute!, frequency: vaccinationFrequencyBtn.title(for: .normal)!) as NSDate?
-        vaccination.pet = self.pet
-        
-        // adding to pets array os baths
-        let petVaccination = pet?.vaccination as! NSMutableOrderedSet
-        petVaccination.add(vaccination)
-        
-        daoVaccination.insert(vaccination)
-        
-        //Deworming
-        let daoDeworming = CoreDataDAO<Deworming>()
-        let deworming = daoDeworming.new()
-        
-        hour = Int(((dewormingHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-        minute = Int(((dewormingHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-        
-        deworming.date = dateForFequency(hour: hour!, minute: minute!, frequency: dewormingFrequencyBtn.title(for: .normal)!) as NSDate?
-        deworming.pet = self.pet
-        
-        // adding to pets array os baths
-        let petDeworming = pet?.deworming as! NSMutableOrderedSet
-        petDeworming.add(deworming)
-        
-        daoDeworming.insert(deworming)
-        
-        //Recreation
-        let daoRecreation = CoreDataDAO<Recreation>()
-        let recreation = daoRecreation.new()
-        
-        hour = Int(((recreationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-        minute = Int(((recreationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-        
-        recreation.date = dateForFequency(hour: hour!, minute: minute!, frequency: recreationFrequencyBtn.title(for: .normal)!) as NSDate?
-        recreation.pet = self.pet
-        
-        // adding to pets array os baths
-        let petRecreation = pet?.recreation as! NSMutableOrderedSet
-        petRecreation.add(recreation)
-        
-        daoRecreation.insert(recreation)
+        //RECREATION
+            let daoRecreation = CoreDataDAO<Recreation>()
+            let recreation = daoRecreation.new()
+            
+            hour = Int(((recreationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((recreationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            
+            let recreationDate = dateForFequency(hour: hour!, minute: minute!, frequency: recreationFrequencyBtn.title(for: .normal)!) as NSDate?
+            recreation.date = recreationDate
+            recreation.pet = self.pet
+            
+            // adding to pets array os baths
+            let petRecreation = pet?.recreation as! NSMutableOrderedSet
+            petRecreation.add(recreation)
+            
+            daoRecreation.insert(recreation)
     }
     
     // MAERK : CZPicker
