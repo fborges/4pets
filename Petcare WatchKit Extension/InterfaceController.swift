@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
+class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnectivityManagerWatchDelegate {
 
     var session: WCSession!
     
@@ -18,9 +18,12 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var petArray: [Pet] = []
     
+    var test: [String] = []
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
+        WatchConnectivityManager.sharedConnectivityManager.delegate = self
+
         // Configure interface objects here.
     }
     
@@ -28,14 +31,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        if (WCSession.isSupported()){
+        if let testDefaults = UserDefaults.standard.array(forKey: "testDefaults") as? [String] {
             
-            self.session = WCSession.default()
-            self.session.delegate = self
-            self.session.activate()
+            test = testDefaults
+            
+        } else {
+            
+            UserDefaults.standard.set("Teste", forKey: "testDefaults")
         }
         
-        requestPetList()
     }
     
     override func didDeactivate() {
@@ -43,34 +47,40 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     
-    func requestPetList() {
+  
+    
+
+    
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String : Any]) {
         
+        let dict = petList["pets"] as! NSDictionary
+
+
+        var tests = self.test
+        tests.insert(dict["Name"] as! String, at: 0)
+        self.test = Array(tests)      
         
-        if(WCSession.isSupported()){
-            
-            session.sendMessage(["sendPetList":true], replyHandler: nil, errorHandler: nil)
-            
-            print("Está enviando a data maldita porém não chega pela falta de conectividade dessa bagaça")
-        }
+        loadTableData()
+        
+        print(dict["Type"]!)
+        
     }
     
-    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-        petArray = (applicationContext["petList"] as? [Pet])!
-        loadTableData()
-    }
+
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         petArray = (message["petList"] as? [Pet])!
-        loadTableData()
     }
     
     func loadTableData(){
         
-        tableList.setNumberOfRows(petArray.count, withRowType: "firstRow")
+        tableList.setNumberOfRows(test.count, withRowType: "firstRow")
         
-        for (index, content) in petArray.enumerated(){
+        for (index, content) in test.enumerated(){
             
-            //let row = tableList.rowController(at: index) as! PetRowController
+            print(content)
+            
+        let row = tableList.rowController(at: index) as! PetRowController
            
             print(content)
             
@@ -84,5 +94,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
+    
+    //    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+    //        petArray = (applicationContext["petList"] as? [Pet])!
+    //        loadTableData()
+    //    }
 
 }

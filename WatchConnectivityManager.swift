@@ -19,11 +19,7 @@ protocol WatchConnectivityManagerPhoneDelegate: class {
 }
 
 protocol WatchConnectivityManagerWatchDelegate: class {
-    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updatedWithMorseCode morseCode: String)
-}
-
-protocol WatchConnectivityManagerWatchOSDelegate: class {
-    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [Pet])
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String:Any])
 }
 
 class WatchConnectivityManager: NSObject, WCSessionDelegate {
@@ -37,7 +33,6 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     weak var delegate: WatchConnectivityManagerPhoneDelegate?
     #else
     weak var delegate: WatchConnectivityManagerWatchDelegate?
-    weak var delegateDois: WatchConnectivityManagerWatchOSDelegate?
     #endif
     
     // MARK: Initialization
@@ -72,26 +67,21 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
         #if os(iOS)
             print("session watch directory URL: \(session.watchDirectoryURL?.absoluteString)")
         #endif
+        
+        #if os(watchOS)
+            delegate?.watchConnectivityManager(self, updateWithPetList: applicationContext)
+        #endif
     }
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         #if os(watchOS)
-            guard let morseCode = userInfo["MorseCode"] as? String else {
-                // If the expected values are unavailable in the `userInfo`, then skip it.
-                return
-            }
             
-            // Inform the delegate.
-            delegate?.watchConnectivityManager(self, updatedWithMorseCode: morseCode)
-        #endif
-        
-        #if os(watchOS)
-            
-            guard let petList = userInfo["PetList"] as? [Pet] else {
-                return
-            }
-            
-            delegateDois?.watchConnectivityManager(self, updateWithPetList: petList)
+//            guard let petList = userInfo["PetList"] as? [Pet] else {
+//                return
+//            }
+            let petDict = ["Name":"Mickey", "Type":"Dog"]
+            let dict = ["pets":petDict]
+            delegate?.watchConnectivityManager(self, updateWithPetList: dict)
             
         #endif
     }

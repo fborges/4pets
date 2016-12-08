@@ -10,8 +10,6 @@ import WatchKit
 
 
 class PetRowController: NSObject {
-
-    @IBOutlet var petImage: WKInterfaceImage!
     
     @IBOutlet var petName: WKInterfaceLabel!
     

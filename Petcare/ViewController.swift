@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WatchConnectivity
 
 class ViewController: UIViewController, WatchConnectivityManagerPhoneDelegate {
 
@@ -19,8 +18,6 @@ class ViewController: UIViewController, WatchConnectivityManagerPhoneDelegate {
         //Ha! I don't do anything but i'm still cool
         
         WatchConnectivityManager.sharedConnectivityManager.delegate = self
-        
-        sendToWatch()
         
     }
 
@@ -34,22 +31,7 @@ class ViewController: UIViewController, WatchConnectivityManagerPhoneDelegate {
         })
     }
 
-    
-    private func sendToWatch() {
-        do {
-            
-            let dao = CoreDataDAO<Pet>()
-            let petList = dao.getAll()
 
-            
-            let applicationDict = ["petList": "teste"]
-            try WCSession.default().updateApplicationContext(applicationDict)
-        }
-            
-        catch {
-            print(error)
-        }
-    }
 
 }
 

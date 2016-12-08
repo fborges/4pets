@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import CZPicker
 import DatePickerDialog
+import WatchConnectivity
 
 class PetController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, CZPickerViewDelegate, CZPickerViewDataSource {
     
@@ -224,7 +225,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         savePet()
-        
+        WCSession.default().transferUserInfo(["Petlist": self.petToCreate.name as AnyObject])
         let confirmPetController = segue.destination as! ConfirmPetViewController
         
         confirmPetController.pet = petToCreate

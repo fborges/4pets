@@ -18,15 +18,13 @@
                                 <tableRow id="2yA-xo-ksb" customClass="PetRowController" customModule="Petcare_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="47" alignment="left" id="fhw-mb-tnX">
                                         <items>
-                                            <imageView width="39" height="39" alignment="left" id="AfX-kG-yG0"/>
-                                            <label width="68" height="24" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="M6q-wO-sYk"/>
+                                            <label width="68" height="24" alignment="left" text="Label" textAlignment="center" id="M6q-wO-sYk"/>
                                         </items>
                                         <connections>
                                             <segue destination="RLQ-uS-50W" kind="push" id="WQR-xe-udF"/>
                                         </connections>
                                     </group>
                                     <connections>
-                                        <outlet property="petImage" destination="AfX-kG-yG0" id="eba-ge-yjZ"/>
                                         <outlet property="petName" destination="M6q-wO-sYk" id="nKu-eq-7lD"/>
                                     </connections>
                                 </tableRow>
