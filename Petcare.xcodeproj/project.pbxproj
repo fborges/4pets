@@ -77,6 +77,7 @@
 		C44C96461DEE3998004E09F9 /* Recreation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96441DEE3998004E09F9 /* Recreation+CoreDataProperties.swift */; };
 		C44C96491DEE39A1004E09F9 /* Vaccination.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96471DEE39A1004E09F9 /* Vaccination.swift */; };
 		C44C964A1DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96481DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift */; };
+		C4C004201DF99501007C1025 /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C0041F1DF99501007C1025 /* RoutineTableViewCell.swift */; };
 		C4D89F5C1DEDB74300CAB613 /* Petcare.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C4D89F5B1DEDB74300CAB613 /* Petcare.xcdatamodel */; };
 		C4E94E6F1DEEFCE1001C5624 /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E94E681DEEFCE1001C5624 /* RoutineViewController.swift */; };
 		C6DCB5E9C37180FEAB38DD44 /* Pods_Petcare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4BE8513E9948478F8E6E7E /* Pods_Petcare.framework */; };
@@ -211,6 +212,7 @@
 		C44C96441DEE3998004E09F9 /* Recreation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recreation+CoreDataProperties.swift"; path = "Petcare/Recreation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C44C96471DEE39A1004E09F9 /* Vaccination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vaccination.swift; path = Petcare/Vaccination.swift; sourceTree = "<group>"; };
 		C44C96481DEE39A1004E09F9 /* Vaccination+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Vaccination+CoreDataProperties.swift"; path = "Petcare/Vaccination+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4C0041F1DF99501007C1025 /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		C4D89F5B1DEDB74300CAB613 /* Petcare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Petcare.xcdatamodel; sourceTree = "<group>"; };
 		C4E94E681DEEFCE1001C5624 /* RoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		CB3278B5DB07D3AD800B3A5E /* Pods-Petcare WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petcare WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Petcare WatchKit Extension/Pods-Petcare WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				774855871DF041FC00E38350 /* PetDashboardViewController.swift */,
 				06AB41BD1DF0563A0093EA9A /* AppointmentController.swift */,
 				06AB41BF1DF0586A0093EA9A /* VeterinaryViewController.swift */,
+				C4C0041F1DF99501007C1025 /* RoutineTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1026,6 +1029,7 @@
 				779B40D31DE86175004894FE /* AppDelegate.swift in Sources */,
 				0628911E1DEC5D57001390B8 /* DAO.swift in Sources */,
 				06F51B7B1DF8502500B485A4 /* WatchConnectivityManager.swift in Sources */,
+				C4C004201DF99501007C1025 /* RoutineTableViewCell.swift in Sources */,
 				C44C96451DEE3998004E09F9 /* Recreation.swift in Sources */,
 				062891261DEC6441001390B8 /* NewPetViewController.swift in Sources */,
 				774855881DF041FC00E38350 /* PetDashboardViewController.swift in Sources */,
