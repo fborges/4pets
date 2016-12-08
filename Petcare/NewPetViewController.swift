@@ -190,6 +190,15 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         }
+        
+        /*if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }*/
     }
     
     
@@ -225,7 +234,11 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         savePet()
-        WCSession.default().transferUserInfo(["Petlist": self.petToCreate.name as AnyObject])
+        
+        let dict = ["Name": self.petToCreate.name!, "Type": self.petToCreate.type!,
+                    "Breed": self.petToCreate.breed!] as [String : Any]
+                
+        WCSession.default().transferUserInfo(["PetCreated": dict])
         let confirmPetController = segue.destination as! ConfirmPetViewController
         
         confirmPetController.pet = petToCreate

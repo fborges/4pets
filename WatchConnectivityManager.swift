@@ -79,9 +79,8 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
 //            guard let petList = userInfo["PetList"] as? [Pet] else {
 //                return
 //            }
-            let petDict = ["Name":"Mickey", "Type":"Dog"]
-            let dict = ["pets":petDict]
-            delegate?.watchConnectivityManager(self, updateWithPetList: dict)
+           
+            delegate?.watchConnectivityManager(self, updateWithPetList: userInfo)
             
         #endif
     }
