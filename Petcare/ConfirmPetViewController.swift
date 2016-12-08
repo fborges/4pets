@@ -43,9 +43,6 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
 
     }
     
-
-    
-    
     func pickFrequency(sender: UIButton) {
         buttonSender = sender
         czpicker?.show()
@@ -70,7 +67,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //saveOnDAO()
+        saveOnDAO()
     }
     
     func dateForFequency(hour: Int, minute: Int, amPm: String, frequency: String) -> Date {
@@ -124,214 +121,221 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
         return newComponents
     }
     
-//    func saveOnDAO() {
-//
-//        var hour: Int!
-//        var minute: Int!
-//        var amPm: String!
-//        //BATH
-//            let daoBath = CoreDataDAO<Bath>()
-//            let bath = daoBath.new()
-//        
-//            let bathCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! RoutineTableViewCell // Bath
-//            hour = Int(((bathCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-//            minute = Int(((bathCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-//
-//            let bathDate = dateForFequency(hour: hour!, minute: minute!, amPm: bathCell.routineAmPm.text! ,frequency: bathCell.routineFrequency.title(for: .normal)!) as NSDate?
-//            bath.date = bathDate
-//            bath.pet = self.pet
-//
-//            // adding to pets array os baths
-//            let petBaths = pet?.bath as! NSMutableOrderedSet
-//            petBaths.add(bath)
-//            
-//            daoBath.insert(bath)
-//            
-//            // adding notification
-//            notification.body = "Just remind you about \((self.pet.name)!) bath"
-//            notification.badge = NSNumber(value: badgeNumber + 1)
-//            let triggerBath = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: bathDate as! Date), repeats: false)
-//            let requestBath = UNNotificationRequest(identifier: "bath", content: notification, trigger: triggerBath)
-//            UNUserNotificationCenter.current().add(requestBath, withCompletionHandler:{ (error) in
-//                if error != nil {
-//                    print(error?.localizedDescription ?? "--")
-//                }
-//            })
-//        
-//        // HAIR
-//            let daoHair = CoreDataDAO<Hair>()
-//            let hair = daoHair.new()
-//        
-//            let hairCell = routineTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! RoutineTableViewCell // Hair
-//            hour = Int(((hairHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-//            minute = Int(((hairHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-//            
-//            let hairDate = dateForFequency(hour: hour!, minute: minute!, frequency: hairFrequencyBtn.title(for: .normal)!) as NSDate?
-//            hair.date = hairDate
-//            hair.pet = self.pet
-//            
-//            // adding to pets array os baths
-//            let petHair = pet?.hair as! NSMutableOrderedSet
-//            petHair.add(hair)
-//            
-//            daoHair.insert(hair)
-//        
-//            // adding notification
-//            notification.body = "Just remind you about \((self.pet.name)!) hair"
-//            notification.badge = NSNumber(value: badgeNumber + 1)
-//            let triggerHair = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: hairDate as! Date), repeats: false)
-//            let requestHair = UNNotificationRequest(identifier: "hair", content: notification, trigger: triggerHair)
-//            UNUserNotificationCenter.current().add(requestHair, withCompletionHandler:{ (error) in
-//                if error != nil {
-//                    print(error?.localizedDescription ?? "--")
-//                }
-//            })
-//        
-//        //TEETH
-//            let daoTeeth = CoreDataDAO<Teeth>()
-//            let teeth = daoTeeth.new()
-//        
-//            let bathCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! RoutineTableViewCell // Bath
-//            hour = Int(((teethHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-//            minute = Int(((teethHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-//            
-//            let teethDate = dateForFequency(hour: hour!, minute: minute!, frequency: teethFrequencyBtn.title(for: .normal)!) as NSDate?
-//            teeth.date = teethDate
-//            teeth.pet = self.pet
-//            
-//            // adding to pets array os baths
-//            let petTeeth = pet?.teeth as! NSMutableOrderedSet
-//            petTeeth.add(teeth)
-//            
-//            daoTeeth.insert(teeth)
-//        
-//            // adding notification
-//            notification.body = "Just remind you about \((self.pet.name)!) teeths"
-//            notification.badge = NSNumber(value: badgeNumber + 1)
-//            let triggerTeeth = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: teethDate as! Date), repeats: false)
-//            let requestTeeth = UNNotificationRequest(identifier: "teeth", content: notification, trigger: triggerTeeth)
-//            UNUserNotificationCenter.current().add(requestTeeth, withCompletionHandler:{ (error) in
-//                if error != nil {
-//                    print(error?.localizedDescription ?? "--")
-//                }
-//            })
-//        
-//        //NAILS
-//            let daoNails = CoreDataDAO<Nails>()
-//            let nails = daoNails.new()
-//        
-//            let bathCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! RoutineTableViewCell // Bath
-//            hour = Int(((nailsHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-//            minute = Int(((nailsHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-//            
-//            let nailsDate = dateForFequency(hour: hour!, minute: minute!, frequency: nailsFrequencyBtn.title(for: .normal)!) as NSDate?
-//            nails.date = nailsDate
-//            nails.pet = self.pet
-//            
-//            // adding to pets array os baths
-//            let petNails = pet?.nails as! NSMutableOrderedSet
-//            petNails.add(nails)
-//            
-//            daoNails.insert(nails)
-//        
-//            // adding notification
-//            notification.body = "Just remind you about \((self.pet.name)!) nails"
-//            notification.badge = NSNumber(value: badgeNumber + 1)
-//            let triggerNails = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: nailsDate as! Date), repeats: false)
-//            let requestNails = UNNotificationRequest(identifier: "nails", content: notification, trigger: triggerNails)
-//            UNUserNotificationCenter.current().add(requestNails, withCompletionHandler:{ (error) in
-//                if error != nil {
-//                    print(error?.localizedDescription ?? "--")
-//                }
-//            })
-//            
-//        //VACCINATION
-//            let daoVaccination = CoreDataDAO<Vaccination>()
-//            let vaccination = daoVaccination.new()
-//        
-//            let bathCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! RoutineTableViewCell // Bath
-//            hour = Int(((vaccinationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-//            minute = Int(((vaccinationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-//            
-//            let vaccinationDate = dateForFequency(hour: hour!, minute: minute!, frequency: vaccinationFrequencyBtn.title(for: .normal)!) as NSDate?
-//            vaccination.date = vaccinationDate
-//            vaccination.pet = self.pet
-//            
-//            // adding to pets array os baths
-//            let petVaccination = pet?.vaccination as! NSMutableOrderedSet
-//            petVaccination.add(vaccination)
-//            
-//            daoVaccination.insert(vaccination)
-//        
-//            // adding notification
-//            notification.body = "Just remind you about \((self.pet.name)!) vaccination"
-//            notification.badge = NSNumber(value: badgeNumber + 1)
-//            let triggerVaccination = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: vaccinationDate as! Date), repeats: false)
-//            let requestVaccination = UNNotificationRequest(identifier: "vaccination", content: notification, trigger: triggerVaccination)
-//            UNUserNotificationCenter.current().add(requestVaccination, withCompletionHandler:{ (error) in
-//                if error != nil {
-//                    print(error?.localizedDescription ?? "--")
-//                }
-//            })
-//        
-//        //DEWORMING
-//            let daoDeworming = CoreDataDAO<Deworming>()
-//            let deworming = daoDeworming.new()
-//        
-//            let bathCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! RoutineTableViewCell // Bath
-//            hour = Int(((dewormingHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-//            minute = Int(((dewormingHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-//            
-//            let dewormingDate = dateForFequency(hour: hour!, minute: minute!, frequency: dewormingFrequencyBtn.title(for: .normal)!) as NSDate?
-//            deworming.date = dewormingDate
-//            deworming.pet = self.pet
-//            
-//            // adding to pets array os baths
-//            let petDeworming = pet?.deworming as! NSMutableOrderedSet
-//            petDeworming.add(deworming)
-//            
-//            daoDeworming.insert(deworming)
-//        
-//            // adding notification
-//            notification.body = "Just remind you about \((self.pet.name)!) deworming"
-//            notification.badge = NSNumber(value: badgeNumber + 1)
-//            let triggerDeworming = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: dewormingDate as! Date), repeats: false)
-//            let requestDeworming = UNNotificationRequest(identifier: "deworming", content: notification, trigger: triggerDeworming)
-//            UNUserNotificationCenter.current().add(requestDeworming, withCompletionHandler:{ (error) in
-//                if error != nil {
-//                    print(error?.localizedDescription ?? "--")
-//                }
-//            })
-//        
-//        //RECREATION
-//            let daoRecreation = CoreDataDAO<Recreation>()
-//            let recreation = daoRecreation.new()
-//        
-//            let bathCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! RoutineTableViewCell // Bath
-//            hour = Int(((recreationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-//            minute = Int(((recreationHourBtn.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-//            
-//            let recreationDate = dateForFequency(hour: hour!, minute: minute!, frequency: recreationFrequencyBtn.title(for: .normal)!) as NSDate?
-//            recreation.date = recreationDate
-//            recreation.pet = self.pet
-//            
-//            // adding to pets array os baths
-//            let petRecreation = pet?.recreation as! NSMutableOrderedSet
-//            petRecreation.add(recreation)
-//            
-//            daoRecreation.insert(recreation)
-//        
-//            // adding notification
-//            notification.body = "Just remind you about \((self.pet.name)!) recreation"
-//            notification.badge = NSNumber(value: badgeNumber + 1)
-//            let triggerRecreation = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: recreationDate as! Date), repeats: false)
-//            let requestRecreation = UNNotificationRequest(identifier: "recreation", content: notification, trigger: triggerRecreation)
-//            UNUserNotificationCenter.current().add(requestRecreation, withCompletionHandler:{ (error) in
-//                if error != nil {
-//                    print(error?.localizedDescription ?? "--")
-//                }
-//            })
-//    }
+    func saveOnDAO() {
+
+        var hour: Int!
+        var minute: Int!
+        var amPm: String!
+        //BATH
+            let daoBath = CoreDataDAO<Bath>()
+            let bath = daoBath.new()
+        
+            let bathCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! RoutineTableViewCell // Bath
+            hour = Int(((bathCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((bathCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            amPm = bathCell.routineAmPm.text
+        
+            let bathDate = dateForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: bathCell.routineFrequency.title(for: .normal)!) as NSDate?
+            bath.date = bathDate
+            bath.pet = self.pet
+
+            // adding to pets array os baths
+            let petBaths = pet?.bath as! NSMutableOrderedSet
+            petBaths.add(bath)
+            
+            daoBath.insert(bath)
+            
+            // adding notification
+            notification.body = "Just remind you about \((self.pet.name)!) bath"
+            notification.badge = NSNumber(value: badgeNumber + 1)
+            let triggerBath = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: bathDate as! Date), repeats: false)
+            let requestBath = UNNotificationRequest(identifier: "bath", content: notification, trigger: triggerBath)
+            UNUserNotificationCenter.current().add(requestBath, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
+        
+        // HAIR
+            let daoHair = CoreDataDAO<Hair>()
+            let hair = daoHair.new()
+        
+            let hairCell = routineTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! RoutineTableViewCell // Hair
+            hour = Int(((hairCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((hairCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            amPm = hairCell.routineAmPm.text
+        
+            let hairDate = dateForFequency(hour: hour!, minute: minute!,amPm: amPm! ,frequency: hairCell.routineFrequency.title(for: .normal)!) as NSDate?
+            hair.date = hairDate
+            hair.pet = self.pet
+            
+            // adding to pets array
+            let petHair = pet?.hair as! NSMutableOrderedSet
+            petHair.add(hair)
+            
+            daoHair.insert(hair)
+        
+            // adding notification
+            notification.body = "Just remind you about \((self.pet.name)!) hair"
+            notification.badge = NSNumber(value: badgeNumber + 1)
+            let triggerHair = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: hairDate as! Date), repeats: false)
+            let requestHair = UNNotificationRequest(identifier: "hair", content: notification, trigger: triggerHair)
+            UNUserNotificationCenter.current().add(requestHair, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
+        //NAILS
+            let daoNails = CoreDataDAO<Nails>()
+            let nails = daoNails.new()
+            
+            let nailsCell = routineTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! RoutineTableViewCell // Nails
+            hour = Int(((nailsCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((nailsCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            amPm = nailsCell.routineAmPm.text
+        
+            let nailsDate = dateForFequency(hour: hour!, minute: minute!,amPm: amPm! ,frequency: nailsCell.routineFrequency.title(for: .normal)!) as NSDate?
+            nails.date = nailsDate
+            nails.pet = self.pet
+            
+            // adding to pets array
+            let petNails = pet?.nails as! NSMutableOrderedSet
+            petNails.add(nails)
+            
+            daoNails.insert(nails)
+            
+            // adding notification
+            notification.body = "Just remind you about \((self.pet.name)!) nails"
+            notification.badge = NSNumber(value: badgeNumber + 1)
+            let triggerNails = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: nailsDate as! Date), repeats: false)
+            let requestNails = UNNotificationRequest(identifier: "nails", content: notification, trigger: triggerNails)
+            UNUserNotificationCenter.current().add(requestNails, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
+        
+
+        //TEETH
+            let daoTeeth = CoreDataDAO<Teeth>()
+            let teeth = daoTeeth.new()
+        
+            let teethCell = routineTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as! RoutineTableViewCell // Teeth
+            hour = Int(((teethCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((teethCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            amPm = teethCell.routineAmPm.text
+        
+            let teethDate = dateForFequency(hour: hour!, minute: minute!,amPm: amPm! ,frequency: teethCell.routineFrequency.title(for: .normal)!) as NSDate?
+            teeth.date = teethDate
+            teeth.pet = self.pet
+            
+            // adding to pets array
+            let petTeeth = pet?.teeth as! NSMutableOrderedSet
+            petTeeth.add(teeth)
+            
+            daoTeeth.insert(teeth)
+        
+            // adding notification
+            notification.body = "Just remind you about \((self.pet.name)!) teeths"
+            notification.badge = NSNumber(value: badgeNumber + 1)
+            let triggerTeeth = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: teethDate as! Date), repeats: false)
+            let requestTeeth = UNNotificationRequest(identifier: "teeth", content: notification, trigger: triggerTeeth)
+            UNUserNotificationCenter.current().add(requestTeeth, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
+        
+        //VACCINATION
+            let daoVaccination = CoreDataDAO<Vaccination>()
+            let vaccination = daoVaccination.new()
+        
+            let vaccinationCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! RoutineTableViewCell // Vaccination
+            hour = Int(((vaccinationCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((vaccinationCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            amPm = vaccinationCell.routineAmPm.text
+        
+            let vaccinationDate = dateForFequency(hour: hour!, minute: minute!,amPm: amPm! ,frequency: vaccinationCell.routineFrequency.title(for: .normal)!) as NSDate?
+            vaccination.date = vaccinationDate
+            vaccination.pet = self.pet
+            
+            // adding to pets array
+            let petVaccination = pet?.vaccination as! NSMutableOrderedSet
+            petVaccination.add(vaccination)
+            
+            daoVaccination.insert(vaccination)
+        
+            // adding notification
+            notification.body = "Just remind you about \((self.pet.name)!) vaccination"
+            notification.badge = NSNumber(value: badgeNumber + 1)
+            let triggerVaccination = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: vaccinationDate as! Date), repeats: false)
+            let requestVaccination = UNNotificationRequest(identifier: "vaccination", content: notification, trigger: triggerVaccination)
+            UNUserNotificationCenter.current().add(requestVaccination, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
+        
+        //DEWORMING
+            let daoDeworming = CoreDataDAO<Deworming>()
+            let deworming = daoDeworming.new()
+        
+            let dewormingCell = routineTableView.cellForRow(at: IndexPath(row: 1, section: 1)) as! RoutineTableViewCell // Deworming
+            hour = Int(((dewormingCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((dewormingCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            amPm = dewormingCell.routineAmPm.text
+        
+            let dewormingDate = dateForFequency(hour: hour!, minute: minute!,amPm: amPm! ,frequency: dewormingCell.routineFrequency.title(for: .normal)!) as NSDate?
+            deworming.date = dewormingDate
+            deworming.pet = self.pet
+            
+            // adding to pets array
+            let petDeworming = pet?.deworming as! NSMutableOrderedSet
+            petDeworming.add(deworming)
+            
+            daoDeworming.insert(deworming)
+        
+            // adding notification
+            notification.body = "Just remind you about \((self.pet.name)!) deworming"
+            notification.badge = NSNumber(value: badgeNumber + 1)
+            let triggerDeworming = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: dewormingDate as! Date), repeats: false)
+            let requestDeworming = UNNotificationRequest(identifier: "deworming", content: notification, trigger: triggerDeworming)
+            UNUserNotificationCenter.current().add(requestDeworming, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
+        
+        //RECREATION
+            let daoRecreation = CoreDataDAO<Recreation>()
+            let recreation = daoRecreation.new()
+        
+            let recreationCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! RoutineTableViewCell // Recreation
+            hour = Int(((recreationCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((recreationCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            amPm = recreationCell.routineAmPm.text
+        
+            let recreationDate = dateForFequency(hour: hour!, minute: minute!,amPm: amPm! ,frequency: recreationCell.routineFrequency.title(for: .normal)!) as NSDate?
+            recreation.date = recreationDate
+            recreation.pet = self.pet
+            
+            // adding to pets array os baths
+            let petRecreation = pet?.recreation as! NSMutableOrderedSet
+            petRecreation.add(recreation)
+            
+            daoRecreation.insert(recreation)
+        
+            // adding notification
+            notification.body = "Just remind you about \((self.pet.name)!) recreation"
+            notification.badge = NSNumber(value: badgeNumber + 1)
+            let triggerRecreation = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: recreationDate as! Date), repeats: false)
+            let requestRecreation = UNNotificationRequest(identifier: "recreation", content: notification, trigger: triggerRecreation)
+            UNUserNotificationCenter.current().add(requestRecreation, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
+    }
     
     // MARK : CZPicker
     func numberOfRows(in pickerView: CZPickerView!) -> Int {
