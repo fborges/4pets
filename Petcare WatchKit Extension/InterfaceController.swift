@@ -16,7 +16,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
     
     @IBOutlet var tableList: WKInterfaceTable!
     
-    var petArray: [Pet] = []
+    var petArray: [PetWatch] = []
     
     var test: [String] = []
     
@@ -31,9 +31,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        if let testDefaults = UserDefaults.standard.array(forKey: "testDefaults") as? [String] {
+        if let testDefaults = UserDefaults.standard.array(forKey: "testDefaults") as? [PetWatch] {
             
-            test = testDefaults
             
         } else {
             
@@ -48,28 +47,16 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
     }
     
   
-    
-
-    
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String : Any]) {
         
         let dict = petList["pets"] as! NSDictionary
 
-
-        var tests = self.test
-        tests.insert(dict["Name"] as! String, at: 0)
-        self.test = Array(tests)      
+        let pet = PetWatch(name: dict["Name"] as! String)      
         
         loadTableData()
         
         print(dict["Type"]!)
         
-    }
-    
-
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        petArray = (message["petList"] as? [Pet])!
     }
     
     func loadTableData(){
