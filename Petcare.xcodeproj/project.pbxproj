@@ -39,6 +39,7 @@
 		06D895421DF82D60006E8E22 /* Hair+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44C96381DEE3972004E09F9 /* Hair+CoreDataProperties.swift */; };
 		06D895441DF82F58006E8E22 /* PetRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D895431DF82F58006E8E22 /* PetRowController.swift */; };
 		06F51B7B1DF8502500B485A4 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F51B7A1DF8502500B485A4 /* WatchConnectivityManager.swift */; };
+		06F51B7C1DF8515400B485A4 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F51B7A1DF8502500B485A4 /* WatchConnectivityManager.swift */; };
 		770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */; };
 		770AE5321DEDC003007AF924 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */; };
 		774624CF1DEF162300B78396 /* ConfirmPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */; };
@@ -1067,6 +1068,7 @@
 				06D895411DF82D5D006E8E22 /* Hair.swift in Sources */,
 				779B41101DE86175004894FE /* ExtensionDelegate.swift in Sources */,
 				06D895331DF82D33006E8E22 /* Pet.swift in Sources */,
+				06F51B7C1DF8515400B485A4 /* WatchConnectivityManager.swift in Sources */,
 				06D895301DF82D2A006E8E22 /* Veterinary+CoreDataProperties.swift in Sources */,
 				06D895371DF82D3E006E8E22 /* Bath.swift in Sources */,
 				06D8952F1DF82D26006E8E22 /* Veterinary.swift in Sources */,

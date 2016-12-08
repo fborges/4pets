@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import UserNotifications
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             // Enable or disable features based on authorization.
+        }
+        
+        if WCSession.isSupported() {
+            let defaultSession = WCSession.default()
+            defaultSession.delegate = WatchConnectivityManager.sharedConnectivityManager
+            defaultSession.activate()
         }
 
         return true

@@ -21,6 +21,9 @@
                                             <imageView width="39" height="39" alignment="left" id="AfX-kG-yG0"/>
                                             <label width="68" height="24" alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="M6q-wO-sYk"/>
                                         </items>
+                                        <connections>
+                                            <segue destination="RLQ-uS-50W" kind="push" id="WQR-xe-udF"/>
+                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="petImage" destination="AfX-kG-yG0" id="eba-ge-yjZ"/>
@@ -36,6 +39,28 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="7Bt-Fx-ekh">
+            <objects>
+                <controller id="RLQ-uS-50W">
+                    <items>
+                        <imageView height="50" alignment="center" id="eEn-nJ-OIa"/>
+                        <label alignment="center" text="Label" id="R9M-nC-FoG"/>
+                        <label alignment="center" text="Label" id="g8p-Qc-wM8"/>
+                        <separator alignment="left" id="siH-a4-MMO"/>
+                        <group width="134" height="44" alignment="center" id="PbC-r9-d33">
+                            <items>
+                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" id="Z2m-7q-Sxy"/>
+                                <label width="28" height="12" alignment="left" verticalAlignment="center" text="Label" id="Gr7-ZA-Roi"/>
+                                <imageView width="20" height="20" alignment="right" verticalAlignment="center" id="hAO-bw-rS1"/>
+                                <label width="28" height="12" alignment="right" verticalAlignment="center" text="Label" id="7Jd-nF-fOE"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="457" y="344"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -58,7 +83,7 @@
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Petcare_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="457" y="643"/>
         </scene>
     </scenes>
 </document>

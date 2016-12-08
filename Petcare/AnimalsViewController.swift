@@ -39,13 +39,6 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
 
         loadPetList()
         
-        if (WCSession.isSupported()){
-            
-            self.session = WCSession.default()
-            self.session.delegate = self
-            self.session.activate()
-        }
-        
         // Do any additional setup after loading the view.
     }
     

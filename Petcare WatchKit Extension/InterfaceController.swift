@@ -54,12 +54,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        petArray = (applicationContext["petList"] as? [Pet])!
+        loadTableData()
+    }
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         petArray = (message["petList"] as? [Pet])!
         loadTableData()
     }
-    
-    
     
     func loadTableData(){
         
