@@ -11,6 +11,7 @@
 		062891201DEC5D65001390B8 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628911F1DEC5D65001390B8 /* CoreDataDAO.swift */; };
 		062891261DEC6441001390B8 /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062891251DEC6441001390B8 /* NewPetViewController.swift */; };
 		062A1E021DF9A47B005E7C86 /* PetWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A1E011DF9A47B005E7C86 /* PetWatch.swift */; };
+		063080CF1DFAED640058D32A /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063080CE1DFAED640058D32A /* ActivityController.swift */; };
 		067DAF321DF9E2F6001C929E /* DashboardWatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067DAF311DF9E2F6001C929E /* DashboardWatchController.swift */; };
 		067DAF381DF9E738001C929E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067DAF361DF9E738001C929E /* Interface.storyboard */; };
 		06AB41B51DF04CAC0093EA9A /* Veterinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41B31DF04CAC0093EA9A /* Veterinary.swift */; };
@@ -151,6 +152,7 @@
 		0628911F1DEC5D65001390B8 /* CoreDataDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDAO.swift; sourceTree = "<group>"; };
 		062891251DEC6441001390B8 /* NewPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPetViewController.swift; sourceTree = "<group>"; };
 		062A1E011DF9A47B005E7C86 /* PetWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetWatch.swift; sourceTree = "<group>"; };
+		063080CE1DFAED640058D32A /* ActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
 		066210301DF6DFF000091DCC /* Petcare WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Petcare WatchKit App.entitlements"; sourceTree = "<group>"; };
 		066210311DF6E11900091DCC /* Petcare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Petcare.entitlements; sourceTree = "<group>"; };
 		067DAF311DF9E2F6001C929E /* DashboardWatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardWatchController.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				779B410B1DE86175004894FE /* Supporting Files */,
 				06D895431DF82F58006E8E22 /* PetRowController.swift */,
 				067DAF311DF9E2F6001C929E /* DashboardWatchController.swift */,
+				063080CE1DFAED640058D32A /* ActivityController.swift */,
 			);
 			path = "Petcare WatchKit Extension";
 			sourceTree = "<group>";
@@ -1093,6 +1096,7 @@
 				06D8952E1DF82D22006E8E22 /* Routine.swift in Sources */,
 				06D8953A1DF82D46006E8E22 /* Vaccination+CoreDataProperties.swift in Sources */,
 				06D8953E1DF82D54006E8E22 /* Teeth+CoreDataProperties.swift in Sources */,
+				063080CF1DFAED640058D32A /* ActivityController.swift in Sources */,
 				06D895361DF82D3C006E8E22 /* Nails+CoreDataProperties.swift in Sources */,
 				06D8953F1DF82D57006E8E22 /* Deworming.swift in Sources */,
 				06D895351DF82D39006E8E22 /* Nails.swift in Sources */,

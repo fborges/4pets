@@ -62,7 +62,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
             
         } else {
-            print("AQUIIII")
             print(dict)
             let dict = petList["PetCreated"] as! NSDictionary
             defaults.set([dict], forKey: "TestPet")

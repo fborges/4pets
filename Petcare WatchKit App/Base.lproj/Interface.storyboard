@@ -43,15 +43,17 @@
             <objects>
                 <controller identifier="dashboardPet" id="RLQ-uS-50W" customClass="DashboardWatchController" customModule="Petcare_WatchKit_Extension">
                     <items>
-                        <imageView height="70" alignment="center" image="dog" id="eEn-nJ-OIa"/>
+                        <imageView height="90" alignment="center" image="dog" id="eEn-nJ-OIa"/>
                         <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="R9M-nC-FoG"/>
-                        <label alignment="center" verticalAlignment="bottom" text="Label" textAlignment="center" id="ARh-9O-TQr"/>
-                        <button width="1" height="35" alignment="center" verticalAlignment="bottom" title="Routine" id="qll-zR-eFQ">
-                            <connections>
-                                <action selector="gotToRoutine" destination="RLQ-uS-50W" id="3WA-pL-1qh"/>
-                            </connections>
-                        </button>
+                        <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="ARh-9O-TQr"/>
                     </items>
+                    <menu key="menu" id="2Vy-Sa-02h">
+                        <items>
+                            <menuItem title="Bath" icon="add" id="IKo-Xw-fhg"/>
+                            <menuItem title="Recreation" icon="decline" id="Q9v-Vx-pmD"/>
+                            <menuItem title="Hair" icon="more" id="iB3-vf-Q2A"/>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="petBreed" destination="ARh-9O-TQr" id="nfS-tr-cJr"/>
                         <outlet property="petImage" destination="eEn-nJ-OIa" id="rak-5k-sP3"/>
@@ -60,6 +62,33 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="474" y="344"/>
+        </scene>
+        <!--activity-->
+        <scene sceneID="fAt-zP-jBx">
+            <objects>
+                <controller identifier="activity" id="OgK-Jg-cZe" customClass="ActivityController" customModule="Petcare_WatchKit_Extension">
+                    <items>
+                        <dateLabel alignment="right" id="Cg0-V3-PYm">
+                            <dateFormatterStyle key="dateStyle" short="YES"/>
+                            <dateFormatterStyle key="timeStyle" short="YES"/>
+                        </dateLabel>
+                        <group width="136" alignment="right" id="SZ4-Ix-CCa">
+                            <items>
+                                <label width="74" height="27" alignment="right" text="Activity" id="5Nh-N7-lZ3"/>
+                                <imageView width="42" alignment="left" id="nxm-jV-Sme"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="SxM-d8-Swx">
+                            <items>
+                                <timer alignment="right" verticalAlignment="bottom" id="QVs-ME-iUc"/>
+                                <label alignment="left" text="Next in:" id="Uc3-V1-T8c"/>
+                            </items>
+                        </group>
+                        <label width="136" height="27" alignment="center" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="728" y="344"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

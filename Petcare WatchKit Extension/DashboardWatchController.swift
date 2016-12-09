@@ -51,5 +51,11 @@ class DashboardWatchController: WKInterfaceController {
     @IBAction func gotToRoutine() {
     }
     
+    @IBAction func nailsButton() {
+        
+        print("nails")
+    }
+    
+    
     
 }
