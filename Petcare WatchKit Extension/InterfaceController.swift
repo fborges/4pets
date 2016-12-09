@@ -66,7 +66,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             print(dict)
             let dict = petList["PetCreated"] as! NSDictionary
             defaults.set([dict], forKey: "TestPet")
+            self.test = (defaults.array(forKey: "TestPet") as? [[String:String]])!
         }
+        
+        let printaDict = defaults.array(forKey: "TestPet") as? [[String:String]]
+        print(printaDict!)
         
         loadTableData()
         
