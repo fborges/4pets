@@ -16,7 +16,7 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate {
     @IBOutlet weak var petName: UILabel!
     @IBOutlet weak var petBreed: UILabel!
     @IBOutlet weak var petBrithday: UILabel!
-    @IBOutlet weak var petSex: UILabel!
+    @IBOutlet weak var petSexImageView: UIImageView!
     
     // internal variables
     var pet: Pet!
@@ -34,7 +34,7 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate {
         self.petName.text = pet.name
         self.petBreed.text = pet.breed
         self.petBrithday.text = dateFormatter.string( from: pet.birthdate! as Date )
-        self.petSex.text = pet.sex
+      //z  self.petSex.text = pet.sex
         
     }
     
