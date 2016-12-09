@@ -6,6 +6,8 @@
 	<string>en</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Por favor, permita acesso a camera</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Por favor, permita acesso a camera e sua galeria de imagens</string>
 	<key>CFBundleIdentifier</key>

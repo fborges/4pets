@@ -11,6 +11,8 @@
 		062891201DEC5D65001390B8 /* CoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0628911F1DEC5D65001390B8 /* CoreDataDAO.swift */; };
 		062891261DEC6441001390B8 /* NewPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062891251DEC6441001390B8 /* NewPetViewController.swift */; };
 		062A1E021DF9A47B005E7C86 /* PetWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062A1E011DF9A47B005E7C86 /* PetWatch.swift */; };
+		067DAF321DF9E2F6001C929E /* DashboardWatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067DAF311DF9E2F6001C929E /* DashboardWatchController.swift */; };
+		067DAF381DF9E738001C929E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 067DAF361DF9E738001C929E /* Interface.storyboard */; };
 		06AB41B51DF04CAC0093EA9A /* Veterinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41B31DF04CAC0093EA9A /* Veterinary.swift */; };
 		06AB41B61DF04CAC0093EA9A /* Veterinary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41B41DF04CAC0093EA9A /* Veterinary+CoreDataProperties.swift */; };
 		06AB41B91DF04D4E0093EA9A /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AB41B71DF04D4E0093EA9A /* Appointment.swift */; };
@@ -54,7 +56,6 @@
 		779B40E81DE86175004894FE /* PetcareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40E71DE86175004894FE /* PetcareTests.swift */; };
 		779B40F31DE86175004894FE /* PetcareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40F21DE86175004894FE /* PetcareUITests.swift */; };
 		779B40F81DE86175004894FE /* Petcare WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 779B40F71DE86175004894FE /* Petcare WatchKit App.app */; };
-		779B40FE1DE86175004894FE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40FC1DE86175004894FE /* Interface.storyboard */; };
 		779B41001DE86175004894FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779B40FF1DE86175004894FE /* Assets.xcassets */; };
 		779B41071DE86175004894FE /* Petcare WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 779B41061DE86175004894FE /* Petcare WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		779B410E1DE86175004894FE /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B410D1DE86175004894FE /* InterfaceController.swift */; };
@@ -152,6 +153,8 @@
 		062A1E011DF9A47B005E7C86 /* PetWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetWatch.swift; sourceTree = "<group>"; };
 		066210301DF6DFF000091DCC /* Petcare WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Petcare WatchKit App.entitlements"; sourceTree = "<group>"; };
 		066210311DF6E11900091DCC /* Petcare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Petcare.entitlements; sourceTree = "<group>"; };
+		067DAF311DF9E2F6001C929E /* DashboardWatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardWatchController.swift; sourceTree = "<group>"; };
+		067DAF371DF9E738001C929E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		06AB41B31DF04CAC0093EA9A /* Veterinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Veterinary.swift; sourceTree = "<group>"; };
 		06AB41B41DF04CAC0093EA9A /* Veterinary+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Veterinary+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		06AB41B71DF04D4E0093EA9A /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
@@ -184,7 +187,6 @@
 		779B40F21DE86175004894FE /* PetcareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetcareUITests.swift; sourceTree = "<group>"; };
 		779B40F41DE86175004894FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		779B40F71DE86175004894FE /* Petcare WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Petcare WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		779B40FD1DE86175004894FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		779B40FF1DE86175004894FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		779B41011DE86175004894FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		779B41061DE86175004894FE /* Petcare WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Petcare WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -421,8 +423,8 @@
 		779B40FB1DE86175004894FE /* Petcare WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				067DAF361DF9E738001C929E /* Interface.storyboard */,
 				066210301DF6DFF000091DCC /* Petcare WatchKit App.entitlements */,
-				779B40FC1DE86175004894FE /* Interface.storyboard */,
 				779B40FF1DE86175004894FE /* Assets.xcassets */,
 				779B41011DE86175004894FE /* Info.plist */,
 			);
@@ -440,6 +442,7 @@
 				779B41151DE86175004894FE /* Info.plist */,
 				779B410B1DE86175004894FE /* Supporting Files */,
 				06D895431DF82F58006E8E22 /* PetRowController.swift */,
+				067DAF311DF9E2F6001C929E /* DashboardWatchController.swift */,
 			);
 			path = "Petcare WatchKit Extension";
 			sourceTree = "<group>";
@@ -784,8 +787,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067DAF381DF9E738001C929E /* Interface.storyboard in Resources */,
 				779B41001DE86175004894FE /* Assets.xcassets in Resources */,
-				779B40FE1DE86175004894FE /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1097,6 +1100,7 @@
 				06D895401DF82D5A006E8E22 /* Deworming+CoreDataProperties.swift in Sources */,
 				06D895381DF82D40006E8E22 /* Bath+CoreDataProperties.swift in Sources */,
 				06D8953C1DF82D4D006E8E22 /* Recreation+CoreDataProperties.swift in Sources */,
+				067DAF321DF9E2F6001C929E /* DashboardWatchController.swift in Sources */,
 				06D8953B1DF82D49006E8E22 /* Recreation.swift in Sources */,
 				06D895441DF82F58006E8E22 /* PetRowController.swift in Sources */,
 				06D895341DF82D36006E8E22 /* Pet+CoreDataProperties.swift in Sources */,
@@ -1133,6 +1137,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		067DAF361DF9E738001C929E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				067DAF371DF9E738001C929E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		779B40D61DE86175004894FE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1147,14 +1159,6 @@
 				779B40DC1DE86175004894FE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		779B40FC1DE86175004894FE /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				779B40FD1DE86175004894FE /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -16,9 +16,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
     
     @IBOutlet var tableList: WKInterfaceTable!
     
-    var petArray: [PetWatch] = []
+    let defaults = UserDefaults.standard
     
-    var test: [String] = []
+    var test: [[String:String]] = [[:]]
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -31,12 +31,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        if let testDefaults = UserDefaults.standard.array(forKey: "testDefaults") as? [PetWatch] {
+        if let testDefaults = defaults.array(forKey: "TestPet") as? [[String:String]] {
             
+            test = testDefaults
+            loadTableData()
             
-        } else {
-            
-            UserDefaults.standard.set("Teste", forKey: "testDefaults")
         }
         
     }
@@ -49,32 +48,52 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
   
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String : Any]) {
         
-        let dict = petList["pets"] as! NSDictionary
-
-        let pet = PetWatch(name: dict["Name"] as! String)      
+        
+        let dict = petList["PetCreated"] as! NSDictionary
+        
+        if let testDefaults = defaults.array(forKey: "TestPet") as? [[String:String]] {
+            
+            //let pet = PetWatch(name: testDefaults[0])
+            
+            self.test = testDefaults
+            self.test.insert(dict as! [String:String], at: 0)
+            defaults.set(self.test, forKey: "TestPet")
+            print(self.test)
+            
+            
+        } else {
+            print("AQUIIII")
+            print(dict)
+            let dict = petList["PetCreated"] as! NSDictionary
+            defaults.set([dict], forKey: "TestPet")
+            self.test = (defaults.array(forKey: "TestPet") as? [[String:String]])!
+        }
+        
+        let printaDict = defaults.array(forKey: "TestPet") as? [[String:String]]
+        print(printaDict!)
         
         loadTableData()
-        
-        print(dict["Type"]!)
         
     }
     
     func loadTableData(){
         
-        tableList.setNumberOfRows(test.count, withRowType: "firstRow")
+        tableList.setNumberOfRows(test.count, withRowType: "petController")
         
         for (index, content) in test.enumerated(){
             
-            print(content)
+            let row = tableList.rowController(at: index) as! PetRowController
             
-        let row = tableList.rowController(at: index) as! PetRowController
-           
-            print(content)
+            row.petName.setText(content["Name"]!)
+            
             
         }
         
     }
     
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        self.pushController(withName: "dashboardPet", context: test[rowIndex])
+    }
     
     /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
     @available(watchOS 2.2, *)

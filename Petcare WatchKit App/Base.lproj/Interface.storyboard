@@ -15,14 +15,14 @@
                     <items>
                         <table alignment="left" id="UaM-Xl-0eg">
                             <items>
-                                <tableRow id="2yA-xo-ksb" customClass="PetRowController" customModule="Petcare_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="47" alignment="left" id="fhw-mb-tnX">
+                                <tableRow identifier="petController" id="2yA-xo-ksb" customClass="PetRowController" customModule="Petcare_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="45" alignment="left" id="fhw-mb-tnX">
                                         <items>
-                                            <label width="68" height="24" alignment="left" text="Label" textAlignment="center" id="M6q-wO-sYk"/>
+                                            <separator alignment="left" id="cQ4-73-ikX">
+                                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </separator>
+                                            <label width="110" height="24" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" id="M6q-wO-sYk"/>
                                         </items>
-                                        <connections>
-                                            <segue destination="RLQ-uS-50W" kind="push" id="WQR-xe-udF"/>
-                                        </connections>
                                     </group>
                                     <connections>
                                         <outlet property="petName" destination="M6q-wO-sYk" id="nKu-eq-7lD"/>
@@ -36,29 +36,30 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="344"/>
         </scene>
-        <!--Interface Controller-->
+        <!--dashboardPet-->
         <scene sceneID="7Bt-Fx-ekh">
             <objects>
-                <controller id="RLQ-uS-50W">
+                <controller identifier="dashboardPet" id="RLQ-uS-50W" customClass="DashboardWatchController" customModule="Petcare_WatchKit_Extension">
                     <items>
-                        <imageView height="50" alignment="center" id="eEn-nJ-OIa"/>
-                        <label alignment="center" text="Label" id="R9M-nC-FoG"/>
-                        <label alignment="center" text="Label" id="g8p-Qc-wM8"/>
-                        <separator alignment="left" id="siH-a4-MMO"/>
-                        <group width="134" height="44" alignment="center" id="PbC-r9-d33">
-                            <items>
-                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" id="Z2m-7q-Sxy"/>
-                                <label width="28" height="12" alignment="left" verticalAlignment="center" text="Label" id="Gr7-ZA-Roi"/>
-                                <imageView width="20" height="20" alignment="right" verticalAlignment="center" id="hAO-bw-rS1"/>
-                                <label width="28" height="12" alignment="right" verticalAlignment="center" text="Label" id="7Jd-nF-fOE"/>
-                            </items>
-                        </group>
+                        <imageView height="70" alignment="center" image="dog" id="eEn-nJ-OIa"/>
+                        <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="R9M-nC-FoG"/>
+                        <label alignment="center" verticalAlignment="bottom" text="Label" textAlignment="center" id="ARh-9O-TQr"/>
+                        <button width="1" height="35" alignment="center" verticalAlignment="bottom" title="Routine" id="qll-zR-eFQ">
+                            <connections>
+                                <action selector="gotToRoutine" destination="RLQ-uS-50W" id="3WA-pL-1qh"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="petBreed" destination="ARh-9O-TQr" id="nfS-tr-cJr"/>
+                        <outlet property="petImage" destination="eEn-nJ-OIa" id="rak-5k-sP3"/>
+                        <outlet property="petName" destination="R9M-nC-FoG" id="rPI-xm-iRL"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="457" y="344"/>
+            <point key="canvasLocation" x="474" y="344"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -81,7 +82,7 @@
             <objects>
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Petcare_WatchKit_App" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="457" y="643"/>
+            <point key="canvasLocation" x="474" y="643"/>
         </scene>
     </scenes>
 </document>
