@@ -80,12 +80,18 @@
                         </group>
                         <group width="1" alignment="left" verticalAlignment="bottom" id="SxM-d8-Swx">
                             <items>
-                                <timer alignment="right" verticalAlignment="bottom" id="QVs-ME-iUc"/>
+                                <timer alignment="right" verticalAlignment="bottom" enabled="YES" id="QVs-ME-iUc"/>
                                 <label alignment="left" text="Next in:" id="Uc3-V1-T8c"/>
                             </items>
                         </group>
-                        <label width="136" height="27" alignment="center" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
+                        <label width="136" height="27" alignment="left" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
                     </items>
+                    <connections>
+                        <outlet property="activityDateLabel" destination="KlI-5W-92I" id="VRb-Rl-UXD"/>
+                        <outlet property="activityImage" destination="nxm-jV-Sme" id="rtC-he-37b"/>
+                        <outlet property="activityLabel" destination="5Nh-N7-lZ3" id="S6i-Qg-mbh"/>
+                        <outlet property="countdownTimer" destination="QVs-ME-iUc" id="cCQ-cr-5Mz"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="728" y="344"/>
