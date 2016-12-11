@@ -54,6 +54,8 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.type.allowsEditingTextAttributes = false
         
         
+        
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

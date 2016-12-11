@@ -38,7 +38,7 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
 
         loadPetList()
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         // Do any additional setup after loading the view.
     }
     

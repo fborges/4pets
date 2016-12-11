@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="264"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1on-UW-HJf" id="amy-D9-deS">
-                                            <frame key="frameInset" width="375" height="263.5"/>
+                                            <frame key="frameInset" width="375" height="263"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-qF-Pwt"/>
@@ -269,6 +269,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQL-IH-fhe">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cMo-Yl-714"/>
+                                    <constraint firstAttribute="width" constant="50" id="fLj-If-kAJ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="question"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -280,6 +287,7 @@
                             <constraint firstItem="Bzx-tB-UdW" firstAttribute="centerX" secondItem="7je-75-zEw" secondAttribute="centerX" id="65w-FJ-VMH"/>
                             <constraint firstItem="9Mc-YP-gpd" firstAttribute="top" secondItem="UR5-fO-teh" secondAttribute="bottom" constant="-85" id="6Pu-et-0NN"/>
                             <constraint firstItem="2NI-rz-JzH" firstAttribute="centerX" secondItem="EEt-08-K6f" secondAttribute="centerX" id="6eM-SF-GR5"/>
+                            <constraint firstItem="mQL-IH-fhe" firstAttribute="trailing" secondItem="7je-75-zEw" secondAttribute="trailingMargin" id="75o-6c-fI7"/>
                             <constraint firstItem="J3m-Ha-KXU" firstAttribute="width" secondItem="Bzx-tB-UdW" secondAttribute="width" id="9zO-BP-O8F"/>
                             <constraint firstItem="OGd-c3-z7g" firstAttribute="top" secondItem="ngB-o8-i6r" secondAttribute="bottom" constant="15" id="ARg-iH-k8Z"/>
                             <constraint firstItem="ngB-o8-i6r" firstAttribute="leading" secondItem="7je-75-zEw" secondAttribute="leadingMargin" constant="10" id="CS1-QV-t0h"/>
@@ -292,6 +300,7 @@
                             <constraint firstItem="EEt-08-K6f" firstAttribute="centerY" secondItem="9Mc-YP-gpd" secondAttribute="centerY" id="bWh-vg-GGg"/>
                             <constraint firstItem="UR5-fO-teh" firstAttribute="top" secondItem="j9E-Vk-GMJ" secondAttribute="bottom" id="dJp-Nb-XEq"/>
                             <constraint firstItem="OGd-c3-z7g" firstAttribute="centerX" secondItem="ngB-o8-i6r" secondAttribute="centerX" id="ra0-Wz-q2P"/>
+                            <constraint firstItem="mQL-IH-fhe" firstAttribute="top" secondItem="j9E-Vk-GMJ" secondAttribute="bottom" constant="18" id="ufu-Gi-ydS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EEt-08-K6f" secondAttribute="trailing" constant="20" id="yz7-AA-BgH"/>
                             <constraint firstItem="2NI-rz-JzH" firstAttribute="centerY" secondItem="xsc-JM-gZw" secondAttribute="centerY" id="zQc-7G-3Bs"/>
                         </constraints>
@@ -328,18 +337,18 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NTh-B8-dVE" id="x9L-G0-RHV">
-                                            <frame key="frameInset" width="375" height="43.5"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0HG-tX-Gjp">
-                                                    <frame key="frameInset" minX="15" minY="5" width="33.5" height="20.5"/>
+                                                    <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y81-pH-Oar">
-                                                    <frame key="frameInset" minX="15" minY="25.5" width="44" height="14.5"/>
+                                                    <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -549,7 +558,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mft-A0-0PW" id="TLh-jn-BQR">
-                                            <frame key="frameInset" width="375" height="60.5"/>
+                                            <frame key="frameInset" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs2-zp-X21">
@@ -638,8 +647,9 @@
     <resources>
         <image name="initialscreen" width="642" height="1138"/>
         <image name="photoIcon" width="376" height="376"/>
+        <image name="question" width="157" height="157"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="s1B-Rb-Son"/>
+        <segue reference="Wb8-JC-Blg"/>
     </inferredMetricsTieBreakers>
 </document>
