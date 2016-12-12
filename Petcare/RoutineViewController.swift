@@ -23,19 +23,19 @@ class RoutineViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         switch routineType {
         case 0:
-            routineArray = pet?.bath!.array as! [Bath]
+            routineArray.append(pet?.routine!.array[0] as! Routine)
         case 1:
-            routineArray = pet?.hair!.array as! [Hair]
+            routineArray.append(pet?.routine!.array[1] as! Routine)
         case 2:
-            routineArray = pet?.teeth!.array as! [Teeth]
+            routineArray.append(pet?.routine!.array[2] as! Routine)
         case 3:
-            routineArray = pet?.nails!.array as! [Nails]
+            routineArray.append(pet?.routine!.array[3] as! Routine)
         case 4:
-            routineArray = pet?.recreation!.array as! [Recreation]
+            routineArray.append(pet?.routine!.array[4] as! Routine)
         case 5:
-            routineArray = pet?.deworming!.array as! [Deworming]
+            routineArray.append(pet?.routine!.array[5] as! Routine)
         case 6:
-            routineArray = pet?.vaccination!.array as! [Vaccination]
+            routineArray.append(pet?.routine!.array[6] as! Routine)
         default:
             print("error")
         }
