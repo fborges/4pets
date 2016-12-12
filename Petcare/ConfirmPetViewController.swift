@@ -73,118 +73,50 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
     }
     
     
-    func addTimeByFrequency(date: Date, frequency: String) -> Date {
+    
+    func scheduleForFequency(hour: Int, minute: Int, amPm: String, frequency: String) -> DateComponents {
         var dateComponent = DateComponents()
-        let calendar = Calendar.autoupdatingCurrent
-        var finalDate: Date!
+        var fixedHour: Int!
         
-        //        switch frequency {
-        //        case "Daily":
-        //            dateComponent.day = 1
-        //        case "3 times a week":
-        //            dateComponent.day = 3
-        //        case "5 times a week":
-        //            dateComponent.day = 5
-        //        case "Weekly":
-        //            dateComponent.day = 7
-        //        case "Monthly":
-        //            dateComponent.day = 30
-        //        case "Yearly":
-        //            dateComponent.day = 365
-        //        default:
-        //            dateComponent.day = 0
-        //
-        //        }
-        //
-        //        finalDate = calendar.date(byAdding: dateComponent, to: Date())
-        
-        dateComponent.second = 5
-        finalDate = calendar.date(byAdding: dateComponent, to: Date())
-        print(finalDate)
-        return finalDate
-    }
-    
-    func dateForFequency(hour: Int, minute: Int, amPm: String, frequency: String) -> Date {
-        var dateComponent = DateComponents()
-        let calendar = Calendar.autoupdatingCurrent
-        var finalDate: Date!
-        let todayDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
-        
-        //        switch amPm {
-        //        case "AM":
-        //            dateComponent.hour = hour
-        //            dateComponent.minute = minute
-        //        case "PM":
-        //            dateComponent.hour = hour + 12
-        //            dateComponent.minute = minute
-        //        default:
-        //            dateComponent.hour = hour
-        //            dateComponent.minute = minute
-        //        }
-        //
-        //        switch frequency {
-        //        case "Daily":
-        //            dateComponent.day = 1
-        //        case "3 times a week":
-        //            dateComponent.day = 3
-        //        case "5 times a week":
-        //            dateComponent.day = 5
-        //        case "Weekly":
-        //            dateComponent.day = 7
-        //        case "Monthly":
-        //            dateComponent.day = 30
-        //        case "Yearly":
-        //            dateComponent.day = 365
-        //        default:
-        //            dateComponent.day = 0
-        //
-        //        }
-        dateComponent.second = 20
-        finalDate = calendar.date(byAdding: dateComponent, to: Date())
-        // finalDate = calendar.date(byAdding: dateComponent, to: todayDate!)
-        
-        print(finalDate)
-        return finalDate
-    }
-    
-    
-    func scheduleNotification(at date: Date) -> DateComponents{
-        let calendar = Calendar(identifier: .gregorian)
-        let components = calendar.dateComponents(in: .current, from: date)
-        let newComponents = DateComponents(calendar: calendar, timeZone: .current, month: components.month, day: components.day, hour: components.hour, minute: components.minute)
-        return newComponents
-    }
-    
-    func notificationLoop() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/aaaa h:mm"
-        let routineArray = pet?.routine!.array as! [Routine]
-        
-        for routine in routineArray {
-            if formatter.string(from: routine.date as! Date) == formatter.string(from: Date()) {
-                // setting routine date
-                
-                let routineDate = addTimeByFrequency(date: routine.date as! Date, frequency: routine.frequency!)
-                routine.date = routineDate as NSDate?
-                
-                // adding notification
-                notification.body = "Just remind you about \((self.pet.name)!) \(routine.name)"
-                notification.badge = NSNumber(value: badgeNumber + 1)
-                let trigger = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: routineDate), repeats: false)
-                
-                let request = UNNotificationRequest(identifier: "routine3", content: notification, trigger: trigger)
-                UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
-                    if error != nil {
-                        print(error?.localizedDescription ?? "--")
-                    }
-                })
-                
-                let timer = Timer(fireAt: routineDate , interval: 0, target: self, selector: #selector(notificationLoop), userInfo: nil, repeats: false)
-                RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
-            }
+        if amPm == "PM" {
+            fixedHour = hour + 12
+        } else {
+            fixedHour = hour
         }
         
+        switch frequency {
+            case "Daily":
+                dateComponent.hour = fixedHour
+                dateComponent.minute = minute
+            case "3 times a week":
+                dateComponent.day = 3
+                dateComponent.hour = fixedHour
+                dateComponent.minute = minute
+            case "5 times a week":
+                dateComponent.day = 5
+                dateComponent.hour = fixedHour
+                dateComponent.minute = minute
+            case "Weekly":
+                dateComponent.day = 7
+                dateComponent.hour = fixedHour
+                dateComponent.minute = minute
+            case "Monthly":
+                dateComponent.day = 30
+                dateComponent.hour = fixedHour
+                dateComponent.minute = minute
+            case "Yearly":
+                dateComponent.day = 365
+                dateComponent.hour = fixedHour
+                dateComponent.minute = minute
+            default:
+                dateComponent.minute = 0
+        }
+
+        
+        return dateComponent
     }
+    
+    
     
     func saveOnDAO() {
         
@@ -195,7 +127,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
         let routineDao = CoreDataDAO<Routine>()
         var routineCell: RoutineTableViewCell!
         
-        for index in 0...1 {
+        for index in 0...6 {
             let routine = routineDao.new()
             routine.pet = self.pet
             
@@ -246,8 +178,9 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
             minute = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
             amPm = routineCell.routineAmPm.text
             
-            let routineDate = dateForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: routineCell.routineFrequency.title(for: .normal)!) as NSDate?
-            routine.date = Date() as NSDate? //routineDate
+            let dateComponents = scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: routineCell.routineFrequency.title(for: .normal)!)
+            let calendar = Calendar.autoupdatingCurrent
+            routine.date = calendar.date(from: dateComponents) as NSDate? //routineTime
             
             // setting routine frequency
             routine.frequency = routineCell.routineFrequency.title(for: .normal)!
@@ -259,20 +192,13 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
             
             // adding notification
             notification.badge = NSNumber(value: badgeNumber + 1)
-            //let triggerRoutine = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-            let triggerRoutine = UNCalendarNotificationTrigger(dateMatching: scheduleNotification(at: routineDate as! Date), repeats: false)
-            let requestRoutine = UNNotificationRequest(identifier: "routine\(index)", content: notification, trigger: triggerRoutine)
-            UNUserNotificationCenter.current().add(requestRoutine, withCompletionHandler:{ (error) in
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            let request = UNNotificationRequest(identifier: "routine\(index)", content: notification, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                 if error != nil {
                     print(error?.localizedDescription ?? "--")
                 }
             })
-            
-            
-            let timer = Timer(fireAt: routineDate as! Date, interval: 0, target: self, selector: #selector(notificationLoop), userInfo: nil, repeats: false)
-            //timer.fire()
-            RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
-            
             
             
         }
