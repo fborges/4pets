@@ -238,9 +238,9 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         savePet()
         
         let dict = ["Name": self.petToCreate.name!, "Type": self.petToCreate.type!,
-                    "Breed": self.petToCreate.breed!] as [String : Any]
+                    "Breed": self.petToCreate.breed!, "TypeSended": "Pet"] as [String : Any]
                 
-        WCSession.default().transferUserInfo(["PetCreated": dict])
+        WCSession.default().transferUserInfo(["Created": dict])
         let confirmPetController = segue.destination as! ConfirmPetViewController
         
         confirmPetController.pet = petToCreate

@@ -45,11 +45,21 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         super.didDeactivate()
     }
     
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routine: [String : Any]) {
+        
+        
+        //let dict = [[String : String]] = []
+        
+        
+        
+        
+    }
   
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String : Any]) {
         
         
-        let dict = petList["PetCreated"] as! NSDictionary
+        let dict = petList["Created"] as! NSDictionary
+        
         
         if let testDefaults = defaults.array(forKey: "TestPet") as? [[String:String]] {
             
@@ -63,13 +73,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
         } else {
             print(dict)
-            let dict = petList["PetCreated"] as! NSDictionary
+            let dict = petList["Created"] as! NSDictionary
             defaults.set([dict], forKey: "TestPet")
             self.test = (defaults.array(forKey: "TestPet") as? [[String:String]])!
         }
-        
-        let printaDict = defaults.array(forKey: "TestPet") as? [[String:String]]
-        print(printaDict!)
         
         loadTableData()
         

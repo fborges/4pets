@@ -23,9 +23,15 @@ class ActivityController: WKInterfaceController{
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        print(context!)
+
+        self.activityLabel.setText(context as? String)
         
+        var todaysDate = NSDate()
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         
-        
+        self.activityDateLabel.setText(dateFormatter.string(from: todaysDate as Date))
         
         // Configure interface objects here.
     }
@@ -33,7 +39,6 @@ class ActivityController: WKInterfaceController{
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
         
         //INSERIR A DATA A PARTIR DA DATA PASSADA PELA ATIVIDADE EM QUESTÃO
         self.countdownTimer.setDate(NSDate(timeIntervalSinceNow: 10) as Date)

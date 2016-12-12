@@ -49,9 +49,21 @@
                     </items>
                     <menu key="menu" id="2Vy-Sa-02h">
                         <items>
-                            <menuItem title="Bath" icon="add" id="IKo-Xw-fhg"/>
-                            <menuItem title="Recreation" icon="decline" id="Q9v-Vx-pmD"/>
-                            <menuItem title="Hair" icon="more" id="iB3-vf-Q2A"/>
+                            <menuItem title="Bath" icon="add" id="IKo-Xw-fhg">
+                                <connections>
+                                    <action selector="bathButton" destination="RLQ-uS-50W" id="v10-BV-lMO"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Recreation" icon="decline" id="Q9v-Vx-pmD">
+                                <connections>
+                                    <action selector="recreationButton" destination="RLQ-uS-50W" id="TI1-4l-nzi"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hair" icon="more" id="iB3-vf-Q2A">
+                                <connections>
+                                    <action selector="hairButton" destination="RLQ-uS-50W" id="QM9-uo-jZV"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -68,23 +80,19 @@
             <objects>
                 <controller identifier="activity" id="OgK-Jg-cZe" customClass="ActivityController" customModule="Petcare_WatchKit_Extension">
                     <items>
-                        <dateLabel alignment="right" id="Cg0-V3-PYm">
-                            <dateFormatterStyle key="dateStyle" short="YES"/>
-                            <dateFormatterStyle key="timeStyle" short="YES"/>
-                        </dateLabel>
-                        <group width="136" alignment="right" id="SZ4-Ix-CCa">
+                        <group width="136" height="79" alignment="left" id="SZ4-Ix-CCa">
                             <items>
-                                <label width="74" height="27" alignment="right" text="Activity" id="5Nh-N7-lZ3"/>
-                                <imageView width="42" alignment="left" id="nxm-jV-Sme"/>
+                                <label width="83" height="28" alignment="right" verticalAlignment="center" text="Activity" id="5Nh-N7-lZ3"/>
+                                <imageView width="48" height="45" alignment="left" verticalAlignment="center" image="dog" id="nxm-jV-Sme"/>
                             </items>
                         </group>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="SxM-d8-Swx">
+                        <label width="136" height="42" alignment="left" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="SxM-d8-Swx">
                             <items>
                                 <timer alignment="right" verticalAlignment="bottom" enabled="YES" id="QVs-ME-iUc"/>
                                 <label alignment="left" text="Next in:" id="Uc3-V1-T8c"/>
                             </items>
                         </group>
-                        <label width="136" height="27" alignment="left" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
                     </items>
                     <connections>
                         <outlet property="activityDateLabel" destination="KlI-5W-92I" id="VRb-Rl-UXD"/>

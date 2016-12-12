@@ -19,18 +19,22 @@ class DashboardWatchController: WKInterfaceController {
     
     @IBOutlet var petBreed: WKInterfaceLabel!
     
+    let defaults = UserDefaults.standard
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        let dict = context! as! NSDictionary
-        self.petName.setText(dict["Name"] as? String)
-        self.petBreed.setText(dict["Breed"] as? String)
-        if (dict["Type"] as? String == "Cat"){
-            
-            self.petImage.setImageNamed("cat")
-        } else{
-            self.petImage.setImageNamed("dog")
-        }
+        
+        
+//        let dict = context! as! NSDictionary
+//        self.petName.setText(dict["Name"] as? String)
+//        self.petBreed.setText(dict["Breed"] as? String)
+//        if (dict["Type"] as? String == "Cat"){
+//            
+//            self.petImage.setImageNamed("cat")
+//        } else{
+//            self.petImage.setImageNamed("dog")
+//        }
         
         
         // Configure interface objects here.
@@ -48,14 +52,55 @@ class DashboardWatchController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    @IBAction func gotToRoutine() {
-    }
     
-    @IBAction func nailsButton() {
+    @IBAction func bathButton() {
         
-        print("nails")
+        let dict = "Bath"
+        
+        self.pushToRoutine(context: dict)
+    }
+    
+    @IBAction func recreationButton() {
+        
+        let dict = "Recreation"
+        
+        self.pushToRoutine(context: dict)
+        
+    }
+    
+    @IBAction func hairButton() {
+        
+        let dict = "Hair"
+        
+        self.pushToRoutine(context: dict)
+        
     }
     
     
+    @IBAction func nailButton() {
+        
+//        if let testDefaults = defaults.array(forKey: "NailsPet") as? [[String:String]] {
+            
+//            self.test = testDefaults
+//            self.test.insert(dict as! [String:String], at: 0)
+//            defaults.set(self.test, forKey: "TestPet")
+//            print(self.test)
+//            
+//            
+//        } else {
+//
+//            let dict = petList["PetCreated"] as! NSDictionary
+//            defaults.set([dict], forKey: "TestPet")
+//            self.test = (defaults.array(forKey: "TestPet") as? [[String:String]])!
+       }
+    
+
+
+
+
+    
+    func pushToRoutine(context: Any){
+        self.pushController(withName: "activity", context: context)
+    }
     
 }
