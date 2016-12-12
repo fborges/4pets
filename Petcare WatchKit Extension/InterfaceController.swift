@@ -38,31 +38,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
         }
         
-        var dict: [[String : String]] = [[:]]
-        
-        let bath = ["Type":"Bath", "time":"12:00","frequency":"daily"]
-        dict.insert(bath, at: 0)
-        
-        if let testDefaults = defaults.array(forKey: "TestBath") as? [[String:String]] {
-            
-            //let pet = PetWatch(name: testDefaults[0])
-            
-            self.test = testDefaults
-            defaults.set(self.test, forKey: "TestBath")
-            print(self.test)
-            
-            
-        } else {
-            
-            let teste = dict[0] as NSDictionary
-            
-            print(teste)
-            defaults.set([teste], forKey: "TestBath")
-        }
-    
-        let array = defaults.array(forKey: "TestBath") as? [[String:String]]
-        
-        print(array!)
         
     }
     
@@ -73,7 +48,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
     
   
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String : Any]) {
-        
         
         let dict = petList["Created"] as! NSDictionary
         
@@ -115,7 +89,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         
         let bath = ["Type":"Bath", "time":dictBath["time"] as? String,"frequency":dictBath["frequency"] as? String,
                     "Pet":dictBath["petName"] as? String]
-        
+        print(bath)
         if let testDefaults = defaults.array(forKey: "TestBath") as? [[String:String]] {
             
             var arrayToInsert = testDefaults
@@ -124,10 +98,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
         } else {
             
-            let teste = bath as NSDictionary
-            
-            defaults.set([teste], forKey: "TestBath")
+            defaults.set([bath], forKey: "TestBath")
         }
+        
+
     }
     
     func saveRecreationToDefaults(routine: [String : Any]){
@@ -136,7 +110,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         
         let dictRecreation = dictionary["Recreation"] as! NSDictionary
         
-        let recreation = ["Type":"Bath", "time":dictRecreation["time"] as? String,"frequency":dictRecreation["frequency"] as? String, "Pet":dictRecreation["petName"] as? String]
+        let recreation = ["Type":"Recreation", "time":dictRecreation["time"] as? String,"frequency":dictRecreation["frequency"] as? String, "Pet":dictRecreation["petName"] as? String]
         
         if let testDefaults = defaults.array(forKey: "TestRecreation") as? [[String:String]] {
             
@@ -146,10 +120,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
         } else {
             
-            let teste = recreation as NSDictionary
-            
-            defaults.set([teste], forKey: "TestRecreation")
+            defaults.set([recreation], forKey: "TestRecreation")
         }
+
     }
     
     func saveHairToDefaults(routine: [String : Any]){
@@ -169,10 +142,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
         } else {
             
-            let teste = hair as NSDictionary
-            
-            defaults.set([teste], forKey: "TestHair")
+            defaults.set([hair], forKey: "TestHair")
         }
+
     }
     
     func loadTableData(){
@@ -199,10 +171,5 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
     public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
-    
-    //    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-    //        petArray = (applicationContext["petList"] as? [Pet])!
-    //        loadTableData()
-    //    }
 
 }

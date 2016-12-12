@@ -78,8 +78,7 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         #if os(watchOS)
-            let dict = userInfo["Created"] as! NSDictionary
-            if dict["TypeSended"] as! String == "Pet" {
+            if userInfo["TypeSended"] as! String == "Pet" {
                 delegate?.watchConnectivityManager(self, updateWithPetList: userInfo)
             } else {
                 delegate?.watchConnectivityManager(self, updateWithRoutine: userInfo)
