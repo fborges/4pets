@@ -43,11 +43,26 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         let bath = ["Type":"Bath", "time":"12:00","frequency":"daily"]
         dict.insert(bath, at: 0)
         
-        print(dict[0])
-        print(dict[0]["Type"]!)
-        print(dict[0]["time"]!)
-        print(dict[0]["frequency"]!)
+        if let testDefaults = defaults.array(forKey: "TestBath") as? [[String:String]] {
+            
+            //let pet = PetWatch(name: testDefaults[0])
+            
+            self.test = testDefaults
+            defaults.set(self.test, forKey: "TestBath")
+            print(self.test)
+            
+            
+        } else {
+            
+            let teste = dict[0] as NSDictionary
+            
+            print(teste)
+            defaults.set([teste], forKey: "TestBath")
+        }
+    
+        let array = defaults.array(forKey: "TestBath") as? [[String:String]]
         
+        print(array!)
         
     }
     
@@ -56,12 +71,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         super.didDeactivate()
     }
     
-    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routine: [String : Any]) {
-        
-        
-        
-        
-    }
   
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String : Any]) {
         
@@ -88,6 +97,82 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         
         loadTableData()
         
+    }
+    
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routine: [String : Any]) {
+        
+        saveBathToDefaults(routine: routine)
+        saveRecreationToDefaults(routine: routine)
+        saveHairToDefaults(routine: routine)
+        
+    }
+    
+    func saveBathToDefaults(routine: [String : Any]){
+        
+        let dictionary = routine["Created"] as! NSDictionary
+        
+        let dictBath = dictionary["Bath"] as! NSDictionary
+        
+        let bath = ["Type":"Bath", "time":dictBath["time"] as? String,"frequency":dictBath["frequency"] as? String,
+                    "Pet":dictBath["petName"] as? String]
+        
+        if let testDefaults = defaults.array(forKey: "TestBath") as? [[String:String]] {
+            
+            var arrayToInsert = testDefaults
+            arrayToInsert.insert(bath as! [String:String], at: 0)
+            defaults.set(arrayToInsert, forKey: "TestBath")
+            
+        } else {
+            
+            let teste = bath as NSDictionary
+            
+            defaults.set([teste], forKey: "TestBath")
+        }
+    }
+    
+    func saveRecreationToDefaults(routine: [String : Any]){
+        
+        let dictionary = routine["Created"] as! NSDictionary
+        
+        let dictRecreation = dictionary["Recreation"] as! NSDictionary
+        
+        let recreation = ["Type":"Bath", "time":dictRecreation["time"] as? String,"frequency":dictRecreation["frequency"] as? String, "Pet":dictRecreation["petName"] as? String]
+        
+        if let testDefaults = defaults.array(forKey: "TestRecreation") as? [[String:String]] {
+            
+            var arrayToInsert = testDefaults
+            arrayToInsert.insert(recreation as! [String:String], at: 0)
+            defaults.set(arrayToInsert, forKey: "TestRecreation")
+            
+        } else {
+            
+            let teste = recreation as NSDictionary
+            
+            defaults.set([teste], forKey: "TestRecreation")
+        }
+    }
+    
+    func saveHairToDefaults(routine: [String : Any]){
+        
+        let dictionary = routine["Created"] as! NSDictionary
+        
+        let dictHair = dictionary["Hair"] as! NSDictionary
+        
+        let hair = ["Type":"Hair", "time":dictHair["time"] as? String,"frequency":dictHair["frequency"] as? String,
+                    "Pet":dictHair["petName"] as? String]
+        
+        if let testDefaults = defaults.array(forKey: "TestHair") as? [[String:String]] {
+            
+            var arrayToInsert = testDefaults
+            arrayToInsert.insert(hair as! [String:String], at: 0)
+            defaults.set(arrayToInsert, forKey: "TestHair")
+            
+        } else {
+            
+            let teste = hair as NSDictionary
+            
+            defaults.set([teste], forKey: "TestHair")
+        }
     }
     
     func loadTableData(){

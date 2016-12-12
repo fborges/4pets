@@ -11,8 +11,6 @@ import Foundation
 class PetWatch{
 
     public var name: String?
-    public var photo: NSData?
-
     
     init(name: String) {
         

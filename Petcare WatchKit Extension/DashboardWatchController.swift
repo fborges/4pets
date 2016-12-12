@@ -12,6 +12,7 @@ import WatchKit
 
 class DashboardWatchController: WKInterfaceController {
     
+    var pet: String!
     
     @IBOutlet var petImage: WKInterfaceImage!
     
@@ -25,16 +26,17 @@ class DashboardWatchController: WKInterfaceController {
         super.awake(withContext: context)
         
         
-        
-//        let dict = context! as! NSDictionary
-//        self.petName.setText(dict["Name"] as? String)
-//        self.petBreed.setText(dict["Breed"] as? String)
-//        if (dict["Type"] as? String == "Cat"){
-//            
-//            self.petImage.setImageNamed("cat")
-//        } else{
-//            self.petImage.setImageNamed("dog")
-//        }
+        let dict = context! as! NSDictionary
+        self.pet = dict["Name"] as? String
+
+        self.petName.setText(dict["Name"] as? String)
+        self.petBreed.setText(dict["Breed"] as? String)
+        if (dict["Type"] as? String == "Cat"){
+            
+            self.petImage.setImageNamed("cat")
+        } else{
+            self.petImage.setImageNamed("dog")
+        }
         
         
         // Configure interface objects here.
@@ -55,48 +57,57 @@ class DashboardWatchController: WKInterfaceController {
     
     @IBAction func bathButton() {
         
-        let dict = "Bath"
+        if let testDefaults = defaults.array(forKey: "TestBath") as? [[String:String]] {
+            
+            
+            for bath in testDefaults {
+                
+                if bath["Pet"] == self.pet {
+                    
+                     self.pushToRoutine(context: bath)
+                    
+                }
+            }
+            
+        }
         
-        self.pushToRoutine(context: dict)
     }
     
     @IBAction func recreationButton() {
         
-        let dict = "Recreation"
-        
-        self.pushToRoutine(context: dict)
+        if let testDefaults = defaults.array(forKey: "TestRecreation") as? [[String:String]] {
+            
+            
+            for recreation in testDefaults {
+                
+                if recreation["Pet"] == self.pet {
+                    
+                    self.pushToRoutine(context: recreation)
+                    
+                }
+            }
+            
+        }
         
     }
     
     @IBAction func hairButton() {
         
-        let dict = "Hair"
-        
-        self.pushToRoutine(context: dict)
+        if let testDefaults = defaults.array(forKey: "TestHair") as? [[String:String]] {
+            
+            
+            for hair in testDefaults {
+                
+                if hair["Pet"] == self.pet {
+                    
+                    self.pushToRoutine(context: hair)
+                    
+                }
+            }
+            
+        }
         
     }
-    
-    
-    @IBAction func nailButton() {
-        
-//        if let testDefaults = defaults.array(forKey: "NailsPet") as? [[String:String]] {
-            
-//            self.test = testDefaults
-//            self.test.insert(dict as! [String:String], at: 0)
-//            defaults.set(self.test, forKey: "TestPet")
-//            print(self.test)
-//            
-//            
-//        } else {
-//
-//            let dict = petList["PetCreated"] as! NSDictionary
-//            defaults.set([dict], forKey: "TestPet")
-//            self.test = (defaults.array(forKey: "TestPet") as? [[String:String]])!
-       }
-    
-
-
-
 
     
     func pushToRoutine(context: Any){
