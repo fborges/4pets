@@ -38,6 +38,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
         }
         
+        var dict: [[String : String]] = [[:]]
+        
+        let bath = ["Type":"Bath", "time":"12:00","frequency":"daily"]
+        dict.insert(bath, at: 0)
+        
+        print(dict[0])
+        print(dict[0]["Type"]!)
+        print(dict[0]["time"]!)
+        print(dict[0]["frequency"]!)
+        
+        
     }
     
     override func didDeactivate() {
@@ -46,9 +57,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
     }
     
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routine: [String : Any]) {
-        
-        
-        //let dict = [[String : String]] = []
         
         
         

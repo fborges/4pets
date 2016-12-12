@@ -1,18 +1,15 @@
 //
-//  Routine.swift
+//  Routine+CoreDataClass.swift
 //  Petcare
 //
-//  Created by Raul Marques de Oliveira on 06/12/16.
+//  Created by Raul Marques de Oliveira on 09/12/16.
 //  Copyright © 2016 Felipe Borges. All rights reserved.
 //
 
 import Foundation
-import UIKit
 import CoreData
 
+@objc(Routine)
 public class Routine: NSManagedObject {
-    
-    @NSManaged public var date: NSDate?
-    @NSManaged public var pet: Pet?
 
 }

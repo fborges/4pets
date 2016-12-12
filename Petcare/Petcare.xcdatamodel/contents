@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Appointment" representedClassName="Appointment" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" syncable="YES"/>
         <relationship name="veterinary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Veterinary" syncable="YES"/>
     </entity>
-    <entity name="Bath" representedClassName="Bath" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="bath" inverseEntity="Pet" syncable="YES"/>
-    </entity>
-    <entity name="Deworming" representedClassName="Deworming" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="deworming" inverseEntity="Pet" syncable="YES"/>
-    </entity>
-    <entity name="Hair" representedClassName="Hair" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="hair" inverseEntity="Pet" syncable="YES"/>
-    </entity>
-    <entity name="Nails" representedClassName="Nails" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="nails" inverseEntity="Pet" syncable="YES"/>
-    </entity>
+    <entity name="Bath" representedClassName="Bath" parentEntity="Routine" syncable="YES"/>
+    <entity name="Deworming" representedClassName="Deworming" parentEntity="Routine" syncable="YES"/>
+    <entity name="Hair" representedClassName="Hair" parentEntity="Routine" syncable="YES"/>
+    <entity name="Nails" representedClassName="Nails" parentEntity="Routine" syncable="YES"/>
     <entity name="Pet" representedClassName="Pet" syncable="YES">
         <attribute name="birthdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="breed" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,41 +17,33 @@
         <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="bath" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Bath" inverseName="pet" inverseEntity="Bath" syncable="YES"/>
-        <relationship name="deworming" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Deworming" inverseName="pet" inverseEntity="Deworming" syncable="YES"/>
-        <relationship name="hair" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Hair" inverseName="pet" inverseEntity="Hair" syncable="YES"/>
-        <relationship name="nails" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Nails" inverseName="pet" inverseEntity="Nails" syncable="YES"/>
-        <relationship name="recreation" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Recreation" inverseName="pet" inverseEntity="Recreation" syncable="YES"/>
-        <relationship name="teeth" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Teeth" inverseName="pet" inverseEntity="Teeth" syncable="YES"/>
-        <relationship name="vaccination" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Vaccination" inverseName="pet" inverseEntity="Vaccination" syncable="YES"/>
+        <relationship name="routine" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Routine" inverseName="pet" inverseEntity="Routine" syncable="YES"/>
     </entity>
-    <entity name="Recreation" representedClassName="Recreation" syncable="YES">
+    <entity name="Recreation" representedClassName="Recreation" parentEntity="Routine" syncable="YES"/>
+    <entity name="Routine" representedClassName="Routine" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="recreation" inverseEntity="Pet" syncable="YES"/>
+        <attribute name="frequency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="routine" inverseEntity="Pet" syncable="YES"/>
     </entity>
-    <entity name="Teeth" representedClassName="Teeth" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="teeth" inverseEntity="Pet" syncable="YES"/>
-    </entity>
-    <entity name="Vaccination" representedClassName="Vaccination" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="vaccination" inverseEntity="Pet" syncable="YES"/>
-    </entity>
+    <entity name="Teeth" representedClassName="Teeth" parentEntity="Routine" syncable="YES"/>
+    <entity name="Vaccination" representedClassName="Vaccination" parentEntity="Routine" syncable="YES"/>
     <entity name="Veterinary" representedClassName="Veterinary" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Bath" positionX="-63" positionY="27" width="128" height="75"/>
-        <element name="Deworming" positionX="36" positionY="81" width="128" height="75"/>
-        <element name="Hair" positionX="-54" positionY="36" width="128" height="75"/>
-        <element name="Nails" positionX="-18" positionY="54" width="128" height="75"/>
-        <element name="Pet" positionX="-63" positionY="-18" width="128" height="240"/>
-        <element name="Recreation" positionX="18" positionY="72" width="128" height="75"/>
-        <element name="Teeth" positionX="-36" positionY="45" width="128" height="75"/>
-        <element name="Vaccination" positionX="0" positionY="63" width="128" height="75"/>
-        <element name="Veterinary" positionX="-9" positionY="90" width="128" height="90"/>
         <element name="Appointment" positionX="0" positionY="99" width="128" height="105"/>
+        <element name="Bath" positionX="-63" positionY="27" width="128" height="45"/>
+        <element name="Deworming" positionX="36" positionY="81" width="128" height="45"/>
+        <element name="Hair" positionX="-54" positionY="36" width="128" height="45"/>
+        <element name="Nails" positionX="-18" positionY="54" width="128" height="45"/>
+        <element name="Pet" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Recreation" positionX="18" positionY="72" width="128" height="45"/>
+        <element name="Teeth" positionX="-36" positionY="45" width="128" height="45"/>
+        <element name="Vaccination" positionX="0" positionY="63" width="128" height="45"/>
+        <element name="Veterinary" positionX="-9" positionY="90" width="128" height="90"/>
+        <element name="Routine" positionX="-9" positionY="90" width="128" height="105"/>
     </elements>
 </model>
