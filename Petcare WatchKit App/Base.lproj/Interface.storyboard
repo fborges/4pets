@@ -88,8 +88,17 @@
                             </items>
                         </group>
                         <separator alignment="left" id="O28-r1-olK"/>
-                        <label width="136" height="21" alignment="left" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
                         <label alignment="left" text="FrequencyLabel" id="YUR-EI-Fpx"/>
+                        <group width="1" height="27" alignment="left" id="5gx-Kk-Q3r">
+                            <items>
+                                <label width="93" height="21" alignment="left" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
+                                <button width="31" height="24" alignment="center" verticalAlignment="center" title="+" id="mp8-B9-scu">
+                                    <connections>
+                                        <action selector="addHour" destination="OgK-Jg-cZe" id="WwS-lj-rK1"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                         <separator alignment="left" verticalAlignment="bottom" id="KTZ-Oe-VzJ"/>
                         <group width="1" height="28" alignment="center" verticalAlignment="bottom" id="SxM-d8-Swx">
                             <items>
@@ -107,7 +116,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="752" y="344"/>
+            <point key="canvasLocation" x="752" y="338.5"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

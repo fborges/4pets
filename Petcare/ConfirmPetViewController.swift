@@ -93,9 +93,10 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
     
     func castDateToString(date: NSDate) -> String{
         
+        print(date)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        print(dateFormatter.string(from: date as Date))
         return dateFormatter.string(from: date as Date)
     }
     
