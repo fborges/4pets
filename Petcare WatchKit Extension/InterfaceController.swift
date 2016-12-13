@@ -38,6 +38,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
         }
         
+        
     }
     
     override func didDeactivate() {
@@ -48,8 +49,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
   
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String : Any]) {
         
+        let dict = petList["Created"] as! NSDictionary
         
-        let dict = petList["PetCreated"] as! NSDictionary
         
         if let testDefaults = defaults.array(forKey: "TestPet") as? [[String:String]] {
             
@@ -63,16 +64,87 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
         } else {
             print(dict)
-            let dict = petList["PetCreated"] as! NSDictionary
+            let dict = petList["Created"] as! NSDictionary
             defaults.set([dict], forKey: "TestPet")
             self.test = (defaults.array(forKey: "TestPet") as? [[String:String]])!
         }
         
-        let printaDict = defaults.array(forKey: "TestPet") as? [[String:String]]
-        print(printaDict!)
-        
         loadTableData()
         
+    }
+    
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routine: [String : Any]) {
+        
+        saveBathToDefaults(routine: routine)
+        saveRecreationToDefaults(routine: routine)
+        saveHairToDefaults(routine: routine)
+        
+    }
+    
+    func saveBathToDefaults(routine: [String : Any]){
+        
+        let dictionary = routine["Created"] as! NSDictionary
+        
+        let dictBath = dictionary["Bath"] as! NSDictionary
+        
+        let bath = ["Type":"Bath", "time":dictBath["time"] as? String,"frequency":dictBath["frequency"] as? String,
+                    "Pet":dictBath["petName"] as? String]
+        print(bath)
+        if let testDefaults = defaults.array(forKey: "TestBath") as? [[String:String]] {
+            
+            var arrayToInsert = testDefaults
+            arrayToInsert.insert(bath as! [String:String], at: 0)
+            defaults.set(arrayToInsert, forKey: "TestBath")
+            
+        } else {
+            
+            defaults.set([bath], forKey: "TestBath")
+        }
+        
+
+    }
+    
+    func saveRecreationToDefaults(routine: [String : Any]){
+        
+        let dictionary = routine["Created"] as! NSDictionary
+        
+        let dictRecreation = dictionary["Recreation"] as! NSDictionary
+        
+        let recreation = ["Type":"Recreation", "time":dictRecreation["time"] as? String,"frequency":dictRecreation["frequency"] as? String, "Pet":dictRecreation["petName"] as? String]
+        
+        if let testDefaults = defaults.array(forKey: "TestRecreation") as? [[String:String]] {
+            
+            var arrayToInsert = testDefaults
+            arrayToInsert.insert(recreation as! [String:String], at: 0)
+            defaults.set(arrayToInsert, forKey: "TestRecreation")
+            
+        } else {
+            
+            defaults.set([recreation], forKey: "TestRecreation")
+        }
+
+    }
+    
+    func saveHairToDefaults(routine: [String : Any]){
+        
+        let dictionary = routine["Created"] as! NSDictionary
+        
+        let dictHair = dictionary["Hair"] as! NSDictionary
+        
+        let hair = ["Type":"Hair", "time":dictHair["time"] as? String,"frequency":dictHair["frequency"] as? String,
+                    "Pet":dictHair["petName"] as? String]
+        
+        if let testDefaults = defaults.array(forKey: "TestHair") as? [[String:String]] {
+            
+            var arrayToInsert = testDefaults
+            arrayToInsert.insert(hair as! [String:String], at: 0)
+            defaults.set(arrayToInsert, forKey: "TestHair")
+            
+        } else {
+            
+            defaults.set([hair], forKey: "TestHair")
+        }
+
     }
     
     func loadTableData(){
@@ -99,10 +171,5 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
     public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
-    
-    //    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
-    //        petArray = (applicationContext["petList"] as? [Pet])!
-    //        loadTableData()
-    //    }
 
 }

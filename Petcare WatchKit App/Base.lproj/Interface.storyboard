@@ -44,14 +44,27 @@
                 <controller identifier="dashboardPet" id="RLQ-uS-50W" customClass="DashboardWatchController" customModule="Petcare_WatchKit_Extension">
                     <items>
                         <imageView height="90" alignment="center" image="dog" id="eEn-nJ-OIa"/>
+                        <separator alignment="left" id="Kml-JC-RcV"/>
                         <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="R9M-nC-FoG"/>
                         <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="ARh-9O-TQr"/>
                     </items>
                     <menu key="menu" id="2Vy-Sa-02h">
                         <items>
-                            <menuItem title="Bath" icon="add" id="IKo-Xw-fhg"/>
-                            <menuItem title="Recreation" icon="decline" id="Q9v-Vx-pmD"/>
-                            <menuItem title="Hair" icon="more" id="iB3-vf-Q2A"/>
+                            <menuItem title="Bath" icon="add" id="IKo-Xw-fhg">
+                                <connections>
+                                    <action selector="bathButton" destination="RLQ-uS-50W" id="v10-BV-lMO"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Recreation" icon="decline" id="Q9v-Vx-pmD">
+                                <connections>
+                                    <action selector="recreationButton" destination="RLQ-uS-50W" id="TI1-4l-nzi"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hair" icon="more" id="iB3-vf-Q2A">
+                                <connections>
+                                    <action selector="hairButton" destination="RLQ-uS-50W" id="QM9-uo-jZV"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -68,33 +81,33 @@
             <objects>
                 <controller identifier="activity" id="OgK-Jg-cZe" customClass="ActivityController" customModule="Petcare_WatchKit_Extension">
                     <items>
-                        <dateLabel alignment="right" id="Cg0-V3-PYm">
-                            <dateFormatterStyle key="dateStyle" short="YES"/>
-                            <dateFormatterStyle key="timeStyle" short="YES"/>
-                        </dateLabel>
-                        <group width="136" alignment="right" id="SZ4-Ix-CCa">
+                        <group width="136" height="56" alignment="left" id="SZ4-Ix-CCa">
                             <items>
-                                <label width="74" height="27" alignment="right" text="Activity" id="5Nh-N7-lZ3"/>
-                                <imageView width="42" alignment="left" id="nxm-jV-Sme"/>
+                                <label width="83" height="28" alignment="right" verticalAlignment="center" text="Activity" id="5Nh-N7-lZ3"/>
+                                <imageView width="54" height="57" alignment="left" verticalAlignment="center" image="dog" id="nxm-jV-Sme"/>
                             </items>
                         </group>
-                        <group width="1" alignment="left" verticalAlignment="bottom" id="SxM-d8-Swx">
+                        <separator alignment="left" id="O28-r1-olK"/>
+                        <label width="136" height="21" alignment="left" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
+                        <label alignment="left" text="FrequencyLabel" id="YUR-EI-Fpx"/>
+                        <separator alignment="left" verticalAlignment="bottom" id="KTZ-Oe-VzJ"/>
+                        <group width="1" height="28" alignment="center" verticalAlignment="bottom" id="SxM-d8-Swx">
                             <items>
-                                <timer alignment="right" verticalAlignment="bottom" enabled="YES" id="QVs-ME-iUc"/>
                                 <label alignment="left" text="Next in:" id="Uc3-V1-T8c"/>
+                                <timer alignment="right" enabled="YES" id="QVs-ME-iUc"/>
                             </items>
                         </group>
-                        <label width="136" height="27" alignment="left" verticalAlignment="center" text="ActivityDate" id="KlI-5W-92I"/>
                     </items>
                     <connections>
-                        <outlet property="activityDateLabel" destination="KlI-5W-92I" id="VRb-Rl-UXD"/>
+                        <outlet property="activityDateLabel" destination="KlI-5W-92I" id="EsG-S0-gu3"/>
                         <outlet property="activityImage" destination="nxm-jV-Sme" id="rtC-he-37b"/>
-                        <outlet property="activityLabel" destination="5Nh-N7-lZ3" id="S6i-Qg-mbh"/>
+                        <outlet property="activityLabel" destination="5Nh-N7-lZ3" id="uQx-I2-gc5"/>
                         <outlet property="countdownTimer" destination="QVs-ME-iUc" id="cCQ-cr-5Mz"/>
+                        <outlet property="frequencyLabel" destination="YUR-EI-Fpx" id="Twi-vh-epM"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="728" y="344"/>
+            <point key="canvasLocation" x="752" y="344"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

@@ -20,7 +20,10 @@ protocol WatchConnectivityManagerPhoneDelegate: class {
 
 protocol WatchConnectivityManagerWatchDelegate: class {
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String:Any])
+    
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routine: [String:Any])
 }
+
 
 class WatchConnectivityManager: NSObject, WCSessionDelegate {
     // MARK: Static Properties
@@ -75,12 +78,13 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     
     func session(_ session: WCSession, didReceiveUserInfo userInfo: [String : Any] = [:]) {
         #if os(watchOS)
-            
-//            guard let petList = userInfo["PetList"] as? [Pet] else {
-//                return
-//            }
+            if userInfo["TypeSended"] as! String == "Pet" {
+                delegate?.watchConnectivityManager(self, updateWithPetList: userInfo)
+            } else {
+                delegate?.watchConnectivityManager(self, updateWithRoutine: userInfo)
+            }
            
-            delegate?.watchConnectivityManager(self, updateWithPetList: userInfo)
+            
             
         #endif
     }

@@ -207,7 +207,6 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagePicked.contentMode = .scaleToFill
             imagePicked.image = pickedImage
         }
         
@@ -238,9 +237,9 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         savePet()
         
         let dict = ["Name": self.petToCreate.name!, "Type": self.petToCreate.type!,
-                    "Breed": self.petToCreate.breed!] as [String : Any]
+                    "Breed": self.petToCreate.breed!, "TypeSended": "Pet"] as [String : Any]
                 
-        WCSession.default().transferUserInfo(["PetCreated": dict])
+        WCSession.default().transferUserInfo(["Created": dict, "TypeSended": "Pet"])
         let confirmPetController = segue.destination as! ConfirmPetViewController
         
         confirmPetController.pet = petToCreate

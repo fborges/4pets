@@ -10,6 +10,8 @@ import UIKit
 import CZPicker
 import DatePickerDialog
 import UserNotifications
+import WatchConnectivity
+
 
 class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, CZPickerViewDelegate, CZPickerViewDataSource {
     
@@ -70,8 +72,32 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         saveOnDAO()
+        
     }
     
+    func prepareToSendToWatch(){
+        
+        
+        let bath = ["Type": (pet.routine?.array[0] as! Routine).name!, "frequency": (pet.routine?.array[0] as! Routine).frequency!, "time": castDateToString(date: (pet.routine?.array[0] as! Routine).date!), "petName": pet.name!] as [String : Any]
+        
+        let hair = ["Type": (pet.routine?.array[1] as! Routine).name!, "frequency": (pet.routine?.array[1] as! Routine).frequency!, "time": castDateToString(date: (pet.routine?.array[1] as! Routine).date!), "petName": pet.name!] as [String : Any]
+        
+        let recreation = ["Type": (pet.routine?.array[6] as! Routine).name!, "frequency": (pet.routine?.array[6] as! Routine).frequency!, "time": castDateToString(date: (pet.routine?.array[6] as! Routine).date!), "petName": pet.name!] as [String : Any]
+        
+        let dictArray = ["Bath":bath, "Recreation":recreation, "Hair":hair]
+        
+        WCSession.default().transferUserInfo(["Created": dictArray, "TypeSended": "Routine"])
+        
+        
+    }
+    
+    func castDateToString(date: NSDate) -> String{
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        
+        return dateFormatter.string(from: date as Date)
+    }
     
     
     func scheduleForFequency(hour: Int, minute: Int, amPm: String, frequency: String) -> DateComponents {
@@ -203,6 +229,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
             
         }
         
+        prepareToSendToWatch()
     }
     
     // MARK : CZPicker
