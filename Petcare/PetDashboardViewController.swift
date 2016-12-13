@@ -37,7 +37,14 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate {
       //z  self.petSex.text = pet.sex
         //testing
         
-        
+        switch pet.sex! {
+            case "Male":
+                petSexImageView.image = UIImage(named: "male")
+            case "Female":
+                petSexImageView.image = UIImage(named: "female")
+            default:
+                print("No such sex")
+        }
     }
     
     @IBAction func selectRoutine(_ sender: Any) {
