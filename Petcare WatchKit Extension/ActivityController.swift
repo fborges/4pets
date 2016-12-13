@@ -18,6 +18,8 @@ class ActivityController: WKInterfaceController{
     
     var activityDate: Date!
     
+    var petName: String!
+    
     @IBOutlet var activityImage: WKInterfaceImage!
     
     @IBOutlet var activityLabel: WKInterfaceLabel!
@@ -35,7 +37,11 @@ class ActivityController: WKInterfaceController{
         self.activityLabel.setText(dict?["Type"] as? String)
         self.frequencyLabel.setText((dict?["frequency"] as? String))
         
+        self.type = dict!["Type"] as? String
+        
         let data  = (dict!["time"] as? String!)!
+        
+        self.petName = (dict!["Pet"] as? String!)!
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
@@ -78,11 +84,44 @@ class ActivityController: WKInterfaceController{
         let calendar = Calendar.autoupdatingCurrent
         let newDate = calendar.date(byAdding: dateComponent as DateComponents, to: activityDate)
         activityDate = newDate!
-        
+        print(activityDate)
         let dateFormatter = DateFormatter()
+        
         dateFormatter.dateFormat = "HH:mm:ss"
         
         self.activityDateLabel.setText(dateFormatter.string(from: activityDate!))
+        
+        
+        
+        let defaults = UserDefaults()
+        if let testDefaults = defaults.array(forKey: self.type!) as? [[String:String]] {
+            
+            var position = 0
+            
+            var arrayToInsert = testDefaults
+            print(arrayToInsert)
+            
+            for recreations in arrayToInsert {
+                
+                if recreations["Pet"] == self.petName {
+                    
+                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                    
+                    let recreation = ["Type":"Recreation", "time":dateFormatter.string(from: newDate!),"frequency":recreations["frequency"]!,
+                                      "Pet":self.petName]
+                    print(recreation)
+                    
+                    arrayToInsert.insert(recreation as! [String:String], at: position)
+                    defaults.set(arrayToInsert, forKey: self.type!)
+                    
+                    
+                }
+                
+                position += 0
+            }
+            
+            
+        }
         
     }
     

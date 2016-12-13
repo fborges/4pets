@@ -76,15 +76,15 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
     }
     
-    func validatePet(pet: Pet) -> Bool{
+    func validatePet() -> Bool{
         
         var petIsOk = true
         
         
-        if (pet.name?.isEmpty)! {
+        if (self.name.text?.isEmpty)! {
             
             petIsOk = false
-            self.name.backgroundColor = UIColor.red
+            self.name.backgroundColor = UIColor(colorLiteralRed: 255, green: 0, blue: 0, alpha: 0.3)
             
         } else {
             
@@ -92,36 +92,23 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
 
         }
         
-        if (pet.breed?.isEmpty)! {
+        if (self.breed.text?.isEmpty)! {
             
             petIsOk = false
-            self.breed.backgroundColor = UIColor.red
-            
-        } else {
-            
-            self.breed.backgroundColor = UIColor.white
+            self.breed.backgroundColor = UIColor(colorLiteralRed: 255, green: 0, blue: 0, alpha: 0.3)
             
         }
         
-        if (pet.type?.isEmpty)! {
+        if (self.type.text?.isEmpty)! {
             
             petIsOk = false
-            self.type.backgroundColor = UIColor.red
+            self.type.backgroundColor = UIColor(colorLiteralRed: 255, green: 0, blue: 0, alpha: 0.3)
 
-        } else {
-            
-            self.type.backgroundColor = UIColor.white
-            
         }
         
-        if (pet.sex?.isEmpty)! {
+        if (self.birthdayTextField.text?.isEmpty)! {
             
-            petIsOk = false
-            self.sexSegment.backgroundColor = UIColor.red
-            
-        } else {
-            
-            self.sexSegment.backgroundColor = UIColor.white
+            self.birthdayTextField.backgroundColor = UIColor(colorLiteralRed: 255, green: 0, blue: 0, alpha: 0.3)
             
         }
         
@@ -129,13 +116,15 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
     }
     
-    func create(pet: Pet){
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.backgroundColor = UIColor.white
         
-        if validatePet(pet: pet){
-            
-            dao.insert(pet)
-
-        }
+        return true
+    }
+    
+    func create(pet: Pet){
+ 
+        dao.insert(pet)
         
     }
     
@@ -164,13 +153,17 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
 
     
-    func buildPet() -> Pet{
+    func buildPet(){
         
-        let imageData: NSData = UIImagePNGRepresentation(imagePicked.image!)! as NSData
-
-        let pet = Pet(name: self.name.text!, birthdate: self.date! as NSDate as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex, type: self.type.text!, context: self.context)
+        if validatePet() {
+            
+            let imageData: NSData = UIImagePNGRepresentation(imagePicked.image!)! as NSData
+            
+            self.petToCreate = Pet(name: self.name.text!, birthdate: self.date! as NSDate as NSDate, breed: self.breed.text!, photo: imageData, sex: self.sex, type: self.type.text!, context: self.context)
+            
+        }
         
-        return pet
+        
     }
     
     func savePet() {
@@ -218,13 +211,13 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        petToCreate = buildPet()
+        buildPet()
         
         var shouldSegue = false
         
         if identifier == "prefrerencesSegue" {
             
-            shouldSegue =  validatePet(pet: petToCreate)
+            shouldSegue =  validatePet()
             
         }
         

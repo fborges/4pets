@@ -57,7 +57,7 @@ class DashboardWatchController: WKInterfaceController {
     
     @IBAction func bathButton() {
         
-        if let testDefaults = defaults.array(forKey: "TestBath") as? [[String:String]] {
+        if let testDefaults = defaults.array(forKey: "Bath") as? [[String:String]] {
             
             
             for bath in testDefaults {
@@ -75,7 +75,7 @@ class DashboardWatchController: WKInterfaceController {
     
     @IBAction func recreationButton() {
         
-        if let testDefaults = defaults.array(forKey: "TestRecreation") as? [[String:String]] {
+        if let testDefaults = defaults.array(forKey: "Recreation") as? [[String:String]] {
             
             
             for recreation in testDefaults {
@@ -93,7 +93,7 @@ class DashboardWatchController: WKInterfaceController {
     
     @IBAction func hairButton() {
         
-        if let testDefaults = defaults.array(forKey: "TestHair") as? [[String:String]] {
+        if let testDefaults = defaults.array(forKey: "Hair") as? [[String:String]] {
             
             
             for hair in testDefaults {
@@ -107,6 +107,24 @@ class DashboardWatchController: WKInterfaceController {
             
         }
         
+    }
+    
+    
+    @IBAction func foodButton() {
+        
+        if let testDefaults = defaults.array(forKey: "Food") as? [[String:String]] {
+            
+            
+            for food in testDefaults {
+                
+                if food["Pet"] == self.pet {
+                    
+                    self.pushToRoutine(context: food)
+                    
+                }
+            }
+            
+        }
     }
 
     
