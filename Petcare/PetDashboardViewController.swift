@@ -21,7 +21,7 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate {
     // internal variables
     var pet: Pet!
     private var circleMenuView: CKCircleMenuView!
-    let circleMenuImageArray = [ #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "bath")]
+    let circleMenuImageArray = [ #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "hair"), #imageLiteral(resourceName: "claws"), #imageLiteral(resourceName: "teeth"), #imageLiteral(resourceName: "vaccination"), #imageLiteral(resourceName: "deworming"), #imageLiteral(resourceName: "feeding"), #imageLiteral(resourceName: "recreation")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

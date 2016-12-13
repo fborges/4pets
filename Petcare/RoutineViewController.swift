@@ -50,9 +50,13 @@ class RoutineViewController: UIViewController, UITableViewDelegate, UITableViewD
             routine = pet?.routine!.array[5] as! Routine
             routineArray.append(pet?.routine!.array[5] as! Routine)
         case 6:
-            routineIdentifier = "Recreation"
+            routineIdentifier = "Feeding"
             routine = pet?.routine!.array[6] as! Routine
             routineArray.append(pet?.routine!.array[6] as! Routine)
+        case 7:
+            routineIdentifier = "Recreation"
+            routine = pet?.routine!.array[7] as! Routine
+            routineArray.append(pet?.routine!.array[7] as! Routine)
         default:
             print("error")
         }

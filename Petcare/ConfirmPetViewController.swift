@@ -20,8 +20,8 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
     
     // local atributes
     let routineHeaders = ["Esthetic", "Health", "Recreation"]
-    let routineNames = [["Bath", "Hair", "Claws", "Teeth"], ["Vaccination", "Deworming"], ["Go out"]]
-    let routineDefaultFrequency = [["Weekly", "Monthly", "Yearly", "Yearly"], ["Yearly", "Yearly"],["Daily"]]
+    let routineNames = [["Bath", "Hair", "Claws", "Teeth"], ["Vaccination", "Deworming","Feeding"], ["Go out"]]
+    let routineDefaultFrequency = [["Weekly", "Monthly", "Yearly", "Yearly"], ["Yearly", "Yearly", "Daily"],["Daily"]]
     let frequency = ["Daily", "3 times a week", "5 times a week", "Weekly", "Monthly", "Yearly"]
     var pet: Pet!
     let czpicker = CZPickerView(headerTitle: "Frequency", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
@@ -154,7 +154,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
         let routineDao = CoreDataDAO<Routine>()
         var routineCell: RoutineTableViewCell!
         
-        for index in 0...6 {
+        for index in 0...7 {
             let routine = routineDao.new()
             routine.pet = self.pet
             
@@ -190,6 +190,11 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
                 notification.body = "Just remind you about \((self.pet.name)!) deworming"
                 
             case 6:
+                routine.name = "Feeding"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 2, section: 1)) as! RoutineTableViewCell
+                notification.body = "Just remind you about \((self.pet.name)!) feeding"
+
+            case 7:
                 routine.name = "Recreation"
                 routineCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! RoutineTableViewCell
                 notification.body = "Just remind you about \((self.pet.name)!) recreation"
@@ -254,23 +259,12 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 4
-        } else if section == 1 {
-            return 2
-        } else {
-            return 1
-        }
+        return self.routineNames[section].count
+
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return self.routineHeaders[0]
-        } else if section == 1 {
-            return self.routineHeaders[1]
-        } else {
-            return self.routineHeaders[2]
-        }
+        return self.routineHeaders[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
