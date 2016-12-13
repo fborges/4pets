@@ -149,6 +149,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
         var hour: Int!
         var minute: Int!
         var amPm: String!
+        var frequencyString: String!
         
         let routineDao = CoreDataDAO<Routine>()
         var routineCell: RoutineTableViewCell!
@@ -203,13 +204,14 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
             hour = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
             minute = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
             amPm = routineCell.routineAmPm.text
+            frequencyString = routineCell.routineFrequency.title(for: .normal)!
             
-            let dateComponents = scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: routineCell.routineFrequency.title(for: .normal)!)
+            let dateComponents = scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: frequencyString)
             let calendar = Calendar.autoupdatingCurrent
             routine.date = calendar.date(from: dateComponents) as NSDate? //routineTime
             
             // setting routine frequency
-            routine.frequency = routineCell.routineFrequency.title(for: .normal)!
+            routine.frequency = frequencyString
             
             // adding to pets array os baths
             let petRoutine = pet?.routine as! NSMutableOrderedSet
@@ -219,7 +221,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
             // adding notification
             notification.badge = NSNumber(value: badgeNumber + 1)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            let request = UNNotificationRequest(identifier: "routine\(index)", content: notification, trigger: trigger)
+            let request = UNNotificationRequest(identifier: routine.name! , content: notification, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                 if error != nil {
                     print(error?.localizedDescription ?? "--")

@@ -132,20 +132,13 @@ class RoutineViewController: UIViewController, UITableViewDelegate, UITableViewD
 
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [routineIdentifier])
         
-
-        }
-        
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            let request = UNNotificationRequest(identifier: "routine\(index)", content: notification, trigger: trigger)
+            let request = UNNotificationRequest(identifier: routineIdentifier, content: notification, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                 if error != nil {
                     print(error?.localizedDescription ?? "--")
                 }
             })
-            
-            
-        
-        
     }
 
     
