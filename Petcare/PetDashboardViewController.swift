@@ -35,6 +35,8 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate {
         self.petBreed.text = pet.breed
         self.petBrithday.text = dateFormatter.string( from: pet.birthdate! as Date )
       //z  self.petSex.text = pet.sex
+        //testing
+        
         
     }
     

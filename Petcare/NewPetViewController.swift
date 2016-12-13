@@ -207,7 +207,6 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imagePicked.contentMode = .scaleToFill
             imagePicked.image = pickedImage
         }
         
