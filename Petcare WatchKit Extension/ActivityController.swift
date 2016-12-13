@@ -8,7 +8,7 @@
 
 import Foundation
 import WatchKit
-
+import WatchConnectivity
 
 class ActivityController: WKInterfaceController{
     
@@ -122,7 +122,25 @@ class ActivityController: WKInterfaceController{
             
             
         }
+        updateDesignatorApplicationContext()
         
+        
+    }
+    
+    func updateDesignatorApplicationContext() {
+        let defaultSession = WCSession.default()
+        
+        do {
+            
+            try defaultSession.updateApplicationContext([
+                "routineType":self.type
+//                "designator": designator,
+//                "designatorColor": designatorColor
+                ])
+        }
+        catch let error as NSError {
+            print("\(error.localizedDescription)")
+        }
     }
     
     

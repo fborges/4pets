@@ -15,7 +15,7 @@ import WatchConnectivity
  Watch app the receiver is provided with any new morse codes.
  */
 protocol WatchConnectivityManagerPhoneDelegate: class {
-    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updatedWithDesignator designator: String, designatorColor: String)
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routineType: String, Routine: [String:String])
 }
 
 protocol WatchConnectivityManagerWatchDelegate: class {
@@ -51,12 +51,12 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
             // Extract relevant values from the application context.
             guard let designator = applicationContext["designator"] as? String, let designatorColor = applicationContext["designatorColor"] as? String else {
                 // If the expected values are unavailable in the `applicationContext`, inform the delegate using default values.
-                delegate?.watchConnectivityManager(self, updatedWithDesignator: "-", designatorColor: "Blue")
+                delegate?.watchConnectivityManager(self, updateWithRoutine: "-", Routine: [:])
                 return
             }
             
             // Inform the delegate.
-            delegate?.watchConnectivityManager(self, updatedWithDesignator: designator, designatorColor: designatorColor)
+            delegate?.watchConnectivityManager(self, updateWithRoutine: designator, Routine: ["color":designatorColor])
         #endif
     }
     

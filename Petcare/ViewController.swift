@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, WatchConnectivityManagerPhoneDelegate {
+class ViewController: UIViewController {
 
 
     override func viewDidLoad() {
@@ -16,9 +16,7 @@ class ViewController: UIViewController, WatchConnectivityManagerPhoneDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         //Ha! I don't do anything but i'm still cool
-        
-        WatchConnectivityManager.sharedConnectivityManager.delegate = self
-        
+                
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,10 +24,7 @@ class ViewController: UIViewController, WatchConnectivityManagerPhoneDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updatedWithDesignator designator: String, designatorColor: String) {
-        DispatchQueue.main.async(execute: {
-        })
-    }
+
 
 
 

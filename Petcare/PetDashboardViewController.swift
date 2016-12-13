@@ -8,8 +8,18 @@
 
 import UIKit
 import CKCircleMenuView
+import WatchConnectivity
 
-class PetDashboardViewController: UIViewController, CKCircleMenuDelegate {
+class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchConnectivityManagerPhoneDelegate {
+    
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routineType: String, Routine: [String : String]) {
+        
+        print("*****************")
+        print(routineType)
+        print("*****************")
+
+        //UPDATE AQUI
+    }
     
     // outlets
     @IBOutlet weak var petPhoto: UIImageView!
