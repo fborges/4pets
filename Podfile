@@ -9,8 +9,9 @@ target 'Petcare' do
 
   pod 'CZPicker'
   pod 'DatePickerDialog'
-  pod 'CKCircleMenuView', '~> 0.3'
-  
+#  pod 'CKCircleMenuView', '~> 0.3'
+  pod 'EFCircularSlider'
+
   target 'PetcareTests' do
     inherit! :search_paths
     # Pods for testing
@@ -36,5 +37,18 @@ target 'Petcare WatchKit Extension' do
   use_frameworks!
 
   # Pods for Petcare WatchKit Extension
+
+end
+
+post_install do |installer|
+
+    installer.pods_project.targets.each do |target|
+
+            target.build_configurations.each do |config|
+
+                        config.build_settings['SWIFT_VERSION'] = '3.0'
+
+            end
+    end
 
 end
