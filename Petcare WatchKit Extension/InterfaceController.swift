@@ -46,6 +46,97 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         super.didDeactivate()
     }
     
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, deletePet pet: [String : Any]) {
+        
+        print(pet)
+        
+        if let testDefaults = defaults.array(forKey: "Pet") as? [[String:String]] {
+            var position = 0
+            self.test = testDefaults
+
+            for pets in testDefaults {
+                let comparator = pet["Created"] as? NSDictionary
+                if pets["name"] == comparator?["Name"] as? String{
+                    print(pets["name"])
+                    self.test.remove(at: position)
+                    defaults.set(self.test, forKey: "Pet")
+                    deleteRotines(petName: pet["name"] as! String)
+                }
+                
+                position += 1
+            }
+            self.test = (defaults.array(forKey: "Pet") as? [[String:String]])!
+        }
+        
+        
+        loadTableData()
+    }
+    
+    func deleteRotines(petName: String){
+        var position = 0
+
+        if let testDefaults = defaults.array(forKey: "Bath") as? [[String:String]] {
+            
+            for pets in testDefaults {
+                if pets["name"] == petName {
+                    self.test = testDefaults
+                    self.test.remove(at: position)
+                    defaults.set(self.test, forKey: "Bath")
+                }
+                
+                position += 1
+            }
+            position = 0
+            self.test = (defaults.array(forKey: "Bath") as? [[String:String]])!
+            
+        }
+        
+        if let testDefaults = defaults.array(forKey: "Hair") as? [[String:String]] {
+            
+            for pets in testDefaults {
+                if pets["name"] == petName {
+                    self.test = testDefaults
+                    self.test.remove(at: position)
+                    defaults.set(self.test, forKey: "Hair")
+                }
+                
+                position += 1
+            }
+            position = 0
+            
+        }
+        
+        if let testDefaults = defaults.array(forKey: "Recreation") as? [[String:String]] {
+            
+            for pets in testDefaults {
+                if pets["name"] == petName {
+                    self.test = testDefaults
+                    self.test.remove(at: position)
+                    defaults.set(self.test, forKey: "Recreation")
+                }
+                
+                position += 1
+            }
+            position = 0
+        }
+        
+        if let testDefaults = defaults.array(forKey: "Feeding") as? [[String:String]] {
+            
+            for pets in testDefaults {
+                if pets["name"] == petName {
+                    self.test = testDefaults
+                    self.test.remove(at: position)
+                    defaults.set(self.test, forKey: "Feeding")
+                }
+                
+                position += 1
+            }
+            position = 0
+            
+        }
+        
+    }
+    
   
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String : Any]) {
         
@@ -59,7 +150,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             self.test = testDefaults
             self.test.insert(dict as! [String:String], at: 0)
             defaults.set(self.test, forKey: "Pet")
-            print(self.test)
             
             
         } else {
@@ -152,20 +242,20 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         
         let dictionary = routine["Created"] as! NSDictionary
         
-        let dictFood = dictionary["Food"] as! NSDictionary
+        let dictFood = dictionary["Feeding"] as! NSDictionary
         
-        let food = ["Type":"Food", "time":dictFood["time"] as? String,"frequency":dictFood["frequency"] as? String,
+        let food = ["Type":"Feeding", "time":dictFood["time"] as? String,"frequency":dictFood["frequency"] as? String,
                     "Pet":dictFood["petName"] as? String]
         
-        if let testDefaults = defaults.array(forKey: "Food") as? [[String:String]] {
+        if let testDefaults = defaults.array(forKey: "Feeding") as? [[String:String]] {
             
             var arrayToInsert = testDefaults
             arrayToInsert.insert(food as! [String:String], at: 0)
-            defaults.set(arrayToInsert, forKey: "Food")
+            defaults.set(arrayToInsert, forKey: "Feeding")
             
         } else {
             
-            defaults.set([food], forKey: "Food")
+            defaults.set([food], forKey: "Feeding")
         }
         
     }

@@ -12,14 +12,7 @@ import WatchConnectivity
 
 class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchConnectivityManagerPhoneDelegate {
     
-    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routineType: String, Routine: [String : String]) {
-        
-        print("*****************")
-        print(routineType)
-        print("*****************")
-
-        //UPDATE AQUI
-    }
+    
     
     // outlets
     @IBOutlet weak var petPhoto: UIImageView!
@@ -33,10 +26,116 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
     private var circleMenuView: CKCircleMenuView!
     let circleMenuImageArray = [ #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "hair"), #imageLiteral(resourceName: "claws"), #imageLiteral(resourceName: "teeth"), #imageLiteral(resourceName: "vaccination"), #imageLiteral(resourceName: "deworming"), #imageLiteral(resourceName: "feeding"), #imageLiteral(resourceName: "recreation")]
     
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routineType: String, Routine: [String : String]) {
+        
+        DispatchQueue.main.async {
+            
+            let routine = self.getByPet(pet: self.pet)
+            let dao = CoreDataDAO<Routine>()
+            
+            if routineType == "Bath" {
+                self.view.backgroundColor = UIColor.red
+                if routine[0].pet == self.pet{
+                    
+                    routine[0].name = Routine["name"]
+                    routine[0].frequency = Routine["frequency"]
+                    let data  = Routine["date"]
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                    
+                    routine[0].date = dateFormatter.date(from: data!) as NSDate?
+                    
+                    dao.update(routine[0])
+                    self.view.backgroundColor = UIColor.red
+                }
+            }
+
+            
+            if routineType == "Hair"{
+                
+                if routine[1].pet == self.pet{
+                    
+                    routine[1].name = Routine["name"]
+                    routine[1].frequency = Routine["frequency"]
+                    let data  = Routine["date"]
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                    
+                    routine[1].date = dateFormatter.date(from: data!) as NSDate?
+                    
+                    dao.update(routine[1])
+                }
+                
+            }
+            
+            if routineType == "Feeding"{
+                
+                if routine[6].pet == self.pet{
+                    
+                    routine[6].name = Routine["name"]
+                    routine[6].frequency = Routine["frequency"]
+                    let data  = Routine["date"]
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                    
+                    routine[6].date = dateFormatter.date(from: data!) as NSDate?
+                    
+                    dao.update(routine[6])
+                    
+                }
+                
+            }
+            
+            if routineType == "Recreation"{
+                
+                if routine[7].pet == self.pet{
+                    
+                    routine[7].name = Routine["name"]
+                    routine[7].frequency = Routine["frequency"]
+                    let data  = Routine["date"]
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                    
+                    routine[7].date = dateFormatter.date(from: data!) as NSDate?
+                    
+                    dao.update(routine[7])
+                    
+                }
+                
+            }
+
+            
+        }
+        
+        
+        
+    }
+
+    
+    func getByPet(pet: Pet) -> [Routine]{
+        
+        let dao = CoreDataDAO<Routine>()
+        
+        return dao.getAll()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        WatchConnectivityManager.sharedConnectivityManager.delegate = self
+        
+        let routine = getByPet(pet: self.pet)
         
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        
+        let data = dateFormatter.string(from: routine[0].date! as Date)
+        
+        //let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         
         // populatting outlets

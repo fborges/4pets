@@ -86,7 +86,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
         
         let food = ["Type": (pet.routine?.array[6] as! Routine).name!, "frequency": (pet.routine?.array[6] as! Routine).frequency!, "time": castDateToString(date: (pet.routine?.array[6] as! Routine).date!), "petName": pet.name!] as [String : Any]
         
-        let dictArray = ["Bath":bath, "Recreation":recreation, "Hair":hair, "Food":food]
+        let dictArray = ["Bath":bath, "Recreation":recreation, "Hair":hair, "Feeding":food]
         
         WCSession.default().transferUserInfo(["Created": dictArray, "TypeSended": "Routine"])
         

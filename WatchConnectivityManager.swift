@@ -22,6 +22,8 @@ protocol WatchConnectivityManagerWatchDelegate: class {
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithPetList petList: [String:Any])
     
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routine: [String:Any])
+    
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, deletePet pet: [String:Any])
 }
 
 
@@ -49,14 +51,14 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     func configureDeviceDetailsWithApplicationContext(applicationContext: [String: Any]) {
         #if os(iOS)
             // Extract relevant values from the application context.
-            guard let designator = applicationContext["designator"] as? String, let designatorColor = applicationContext["designatorColor"] as? String else {
+            guard let routineType = applicationContext["routineType"] as? String, let routine = applicationContext["Routine"] as? [String:String] else {
                 // If the expected values are unavailable in the `applicationContext`, inform the delegate using default values.
                 delegate?.watchConnectivityManager(self, updateWithRoutine: "-", Routine: [:])
                 return
             }
             
             // Inform the delegate.
-            delegate?.watchConnectivityManager(self, updateWithRoutine: designator, Routine: ["color":designatorColor])
+            delegate?.watchConnectivityManager(self, updateWithRoutine: routineType, Routine: routine)
         #endif
     }
     
@@ -80,8 +82,10 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
         #if os(watchOS)
             if userInfo["TypeSended"] as! String == "Pet" {
                 delegate?.watchConnectivityManager(self, updateWithPetList: userInfo)
-            } else {
+            } else if userInfo["TypeSended"] as! String == "Routine" {
                 delegate?.watchConnectivityManager(self, updateWithRoutine: userInfo)
+            } else if userInfo["TypeSended"] as! String == "Delete"{
+                delegate?.watchConnectivityManager(self, deletePet: userInfo)
             }
            
             

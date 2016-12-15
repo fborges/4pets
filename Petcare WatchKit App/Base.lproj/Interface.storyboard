@@ -65,7 +65,7 @@
                                     <action selector="hairButton" destination="RLQ-uS-50W" id="QM9-uo-jZV"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Menu Item" icon="repeat" id="HGM-P7-EhY" userLabel="Food">
+                            <menuItem title="Feeding" icon="repeat" id="HGM-P7-EhY">
                                 <connections>
                                     <action selector="foodButton" destination="RLQ-uS-50W" id="UVq-vP-Kq5"/>
                                 </connections>
