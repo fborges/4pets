@@ -9,7 +9,7 @@ target 'Petcare' do
 
   pod 'CZPicker'
   pod 'DatePickerDialog'
-#  pod 'CKCircleMenuView', '~> 0.3'
+  pod 'CKCircleMenuView', '~> 0.3'
   pod 'EFCircularSlider'
 
   target 'PetcareTests' do

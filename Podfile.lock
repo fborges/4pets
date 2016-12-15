@@ -1,18 +1,21 @@
 PODS:
+  - CKCircleMenuView (0.3.1)
   - CZPicker (0.4.2)
   - DatePickerDialog (1.1.3)
   - EFCircularSlider (0.2.0)
 
 DEPENDENCIES:
+  - CKCircleMenuView (~> 0.3)
   - CZPicker
   - DatePickerDialog
   - EFCircularSlider
 
 SPEC CHECKSUMS:
+  CKCircleMenuView: 2c4183c79c84cb94b8b27714d8e7ebcf4de67e5e
   CZPicker: df3d8d0511595b7cd2f032263c82c611d45a9b8e
   DatePickerDialog: af729d1ea643d23f7976f10817234de6b030c361
   EFCircularSlider: 3af1dd6f86eb3eeeeaab0345ef3d6d1c2fc93d17
 
-PODFILE CHECKSUM: 13528081aec78e49e885a3f2ec59dccfe6a5dd1c
+PODFILE CHECKSUM: 3125bb9739835aa0e4e2c9d56f5c4a5f7af8abdb
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
