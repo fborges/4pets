@@ -260,22 +260,6 @@
                                     <action selector="selectRoutine:" destination="NGJ-vN-Fes" eventType="touchUpInside" id="sZH-Ng-Rcj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3m-Ha-KXU">
-                                <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <state key="normal" title="Veterinary">
-                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipsToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="selectRoutine:" destination="NGJ-vN-Fes" eventType="touchUpInside" id="DDj-p0-Umq"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NI-rz-JzH">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -292,12 +276,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jPd-mG-b3C" firstAttribute="top" secondItem="Bzx-tB-UdW" secondAttribute="bottom" constant="20" id="09v-q4-SZJ"/>
-                            <constraint firstItem="Bzx-tB-UdW" firstAttribute="top" secondItem="J3m-Ha-KXU" secondAttribute="bottom" constant="17" id="0Ds-Om-wJJ"/>
-                            <constraint firstItem="J3m-Ha-KXU" firstAttribute="centerX" secondItem="7je-75-zEw" secondAttribute="centerX" id="1ti-WY-wo6"/>
                             <constraint firstAttribute="trailing" secondItem="hGl-jv-elb" secondAttribute="trailing" id="45q-bo-ADv"/>
                             <constraint firstItem="2NI-rz-JzH" firstAttribute="centerX" secondItem="OGd-c3-z7g" secondAttribute="centerX" id="4j0-Bb-BBU"/>
                             <constraint firstItem="Bzx-tB-UdW" firstAttribute="centerX" secondItem="7je-75-zEw" secondAttribute="centerX" id="65w-FJ-VMH"/>
-                            <constraint firstItem="J3m-Ha-KXU" firstAttribute="width" secondItem="Bzx-tB-UdW" secondAttribute="width" id="9zO-BP-O8F"/>
                             <constraint firstItem="mQL-IH-fhe" firstAttribute="top" secondItem="UR5-fO-teh" secondAttribute="top" constant="175" id="OVX-z4-u1E"/>
                             <constraint firstAttribute="trailing" secondItem="UR5-fO-teh" secondAttribute="trailing" id="OmQ-so-44o"/>
                             <constraint firstItem="hGl-jv-elb" firstAttribute="leading" secondItem="7je-75-zEw" secondAttribute="leading" id="Xa5-0R-75j"/>

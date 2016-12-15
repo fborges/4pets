@@ -25,7 +25,8 @@
 		774624CF1DEF162300B78396 /* ConfirmPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */; };
 		774855881DF041FC00E38350 /* PetDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774855871DF041FC00E38350 /* PetDashboardViewController.swift */; };
 		774855941DF0594100E38350 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774855931DF0594100E38350 /* PickerDialog.swift */; };
-		7762A41F1E0025800037F72C /* RoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762A41E1E0025800037F72C /* RoutineView.swift */; };
+		7762A4261E002A5B0037F72C /* RoutineAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7762A4241E002A5B0037F72C /* RoutineAlertController.swift */; };
+		7762A4271E002A5B0037F72C /* RoutineAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7762A4251E002A5B0037F72C /* RoutineAlertController.xib */; };
 		779B40D31DE86175004894FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D21DE86175004894FE /* AppDelegate.swift */; };
 		779B40D51DE86175004894FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B40D41DE86175004894FE /* ViewController.swift */; };
 		779B40D81DE86175004894FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779B40D61DE86175004894FE /* Main.storyboard */; };
@@ -154,7 +155,8 @@
 		774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPetViewController.swift; sourceTree = "<group>"; };
 		774855871DF041FC00E38350 /* PetDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetDashboardViewController.swift; sourceTree = "<group>"; };
 		774855931DF0594100E38350 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDialog.swift; sourceTree = "<group>"; };
-		7762A41E1E0025800037F72C /* RoutineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineView.swift; sourceTree = "<group>"; };
+		7762A4241E002A5B0037F72C /* RoutineAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineAlertController.swift; sourceTree = "<group>"; };
+		7762A4251E002A5B0037F72C /* RoutineAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RoutineAlertController.xib; sourceTree = "<group>"; };
 		779B40CF1DE86175004894FE /* Petcare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petcare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		779B40D21DE86175004894FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		779B40D41DE86175004894FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -329,7 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */,
-				7762A41E1E0025800037F72C /* RoutineView.swift */,
+				7762A4241E002A5B0037F72C /* RoutineAlertController.swift */,
+				7762A4251E002A5B0037F72C /* RoutineAlertController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -754,6 +757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				779B40DD1DE86175004894FE /* LaunchScreen.storyboard in Resources */,
+				7762A4271E002A5B0037F72C /* RoutineAlertController.xib in Resources */,
 				779B40DA1DE86175004894FE /* Assets.xcassets in Resources */,
 				779B40D81DE86175004894FE /* Main.storyboard in Resources */,
 			);
@@ -1028,7 +1032,6 @@
 				774624CF1DEF162300B78396 /* ConfirmPetViewController.swift in Sources */,
 				C4D47E631DFED50E002C7663 /* Nails+CoreDataProperties.swift in Sources */,
 				C4D47E181DFECEB0002C7663 /* Pet+CoreDataProperties.swift in Sources */,
-				7762A41F1E0025800037F72C /* RoutineView.swift in Sources */,
 				C4D47E591DFED4DA002C7663 /* Deworming.swift in Sources */,
 				06AB41BE1DF0563A0093EA9A /* AppointmentController.swift in Sources */,
 				C4E94E6F1DEEFCE1001C5624 /* RoutineViewController.swift in Sources */,
@@ -1048,6 +1051,7 @@
 				774855881DF041FC00E38350 /* PetDashboardViewController.swift in Sources */,
 				C4D47E5E1DFED4DF002C7663 /* Hair+CoreDataProperties.swift in Sources */,
 				06AB41C01DF0586A0093EA9A /* VeterinaryViewController.swift in Sources */,
+				7762A4261E002A5B0037F72C /* RoutineAlertController.swift in Sources */,
 				062891201DEC5D65001390B8 /* CoreDataDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
