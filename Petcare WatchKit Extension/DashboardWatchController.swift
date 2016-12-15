@@ -112,7 +112,7 @@ class DashboardWatchController: WKInterfaceController {
     
     @IBAction func foodButton() {
         
-        if let testDefaults = defaults.array(forKey: "Food") as? [[String:String]] {
+        if let testDefaults = defaults.array(forKey: "Feeding") as? [[String:String]] {
             
             
             for food in testDefaults {

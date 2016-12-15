@@ -20,6 +20,8 @@ class ActivityController: WKInterfaceController{
     
     var petName: String!
     
+    var frequency: String!
+    
     @IBOutlet var activityImage: WKInterfaceImage!
     
     @IBOutlet var activityLabel: WKInterfaceLabel!
@@ -34,6 +36,8 @@ class ActivityController: WKInterfaceController{
         super.awake(withContext: context)
         
         let dict = context! as? NSDictionary
+        self.frequency = (dict?["frequency"] as? String)
+        
         self.activityLabel.setText(dict?["Type"] as? String)
         self.frequencyLabel.setText((dict?["frequency"] as? String))
         
@@ -84,14 +88,11 @@ class ActivityController: WKInterfaceController{
         let calendar = Calendar.autoupdatingCurrent
         let newDate = calendar.date(byAdding: dateComponent as DateComponents, to: activityDate)
         activityDate = newDate!
-        print(activityDate)
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "HH:mm:ss"
         
         self.activityDateLabel.setText(dateFormatter.string(from: activityDate!))
-        
-        
         
         let defaults = UserDefaults()
         if let testDefaults = defaults.array(forKey: self.type!) as? [[String:String]] {
@@ -99,7 +100,6 @@ class ActivityController: WKInterfaceController{
             var position = 0
             
             var arrayToInsert = testDefaults
-            print(arrayToInsert)
             
             for recreations in arrayToInsert {
                 
@@ -107,10 +107,8 @@ class ActivityController: WKInterfaceController{
                     
                     dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
                     
-                    let recreation = ["Type":"Recreation", "time":dateFormatter.string(from: newDate!),"frequency":recreations["frequency"]!,
+                    let recreation = ["Type":self.type, "time":dateFormatter.string(from: newDate!),"frequency":recreations["frequency"]!,
                                       "Pet":self.petName]
-                    print(recreation)
-                    
                     arrayToInsert.insert(recreation as! [String:String], at: position)
                     defaults.set(arrayToInsert, forKey: self.type!)
                     
@@ -132,15 +130,23 @@ class ActivityController: WKInterfaceController{
         
         do {
             
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+            let type = self.type!
+            let routine: [String:String] = ["name":type,"date":dateFormatter.string(from: self.activityDate),"frequency":self.frequency,"pet":self.petName]
+            print(routine["name"]! as String)
             try defaultSession.updateApplicationContext([
-                "routineType":self.type
-//                "designator": designator,
-//                "designatorColor": designatorColor
+                "routineType":routine["name"]! as String,
+                "Routine":routine
                 ])
+
         }
+            
         catch let error as NSError {
             print("\(error.localizedDescription)")
         }
+        
     }
     
     

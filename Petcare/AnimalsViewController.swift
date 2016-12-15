@@ -76,8 +76,15 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
             let dao = CoreDataDAO<Pet>()
             let pet = petList[indexPath.row]
             
+            let dict = ["Name":petList[indexPath.row].name]
+            
+            WCSession.default().transferUserInfo(["Created": dict, "TypeSended": "Delete"])
+            
             dao.delete(pet)
             petList.remove(at: indexPath.row)
+            
+            
+            
             tableView.reloadData()
         }
     }
