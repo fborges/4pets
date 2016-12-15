@@ -60,6 +60,7 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
     @IBAction func selectRoutine(_ sender: Any) {
         configurePopUpMenu()
         self.circleMenuView!.openMenu()
+        
     }
     
     
@@ -109,6 +110,7 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
         
         
     }
+
     
     
     
