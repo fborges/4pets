@@ -17,6 +17,7 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
     var pet: Pet?
     var routineType: Int!
     var routineArray = [Routine]()
+    var routineOfPetArray = [Routine]()
     var routine: Routine!
     var routineIdentifier: String!
     
@@ -25,33 +26,60 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
     
     let routineHeaders = ["Esthetic", "Health", "Recreation"]
     let routineNames = [["Bath", "Hair", "Claws", "Teeth"], ["Vaccination", "Deworming","Feeding"], ["Go out"]]
-    let routineDefaultFrequency = [["Weekly", "Monthly", "Yearly", "Yearly"], ["Yearly", "Yearly", "Daily"],["Daily"]]
+    var routineDefaultFrequency = [["Weekly", "Monthly", "Yearly", "Yearly"], ["Yearly", "Yearly", "Daily"],["Daily"]]
+    var routineHour = [[String]]()
+    var routineAmPm = [[String]]()
     let frequency = ["Daily", "3 times a week", "5 times a week", "Weekly", "Monthly", "Yearly"]
     let czpicker = CZPickerView(headerTitle: "Frequency", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
     var buttonSender: UIButton!
     var badgeNumber: Int!
     
-    
     override func viewDidLoad() {
         let dao = CoreDataDAO<Routine>()
         
         self.routineArray = dao.getAll()
-        
-        
+        var position = 0
         for pets in routineArray {
             
             if pets.pet == pet {
                 
+                routineOfPetArray.insert(pets, at: position)
+                position += 1
             }
             
-            
-            czpicker?.delegate = self
-            czpicker?.dataSource = self
-            czpicker?.allowMultipleSelection = false
-            czpicker?.needFooterView = true
-            
-            
         }
+        
+        
+        self.routineDefaultFrequency = [[self.routineOfPetArray[0].frequency!,self.routineOfPetArray[1].frequency!,self.routineOfPetArray[2].frequency!, self.routineOfPetArray[3].frequency!],
+            [self.routineOfPetArray[4].frequency!,self.routineOfPetArray[5].frequency!,self.routineOfPetArray[6].frequency!],
+            [self.routineOfPetArray[7].frequency!]]
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "a"
+        dateFormatter.amSymbol = "AM"
+        dateFormatter.pmSymbol = "PM"
+        
+        let dateString = dateFormatter.string(from: self.routineOfPetArray[0].date! as Date)
+        
+        self.routineAmPm = [[dateFormatter.string(from: self.routineOfPetArray[0].date! as Date),
+                            dateFormatter.string(from: self.routineOfPetArray[1].date! as Date),
+                            dateFormatter.string(from: self.routineOfPetArray[2].date! as Date),
+                            dateFormatter.string(from: self.routineOfPetArray[3].date! as Date)],
+                            [dateFormatter.string(from: self.routineOfPetArray[4].date! as Date),
+                            dateFormatter.string(from: self.routineOfPetArray[5].date! as Date),
+                            dateFormatter.string(from: self.routineOfPetArray[6].date! as Date)],
+                            [dateFormatter.string(from: self.routineOfPetArray[7].date! as Date),]]
+        
+        dateFormatter.dateFormat = "h:mm"
+        
+        self.routineHour = [[dateFormatter.string(from: self.routineOfPetArray[0].date! as Date),dateFormatter.string(from: self.routineOfPetArray[1].date! as Date),dateFormatter.string(from: self.routineOfPetArray[2].date! as Date), dateFormatter.string(from: self.routineOfPetArray[3].date! as Date)],
+            [dateFormatter.string(from: self.routineOfPetArray[4].date! as Date),dateFormatter.string(from: self.routineOfPetArray[5].date! as Date),dateFormatter.string(from: self.routineOfPetArray[6].date! as Date)],
+            [dateFormatter.string(from: self.routineOfPetArray[7].date! as Date)]]
+        
+        czpicker?.delegate = self
+        czpicker?.dataSource = self
+        czpicker?.allowMultipleSelection = false
+        czpicker?.needFooterView = true
         
         
     }
@@ -106,10 +134,8 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
     
     func castDateToString(date: NSDate) -> String{
         
-        print(date)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        print(dateFormatter.string(from: date as Date))
         
         return dateFormatter.string(from: date as Date)
     }
@@ -166,6 +192,8 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
         cell.routineName.text = self.routineNames[indexPath.section][indexPath.row]
         cell.routineFrequency.setTitle(self.routineDefaultFrequency[indexPath.section][indexPath.row], for: .normal)
         
+        cell.routineHour.setTitle(self.routineHour[indexPath.section][indexPath.row], for: .normal)
+        cell.routineAmPm.text = self.routineAmPm[indexPath.section][indexPath.row]
         // adding buttons actions
         cell.routineHour.addTarget(self, action: #selector(pickHour(sender:)), for: .touchUpInside)
         cell.routineHour.tag = (indexPath.section*100)+indexPath.row

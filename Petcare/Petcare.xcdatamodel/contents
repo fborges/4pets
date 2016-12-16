@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2657" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Appointment" representedClassName="Appointment" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
@@ -41,9 +41,9 @@
         <element name="Nails" positionX="-18" positionY="54" width="128" height="45"/>
         <element name="Pet" positionX="-63" positionY="-18" width="128" height="150"/>
         <element name="Recreation" positionX="18" positionY="72" width="128" height="45"/>
+        <element name="Routine" positionX="-9" positionY="90" width="128" height="105"/>
         <element name="Teeth" positionX="-36" positionY="45" width="128" height="45"/>
         <element name="Vaccination" positionX="0" positionY="63" width="128" height="45"/>
         <element name="Veterinary" positionX="-9" positionY="90" width="128" height="90"/>
-        <element name="Routine" positionX="-9" positionY="90" width="128" height="105"/>
     </elements>
 </model>

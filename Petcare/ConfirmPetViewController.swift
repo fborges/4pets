@@ -198,7 +198,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
                 notification.body = "Just remind you about \((self.pet.name)!) feeding"
 
             case 7:
-                routine.name = "Recreation"
+                routine.name = "Go out"
                 routineCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! RoutineTableViewCell
                 notification.body = "Just remind you about \((self.pet.name)!) recreation"
                 
