@@ -10,33 +10,46 @@ import Foundation
 import CZPicker
 import UIKit
 import DatePickerDialog
+import UserNotifications
+import WatchConnectivity
+
 
 
 class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableViewDataSource, CZPickerViewDelegate, CZPickerViewDataSource {
     
-    var pet: Pet?
+    var pet: Pet!
     var routineType: Int!
     var routineArray = [Routine]()
     var routineOfPetArray = [Routine]()
     var routine: Routine!
     var routineIdentifier: String!
-    
+    var positionOfUpdate = 0
+
+
     @IBOutlet weak var routineTableView: UITableView!
     
     
     let routineHeaders = ["Esthetic", "Health", "Recreation"]
     let routineNames = [["Bath", "Hair", "Claws", "Teeth"], ["Vaccination", "Deworming","Feeding"], ["Go out"]]
-    var routineDefaultFrequency = [["Weekly", "Monthly", "Yearly", "Yearly"], ["Yearly", "Yearly", "Daily"],["Daily"]]
+    var routineDefaultFrequency = [[String]]()
     var routineHour = [[String]]()
     var routineAmPm = [[String]]()
     let frequency = ["Daily", "3 times a week", "5 times a week", "Weekly", "Monthly", "Yearly"]
     let czpicker = CZPickerView(headerTitle: "Frequency", cancelButtonTitle: "Cancel", confirmButtonTitle: "Confirm")
     var buttonSender: UIButton!
+    
+    let notification = UNMutableNotificationContent()
+
     var badgeNumber: Int!
     
     override func viewDidLoad() {
-        let dao = CoreDataDAO<Routine>()
         
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        print(paths[0])
+        
+        let dao = CoreDataDAO<Routine>()
+        let application = UIApplication.shared
+        badgeNumber = application.applicationIconBadgeNumber
         self.routineArray = dao.getAll()
         var position = 0
         for pets in routineArray {
@@ -58,8 +71,6 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
         dateFormatter.dateFormat = "a"
         dateFormatter.amSymbol = "AM"
         dateFormatter.pmSymbol = "PM"
-        
-        let dateString = dateFormatter.string(from: self.routineOfPetArray[0].date! as Date)
         
         self.routineAmPm = [[dateFormatter.string(from: self.routineOfPetArray[0].date! as Date),
                             dateFormatter.string(from: self.routineOfPetArray[1].date! as Date),
@@ -156,6 +167,140 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
             }
         })
     }
+    
+    func prepareToSendToWatch(){
+        
+        
+        let bath = ["Type": (pet?.routine?.array[0] as! Routine).name!, "frequency": (pet?.routine?.array[0] as! Routine).frequency!, "time": castDateToString(date: (pet?.routine?.array[0] as! Routine).date!), "petName": (pet?.name!)! as String] as [String : Any]
+        
+        let hair = ["Type": (pet?.routine?.array[1] as! Routine).name!, "frequency": (pet?.routine?.array[1] as! Routine).frequency!, "time": castDateToString(date: (pet?.routine?.array[1] as! Routine).date!), "petName": (pet?.name!)! as String] as [String : Any]
+        
+        let recreation = ["Type": (pet.routine?.array[7] as! Routine).name!, "frequency": (pet.routine?.array[7] as! Routine).frequency!, "time": castDateToString(date: (pet.routine?.array[7] as! Routine).date!), "petName": pet.name!] as [String : Any]
+        
+        let food = ["Type": (pet.routine?.array[6] as! Routine).name!, "frequency": (pet.routine?.array[6] as! Routine).frequency!, "time": castDateToString(date: (pet.routine?.array[6] as! Routine).date!), "petName": pet.name!] as [String : Any]
+        
+        let dictArray = ["Bath":bath, "Recreation":recreation, "Hair":hair, "Feeding":food]
+        
+        WCSession.default().transferUserInfo(["Created": dictArray, "TypeSended": "Routine"])
+        
+        
+    }
+    
+    func saveOnDAO() {
+        
+        var hour: Int!
+        var minute: Int!
+        var amPm: String!
+        var frequencyString: String!
+        
+        let routineDao = CoreDataDAO<Routine>()
+        var routineCell: UpdateRoutineCell!
+        
+        for index in 0...7 {
+            let routine = routineDao.getByID(routineArray[positionOfUpdate].objectID)
+            routine.pet = self.pet
+            
+            switch index {
+            case 0:
+                routine.name = "Bath"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) bath"
+                
+            case 1:
+                routine.name = "Hair"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) hair"
+                
+            case 2:
+                routine.name = "Claws"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 2, section: 0)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) claws"
+                
+            case 3:
+                routine.name = "Teeth"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 3, section: 0)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) teeth"
+                
+            case 4:
+                routine.name = "Vaccination"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) vaccination"
+                
+            case 5:
+                routine.name = "Deworming"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 1, section: 1)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) deworming"
+                
+            case 6:
+                routine.name = "Feeding"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 2, section: 1)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) feeding"
+                
+            case 7:
+                routine.name = "Go out"
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) recreation"
+                
+            default:
+                routineCell = routineTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! UpdateRoutineCell
+                notification.body = "Just remind you about \((self.pet.name)!) bath"
+                
+            }
+            
+            // setting routine date
+            hour = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+            minute = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+            amPm = routineCell.routineAmPm.text
+            frequencyString = routineCell.routineFrequency.title(for: .normal)!
+            
+            let dateComponents = scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: frequencyString)
+            let calendar = Calendar.autoupdatingCurrent
+            routine.date = calendar.date(from: dateComponents) as NSDate? //routineTime
+            
+            // setting routine frequency
+            routine.frequency = frequencyString
+            
+            // adding to pets array os baths
+            let petRoutine = pet?.routine as! NSMutableOrderedSet
+            petRoutine.add(routine)
+
+            var routineToUpdate = routineDao.getByID(routineArray[positionOfUpdate].objectID)
+            print(castDateToString(date: routineToUpdate.date! ))
+            routineToUpdate = routine
+            print(castDateToString(date: routineToUpdate.date! ))
+
+            routineDao.update(routineToUpdate)
+            print(castDateToString(date: routineToUpdate.date! ))
+
+            
+            // adding notification
+            notification.badge = NSNumber(value: badgeNumber + 1)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            let request = UNNotificationRequest(identifier: routine.name! , content: notification, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "--")
+                }
+            })
+            
+            positionOfUpdate += 1
+        }
+        
+        //prepareToSendToWatch()
+    }
+    
+    
+    override func willMove(toParentViewController parent: UIViewController?) {
+        if parent == nil {
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+
+            saveOnDAO()
+        
+        }
+        
+    }
+
     
     // MARK : CZPicker
     func numberOfRows(in pickerView: CZPickerView!) -> Int {

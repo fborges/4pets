@@ -721,7 +721,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="routineTableView" destination="nea-o5-Nf6" id="WKo-ez-S0c"/>
+                        <outlet property="routineTableView" destination="nea-o5-Nf6" id="qzs-zQ-4s2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dU6-Aa-lCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -735,6 +735,6 @@
         <image name="question" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wb8-JC-Blg"/>
+        <segue reference="s1B-Rb-Son"/>
     </inferredMetricsTieBreakers>
 </document>
