@@ -50,7 +50,7 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                     self.view.backgroundColor = UIColor.red
                 }
             }
-
+            
             
             if routineType == "Hair"{
                 
@@ -107,14 +107,14 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 }
                 
             }
-
+            
             
         }
         
         
         
     }
-
+    
     
     func getByPet(pet: Pet) -> [Routine]{
         
@@ -143,24 +143,27 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
         self.petName.text = pet.name
         self.petBreed.text = pet.breed
         self.petBrithday.text = dateFormatter.string( from: pet.birthdate! as Date )
-      //z  self.petSex.text = pet.sex
+        //z  self.petSex.text = pet.sex
         //testing
         
         switch pet.sex! {
-            case "Male":
-                petSexImageView.image = UIImage(named: "male")
-            case "Female":
-                petSexImageView.image = UIImage(named: "female")
-            default:
-                print("No such sex")
+        case "Male":
+            petSexImageView.image = UIImage(named: "male")
+        case "Female":
+            petSexImageView.image = UIImage(named: "female")
+        default:
+            print("No such sex")
         }
     }
     
     @IBAction func selectRoutine(_ sender: Any) {
-        configurePopUpMenu()
-        self.circleMenuView!.openMenu()
+        
+        performSegue(withIdentifier: "updateRoutineViewController", sender: nil)
+        //        configurePopUpMenu()
+        //        self.circleMenuView!.openMenu()
         
     }
+    
     
     
     func configurePopUpMenu() {
@@ -193,23 +196,20 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
     }
     
     func circleMenuActivatedButton(with anIndex: Int32) {
-        performSegue(withIdentifier: "routineViewController", sender: anIndex)
+        performSegue(withIdentifier: "updateRoutineViewController", sender: anIndex)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "routineViewController" {
-            let index =  Int(exactly: sender as! Int32)
-            let viewController = segue.destination as! RoutineViewController
+        if segue.identifier == "updateRoutineViewController" {
+            let viewController = segue.destination as! UpdateRoutineController
             
             viewController.pet = self.pet
-            viewController.routineType = index
-            
         }
         
         
         
     }
-
+    
     
     
     

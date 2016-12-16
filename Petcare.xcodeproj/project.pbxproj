@@ -20,6 +20,8 @@
 		06D895441DF82F58006E8E22 /* PetRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D895431DF82F58006E8E22 /* PetRowController.swift */; };
 		06F51B7B1DF8502500B485A4 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F51B7A1DF8502500B485A4 /* WatchConnectivityManager.swift */; };
 		06F51B7C1DF8515400B485A4 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F51B7A1DF8502500B485A4 /* WatchConnectivityManager.swift */; };
+		06F8E9D31E040AC900DED157 /* UpdateRoutineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F8E9D21E040AC900DED157 /* UpdateRoutineController.swift */; };
+		06F8E9D51E040B3000DED157 /* UpdateRoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F8E9D41E040B3000DED157 /* UpdateRoutineCell.swift */; };
 		770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE52A1DEC560E007AF924 /* AnimalsViewController.swift */; };
 		770AE5321DEDC003007AF924 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */; };
 		774624CF1DEF162300B78396 /* ConfirmPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774624CE1DEF162300B78396 /* ConfirmPetViewController.swift */; };
@@ -145,6 +147,8 @@
 		06C2F4301DFEE56500834730 /* BathWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BathWatch.swift; sourceTree = "<group>"; };
 		06D895431DF82F58006E8E22 /* PetRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetRowController.swift; sourceTree = "<group>"; };
 		06F51B7A1DF8502500B485A4 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
+		06F8E9D21E040AC900DED157 /* UpdateRoutineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateRoutineController.swift; sourceTree = "<group>"; };
+		06F8E9D41E040B3000DED157 /* UpdateRoutineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateRoutineCell.swift; sourceTree = "<group>"; };
 		1FDB8584CDD5000099B74081 /* Pods-Petcare WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Petcare WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Petcare WatchKit Extension/Pods-Petcare WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		2B4BE8513E9948478F8E6E7E /* Pods_Petcare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Petcare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DDCAB02721558472E3307D7 /* Pods-PetcareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetcareUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PetcareUITests/Pods-PetcareUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -323,6 +327,7 @@
 				06AB41BD1DF0563A0093EA9A /* AppointmentController.swift */,
 				06AB41BF1DF0586A0093EA9A /* VeterinaryViewController.swift */,
 				C4C0041F1DF99501007C1025 /* RoutineTableViewCell.swift */,
+				06F8E9D21E040AC900DED157 /* UpdateRoutineController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 				770AE5311DEDC003007AF924 /* AnimalTableViewCell.swift */,
 				7762A4241E002A5B0037F72C /* RoutineAlertController.swift */,
 				7762A4251E002A5B0037F72C /* RoutineAlertController.xib */,
+				06F8E9D41E040B3000DED157 /* UpdateRoutineCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1021,6 +1027,7 @@
 				C4D47E0B1DFECE6B002C7663 /* Routine.swift in Sources */,
 				770AE52B1DEC560E007AF924 /* AnimalsViewController.swift in Sources */,
 				770AE5321DEDC003007AF924 /* AnimalTableViewCell.swift in Sources */,
+				06F8E9D51E040B3000DED157 /* UpdateRoutineCell.swift in Sources */,
 				774855941DF0594100E38350 /* PickerDialog.swift in Sources */,
 				C4D47E551DFED4CF002C7663 /* Bath.swift in Sources */,
 				C4D47E6A1DFED532002C7663 /* Teeth.swift in Sources */,
@@ -1046,6 +1053,7 @@
 				C4D47E621DFED50E002C7663 /* Nails.swift in Sources */,
 				06F51B7B1DF8502500B485A4 /* WatchConnectivityManager.swift in Sources */,
 				C4C004201DF99501007C1025 /* RoutineTableViewCell.swift in Sources */,
+				06F8E9D31E040AC900DED157 /* UpdateRoutineController.swift in Sources */,
 				062891261DEC6441001390B8 /* NewPetViewController.swift in Sources */,
 				C4D47E361DFECF1C002C7663 /* Petcare.xcdatamodel in Sources */,
 				774855881DF041FC00E38350 /* PetDashboardViewController.swift in Sources */,
