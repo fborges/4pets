@@ -30,81 +30,101 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
         
         DispatchQueue.main.async {
             
-            let routine = self.getByPet(pet: self.pet)
+            let petName = Routine["pet"]
+            
             let dao = CoreDataDAO<Routine>()
+            let routine = dao.getAll()
+            var routineOfPetArray: [Routine] = []
+            var position = 0
+            for pets in routine {
+                
+                if pets.pet?.name == petName {
+                    routineOfPetArray.insert(pets, at: position)
+                    position += 1
+                }
+                
+            }
+            
             
             if routineType == "Bath" {
-                self.view.backgroundColor = UIColor.red
-                if routine[0].pet == self.pet{
-                    
-                    routine[0].name = Routine["name"]
-                    routine[0].frequency = Routine["frequency"]
-                    let data  = Routine["date"]
-                    
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                    
-                    routine[0].date = dateFormatter.date(from: data!) as NSDate?
-                    
-                    dao.update(routine[0])
-                    self.view.backgroundColor = UIColor.red
-                }
+                
+                let routineToUpdate = dao.getByID(routineOfPetArray[0].objectID)
+                
+                routineToUpdate.name = Routine["name"]
+                routineToUpdate.frequency = Routine["frequency"]
+                let data  = Routine["date"]
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                
+                routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
+                dao.update(routineToUpdate)
+
+//                if routine[0].pet == self.pet{
+//                    
+//                    
+//                    
+//                    dao.update(routine[0])
+//                    //routineDao.getByID(routineArray[positionOfUpdate].objectID)
+//                    //notification.body = "Just remind you about \((self.pet.name)!) deworming"
+//                }
             }
             
             
             if routineType == "Hair"{
                 
-                if routine[1].pet == self.pet{
-                    
-                    routine[1].name = Routine["name"]
-                    routine[1].frequency = Routine["frequency"]
-                    let data  = Routine["date"]
-                    
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                    
-                    routine[1].date = dateFormatter.date(from: data!) as NSDate?
-                    
-                    dao.update(routine[1])
-                }
+                self.view.backgroundColor = UIColor.red
+                
+                let routineToUpdate = dao.getByID(routineOfPetArray[1].objectID)
+                
+                routineToUpdate.name = Routine["name"]
+                routineToUpdate.frequency = Routine["frequency"]
+                let data  = Routine["date"]
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                
+                routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
+                
+                dao.update(routineToUpdate)
+                
                 
             }
             
             if routineType == "Feeding"{
                 
-                if routine[6].pet == self.pet{
-                    
-                    routine[6].name = Routine["name"]
-                    routine[6].frequency = Routine["frequency"]
-                    let data  = Routine["date"]
-                    
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                    
-                    routine[6].date = dateFormatter.date(from: data!) as NSDate?
-                    
-                    dao.update(routine[6])
-                    
-                }
+                self.view.backgroundColor = UIColor.red
                 
+                let routineToUpdate = dao.getByID(routineOfPetArray[6].objectID)
+                
+                routineToUpdate.name = Routine["name"]
+                routineToUpdate.frequency = Routine["frequency"]
+                let data  = Routine["date"]
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                
+                routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
+                
+                dao.update(routineToUpdate)
             }
             
             if routineType == "Recreation"{
                 
-                if routine[7].pet == self.pet{
-                    
-                    routine[7].name = Routine["name"]
-                    routine[7].frequency = Routine["frequency"]
-                    let data  = Routine["date"]
-                    
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                    
-                    routine[7].date = dateFormatter.date(from: data!) as NSDate?
-                    
-                    dao.update(routine[7])
-                    
-                }
+                self.view.backgroundColor = UIColor.red
+                
+                let routineToUpdate = dao.getByID(routineOfPetArray[7].objectID)
+                
+                routineToUpdate.name = Routine["name"]
+                routineToUpdate.frequency = Routine["frequency"]
+                let data  = Routine["date"]
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                
+                routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
+                
+                dao.update(routineToUpdate)
                 
             }
             
@@ -113,6 +133,26 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
         
         
         
+    }
+    
+    func teste(){
+        
+        let dao = CoreDataDAO<Routine>()
+        let routine = dao.getAll()
+        var routineOfPetArray: [Routine] = []
+        var position = 0
+        
+        for pets in routine {
+            
+            if pets.pet?.name == self.pet.name {
+                routineOfPetArray.insert(pets, at: position)
+                position += 1
+            }
+            
+        }
+        
+        
+        print(routineOfPetArray)
     }
     
     
@@ -154,6 +194,8 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
         default:
             print("No such sex")
         }
+        
+        self.teste()
     }
     
     @IBAction func selectRoutine(_ sender: Any) {

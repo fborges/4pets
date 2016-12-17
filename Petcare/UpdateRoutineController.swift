@@ -44,9 +44,6 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        print(paths[0])
-        
         let dao = CoreDataDAO<Routine>()
         let application = UIApplication.shared
         badgeNumber = application.applicationIconBadgeNumber
@@ -61,7 +58,6 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
             }
             
         }
-        
         
         self.routineDefaultFrequency = [[self.routineOfPetArray[0].frequency!,self.routineOfPetArray[1].frequency!,self.routineOfPetArray[2].frequency!, self.routineOfPetArray[3].frequency!],
             [self.routineOfPetArray[4].frequency!,self.routineOfPetArray[5].frequency!,self.routineOfPetArray[6].frequency!],
@@ -265,12 +261,8 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
             petRoutine.add(routine)
 
             var routineToUpdate = routineDao.getByID(routineArray[positionOfUpdate].objectID)
-            print(castDateToString(date: routineToUpdate.date! ))
             routineToUpdate = routine
-            print(castDateToString(date: routineToUpdate.date! ))
-
             routineDao.update(routineToUpdate)
-            print(castDateToString(date: routineToUpdate.date! ))
 
             
             // adding notification
