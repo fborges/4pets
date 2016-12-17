@@ -181,7 +181,7 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
         
         let dictArray = ["Bath":bath, "Recreation":recreation, "Hair":hair, "Feeding":food]
         
-        WCSession.default().transferUserInfo(["Created": dictArray, "TypeSended": "Routine"])
+        WCSession.default().transferUserInfo(["Created": dictArray, "TypeSended": "RoutineUpdate"])
         
         
     }
@@ -286,7 +286,7 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
             positionOfUpdate += 1
         }
         
-        //prepareToSendToWatch()
+        prepareToSendToWatch()
     }
     
     

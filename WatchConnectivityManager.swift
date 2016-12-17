@@ -24,6 +24,8 @@ protocol WatchConnectivityManagerWatchDelegate: class {
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routine: [String:Any])
     
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, deletePet pet: [String:Any])
+    
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateRoutine routine: [String:Any])
 }
 
 
@@ -86,6 +88,8 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
                 delegate?.watchConnectivityManager(self, updateWithRoutine: userInfo)
             } else if userInfo["TypeSended"] as! String == "Delete"{
                 delegate?.watchConnectivityManager(self, deletePet: userInfo)
+            } else if userInfo["TypeSended"] as! String == "RoutineUpdate" {
+                delegate?.watchConnectivityManager(self, updateRoutine: userInfo)
             }
            
             

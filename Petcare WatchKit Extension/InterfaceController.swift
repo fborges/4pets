@@ -31,6 +31,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
+
+        
         if let testDefaults = defaults.array(forKey: "Pet") as? [[String:String]] {
             
             test = testDefaults
@@ -46,6 +48,54 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         super.didDeactivate()
     }
     
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateRoutine routine: [String : Any]) {
+        
+        let dictionary = routine["Created"] as! NSDictionary
+        
+        let dictAux = dictionary["Bath"] as! NSDictionary
+        
+        let petName = dictAux["petName"] as! String
+        
+        deletePetRoutineList(type: "Bath", petName: petName)
+        deletePetRoutineList(type: "Hair", petName: petName)
+        deletePetRoutineList(type: "Recreation", petName: petName)
+        deletePetRoutineList(type: "Feeding", petName: petName)
+        
+        saveBathToDefaults(routine: routine)
+        saveRecreationToDefaults(routine: routine)
+        saveHairToDefaults(routine: routine)
+        saveFoodToDefaults(routine: routine)
+
+
+    }
+    
+    func deletePetRoutineList(type: String, petName: String){
+        
+        let defaults = UserDefaults()
+        if let testDefaults = defaults.array(forKey: type) as? [[String:String]] {
+            
+            var position = 0
+            
+            var arrayToRemove = testDefaults
+            for recreations in arrayToRemove {
+                
+                if recreations["Pet"] == petName {
+                    
+                    arrayToRemove.remove(at: position)
+                    defaults.set(arrayToRemove, forKey: type)
+
+                }
+                
+                position += 0
+            }
+            arrayToRemove = (defaults.array(forKey: type) as? [[String:String]])!
+            
+            print(arrayToRemove)
+            
+            
+        }
+    }
+    
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, deletePet pet: [String : Any]) {
         
         print(pet)
@@ -57,7 +107,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             for pets in testDefaults {
                 let comparator = pet["Created"] as? NSDictionary
                 if pets["name"] == comparator?["Name"] as? String{
-                    print(pets["name"])
                     self.test.remove(at: position)
                     defaults.set(self.test, forKey: "Pet")
                     deleteRotines(petName: pet["name"] as! String)
@@ -153,7 +202,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
             
             
         } else {
-            print(dict)
             let dict = petList["Created"] as! NSDictionary
             defaults.set([dict], forKey: "Pet")
             self.test = (defaults.array(forKey: "Pet") as? [[String:String]])!
@@ -183,7 +231,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         if let testDefaults = defaults.array(forKey: "Bath") as? [[String:String]] {
             
             var arrayToInsert = testDefaults
-            arrayToInsert.remove(at: 0)
             arrayToInsert.insert(bath as! [String:String], at: 0)
             defaults.set(arrayToInsert, forKey: "Bath")
             
