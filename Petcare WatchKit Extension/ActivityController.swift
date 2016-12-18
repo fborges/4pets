@@ -36,6 +36,18 @@ class ActivityController: WKInterfaceController{
         super.awake(withContext: context)
         
         let dict = context! as? NSDictionary
+        
+        
+        if (dict?["Type"] as? String == "Bath"){
+            self.activityImage.setImageNamed("bath")
+        } else if (dict?["Type"] as? String == "Recreation"){
+            self.activityImage.setImageNamed("fun")
+        } else if (dict?["Type"] as? String == "Hair"){
+            self.activityImage.setImageNamed("hair")
+        } else {
+            self.activityImage.setImageNamed("food")
+        }
+        
         self.frequency = (dict?["frequency"] as? String)
         
         self.activityLabel.setText(dict?["Type"] as? String)
@@ -70,9 +82,9 @@ class ActivityController: WKInterfaceController{
         super.willActivate()
 
         //INSERIR A DATA A PARTIR DA DATA PASSADA PELA ATIVIDADE EM QUESTÃO
-        self.countdownTimer.setDate(dateCountdown)
-        self.countdownTimer.start()
-        
+//        self.countdownTimer.setDate(dateCountdown)
+//        self.countdownTimer.start()
+//        
     }
     
     override func didDeactivate() {

@@ -43,29 +43,29 @@
             <objects>
                 <controller identifier="dashboardPet" id="RLQ-uS-50W" customClass="DashboardWatchController" customModule="Petcare_WatchKit_Extension">
                     <items>
-                        <imageView height="90" alignment="center" image="dog" id="eEn-nJ-OIa"/>
+                        <imageView width="106" height="90" alignment="center" id="eEn-nJ-OIa"/>
                         <separator alignment="left" id="Kml-JC-RcV"/>
                         <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="R9M-nC-FoG"/>
                         <label alignment="center" verticalAlignment="center" text="Label" textAlignment="center" id="ARh-9O-TQr"/>
                     </items>
                     <menu key="menu" id="2Vy-Sa-02h">
                         <items>
-                            <menuItem title="Bath" icon="add" id="IKo-Xw-fhg">
+                            <menuItem title="Bath" image="bath" id="IKo-Xw-fhg">
                                 <connections>
                                     <action selector="bathButton" destination="RLQ-uS-50W" id="v10-BV-lMO"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Recreation" icon="decline" id="Q9v-Vx-pmD">
+                            <menuItem title="Recreation" image="fun" id="Q9v-Vx-pmD">
                                 <connections>
                                     <action selector="recreationButton" destination="RLQ-uS-50W" id="TI1-4l-nzi"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Hair" icon="more" id="iB3-vf-Q2A">
+                            <menuItem title="Hair" image="hair" id="iB3-vf-Q2A">
                                 <connections>
                                     <action selector="hairButton" destination="RLQ-uS-50W" id="QM9-uo-jZV"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Feeding" icon="repeat" id="HGM-P7-EhY">
+                            <menuItem title="Feeding" image="food" id="HGM-P7-EhY">
                                 <connections>
                                     <action selector="foodButton" destination="RLQ-uS-50W" id="UVq-vP-Kq5"/>
                                 </connections>
@@ -89,7 +89,7 @@
                         <group width="136" height="56" alignment="left" id="SZ4-Ix-CCa">
                             <items>
                                 <label width="83" height="28" alignment="right" verticalAlignment="center" text="Activity" id="5Nh-N7-lZ3"/>
-                                <imageView width="54" height="57" alignment="left" verticalAlignment="center" image="dog" id="nxm-jV-Sme"/>
+                                <imageView width="54" height="57" alignment="left" verticalAlignment="center" id="nxm-jV-Sme"/>
                             </items>
                         </group>
                         <separator alignment="left" id="O28-r1-olK"/>

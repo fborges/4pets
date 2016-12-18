@@ -36,7 +36,8 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
         notification.title = "PetCare"
         let application = UIApplication.shared
         badgeNumber = application.applicationIconBadgeNumber
-        
+        navigationItem.hidesBackButton = true
+
         // picker settings
         czpicker?.delegate = self
         czpicker?.dataSource = self

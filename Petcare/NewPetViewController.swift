@@ -11,6 +11,7 @@ import CoreData
 import CZPicker
 import DatePickerDialog
 import WatchConnectivity
+import NotificationCenter
 
 class PetController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, CZPickerViewDelegate, CZPickerViewDataSource {
     
@@ -43,7 +44,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         self.breed.delegate = self
         self.type.delegate = self
         self.birthdayTextField.delegate = self
-        
+                
         czpicker?.delegate = self
         czpicker?.dataSource = self
         
@@ -53,7 +54,28 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
         self.type.allowsEditingTextAttributes = false
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        
+        
+        
+    }
+    
+
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.backgroundColor = UIColor.white
+        
+        if (((textField.placeholder?.description)! as String == "Animal")
+            || ((textField.placeholder?.description)! as String == "Birthdate")) {
+            
+            return false
+            
+        } else {
+            
+            return true
+        }
         
         
     }
@@ -74,6 +96,31 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
             break;
         }
         
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                print(self.view.frame.origin.y)
+                self.view.frame.origin.y -= (keyboardSize.height - 50)
+                print(self.view.frame.origin.y)
+
+            }
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                print(self.view.frame.origin.y)
+
+                self.view.frame.origin.y += (keyboardSize.height - 50)
+                print(self.view.frame.origin.y)
+
+            }
+        }
     }
     
     func validatePet() -> Bool{
@@ -116,11 +163,7 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
         
     }
     
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.backgroundColor = UIColor.white
-        
-        return true
-    }
+    
     
     func create(pet: Pet){
  
@@ -186,14 +229,6 @@ class PetController: UIViewController, UIImagePickerControllerDelegate, UINaviga
             self.present(imagePicker, animated: true, completion: nil)
         }
         
-        /*if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
-            
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
-        }*/
     }
     
     

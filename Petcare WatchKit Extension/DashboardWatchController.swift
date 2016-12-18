@@ -61,7 +61,6 @@ class DashboardWatchController: WKInterfaceController {
             
             
             for bath in testDefaults {
-                
                 if bath["Pet"] == self.pet {
                     
                      self.pushToRoutine(context: bath)
