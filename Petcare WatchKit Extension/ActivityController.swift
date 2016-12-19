@@ -18,6 +18,8 @@ class ActivityController: WKInterfaceController{
     
     var activityDate: Date!
     
+    var activityDatePartOne: String!
+    
     var petName: String!
     
     var frequency: String!
@@ -63,13 +65,10 @@ class ActivityController: WKInterfaceController{
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
         
         self.activityDate = dateFormatter.date(from: data!)
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        
-        
-        let activityDatePartOne = dateFormatter.string(from: activityDate!)
-        self.dateCountdown = dateFormatter.date(from: activityDatePartOne)
-        
         dateFormatter.dateFormat = "HH:mm:ss"
+        self.activityDatePartOne = dateFormatter.string(from: activityDate!)
+        
+        self.dateCountdown = dateFormatter.date(from: activityDatePartOne)
         
         
         self.activityDateLabel.setText(dateFormatter.string(from: activityDate!))
@@ -80,11 +79,7 @@ class ActivityController: WKInterfaceController{
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-
-        //INSERIR A DATA A PARTIR DA DATA PASSADA PELA ATIVIDADE EM QUESTÃO
-//        self.countdownTimer.setDate(dateCountdown)
-//        self.countdownTimer.start()
-//        
+     
     }
     
     override func didDeactivate() {

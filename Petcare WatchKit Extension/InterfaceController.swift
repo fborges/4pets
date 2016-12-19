@@ -98,18 +98,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
     
     func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, deletePet pet: [String : Any]) {
         
-        print(pet)
-        
         if let testDefaults = defaults.array(forKey: "Pet") as? [[String:String]] {
             var position = 0
             self.test = testDefaults
 
             for pets in testDefaults {
                 let comparator = pet["Created"] as? NSDictionary
-                if pets["name"] == comparator?["Name"] as? String{
+            
+                if pets["Name"] == comparator?["Name"] as? String{
                     self.test.remove(at: position)
                     defaults.set(self.test, forKey: "Pet")
-                    deleteRotines(petName: pet["name"] as! String)
+                    deleteRotines(petName: comparator?["Name"] as! String)
                 }
                 
                 position += 1
@@ -125,9 +124,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         var position = 0
 
         if let testDefaults = defaults.array(forKey: "Bath") as? [[String:String]] {
-            
             for pets in testDefaults {
-                if pets["name"] == petName {
+                print(pets["Pet"])
+                print(petName)
+                if pets["Pet"] == petName {
                     self.test = testDefaults
                     self.test.remove(at: position)
                     defaults.set(self.test, forKey: "Bath")
@@ -143,7 +143,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         if let testDefaults = defaults.array(forKey: "Hair") as? [[String:String]] {
             
             for pets in testDefaults {
-                if pets["name"] == petName {
+                if pets["Pet"] == petName {
                     self.test = testDefaults
                     self.test.remove(at: position)
                     defaults.set(self.test, forKey: "Hair")
@@ -158,7 +158,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         if let testDefaults = defaults.array(forKey: "Recreation") as? [[String:String]] {
             
             for pets in testDefaults {
-                if pets["name"] == petName {
+                if pets["Pet"] == petName {
                     self.test = testDefaults
                     self.test.remove(at: position)
                     defaults.set(self.test, forKey: "Recreation")
@@ -172,7 +172,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
         if let testDefaults = defaults.array(forKey: "Feeding") as? [[String:String]] {
             
             for pets in testDefaults {
-                if pets["name"] == petName {
+                if pets["Pet"] == petName {
                     self.test = testDefaults
                     self.test.remove(at: position)
                     defaults.set(self.test, forKey: "Feeding")
