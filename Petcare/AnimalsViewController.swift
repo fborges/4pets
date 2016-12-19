@@ -111,7 +111,7 @@ class AnimalsViewController: UIViewController, UITableViewDataSource, UITableVie
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
 
         if (message["sendPetList"]! as? Bool)! {
-            
+        
             sendMessageToWatch()
         }
     }
