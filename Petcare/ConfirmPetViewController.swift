@@ -33,7 +33,7 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         // notification
-        notification.title = "PetCare"
+        notification.title = "4Pets"
         let application = UIApplication.shared
         badgeNumber = application.applicationIconBadgeNumber
         navigationItem.hidesBackButton = true
@@ -227,10 +227,12 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
             petRoutine.add(routine)
             routineDao.insert(routine)
             
+            let requestName = routine.name! + self.pet.name!
+            
             // adding notification
             notification.badge = NSNumber(value: badgeNumber + 1)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            let request = UNNotificationRequest(identifier: routine.name! , content: notification, trigger: trigger)
+            let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                 if error != nil {
                     print(error?.localizedDescription ?? "--")

@@ -107,43 +107,43 @@ class RoutineViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     
-    func updateHourAndFrequency() {
-        
-        var hour: Int!
-        var minute: Int!
-        var amPm: String!
-        var frequency: String!
-       
-        let calendar = Calendar.autoupdatingCurrent
-        let notification = UNMutableNotificationContent()
-        
-            notification.body = "Just remind you about \((self.pet?.name)!) \(routine.name)"
-           // notification.badge = NSNumber(value: badgeNumber + 1)
-        
-        // setting routine date
-//            hour = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
-//            minute = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
-//            amPm = routineCell.routineAmPm.text
-        
-            let dateComponents = scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: frequency)
-            routine.date = calendar.date(from: dateComponents) as NSDate? //routineTime
-            
-            // setting routine frequency
-            routine.frequency = frequency
-            
-            // updating notification
-        
-
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [routineIdentifier])
-        
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            let request = UNNotificationRequest(identifier: routineIdentifier, content: notification, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
-                if error != nil {
-                    print(error?.localizedDescription ?? "--")
-                }
-            })
-    }
+//    func updateHourAndFrequency() {
+//        
+//        var hour: Int!
+//        var minute: Int!
+//        var amPm: String!
+//        var frequency: String!
+//       
+//        let calendar = Calendar.autoupdatingCurrent
+//        let notification = UNMutableNotificationContent()
+//        
+//            notification.body = "Just remind you about \((self.pet?.name)!) \(routine.name)"
+//           // notification.badge = NSNumber(value: badgeNumber + 1)
+//        
+//        // setting routine date
+////            hour = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[0])!)
+////            minute = Int(((routineCell.routineHour.title(for: .normal)?.components(separatedBy: ":"))?[1])!)
+////            amPm = routineCell.routineAmPm.text
+//        
+//            let dateComponents = scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: frequency)
+//            routine.date = calendar.date(from: dateComponents) as NSDate? //routineTime
+//            
+//            // setting routine frequency
+//            routine.frequency = frequency
+//            
+//            // updating notification
+//        
+//
+//            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [routineIdentifier])
+//        
+//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+//            let request = UNNotificationRequest(identifier: routineIdentifier, content: notification, trigger: trigger)
+//            UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
+//                if error != nil {
+//                    print(error?.localizedDescription ?? "--")
+//                }
+//            })
+//    }
 
     
     // MARK: - TableView methods

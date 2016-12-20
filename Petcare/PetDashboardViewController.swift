@@ -9,6 +9,7 @@
 import UIKit
 import CKCircleMenuView
 import WatchConnectivity
+import UserNotifications
 
 class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchConnectivityManagerPhoneDelegate {
     
@@ -24,11 +25,33 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
     // internal variables
     var pet: Pet!
     private var circleMenuView: CKCircleMenuView!
-    let circleMenuImageArray = [ #imageLiteral(resourceName: "bath"), #imageLiteral(resourceName: "hair"), #imageLiteral(resourceName: "claws"), #imageLiteral(resourceName: "teeth"), #imageLiteral(resourceName: "vaccination"), #imageLiteral(resourceName: "deworming"), #imageLiteral(resourceName: "feeding"), #imageLiteral(resourceName: "recreation")]
     
-    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routineType: String, Routine: [String : String]) {
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routineType: String, Routine: [String : String], amPM: String) {
         
         DispatchQueue.main.async {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+            
+            let date  = Routine["date"]
+            
+            let data = dateFormatter.date(from: date!) as NSDate?
+            dateFormatter.dateFormat = "HH"
+          
+            let hour = Int(dateFormatter.string(from: data as! Date))
+
+            dateFormatter.dateFormat = "mm"
+            let minute = Int(dateFormatter.string(from: data as! Date))
+
+            let amPm = amPM
+            let frequencyString = Routine["frequency"]
+            
+            let notification = UNMutableNotificationContent()
+            var badgeNumber: Int!
+            
+            notification.title = "4Pets"
+            let application = UIApplication.shared
+            badgeNumber = application.applicationIconBadgeNumber
             
             let petName = Routine["pet"]
             
@@ -54,26 +77,34 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 routineToUpdate.frequency = Routine["frequency"]
                 let data  = Routine["date"]
                 
-                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
                 
                 routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
                 dao.update(routineToUpdate)
+                
+                let dateComponents = self.scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm ,frequency: frequencyString!)
+                
+                
+                let requestName = routineType + Routine["pet"]!
+                
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestName])
+                
+                notification.body = "Just remind you about \((Routine["pet"]!)) bath"
+                
+                notification.badge = NSNumber(value: badgeNumber + 1)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
+                    if error != nil {
+                        print(error?.localizedDescription ?? "--")
+                    }
+                })
+                
 
-//                if routine[0].pet == self.pet{
-//                    
-//                    
-//                    
-//                    dao.update(routine[0])
-//                    //routineDao.getByID(routineArray[positionOfUpdate].objectID)
-//                    //notification.body = "Just remind you about \((self.pet.name)!) deworming"
-//                }
             }
             
             
             if routineType == "Hair"{
-                
-                self.view.backgroundColor = UIColor.red
                 
                 let routineToUpdate = dao.getByID(routineOfPetArray[1].objectID)
                 
@@ -81,19 +112,33 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 routineToUpdate.frequency = Routine["frequency"]
                 let data  = Routine["date"]
                 
-                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
                 
                 routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
-                
                 dao.update(routineToUpdate)
+                
+                let dateComponents = self.scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm ,frequency: frequencyString!)
+                
+                let requestName = routineType + Routine["pet"]!
+                
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestName])
+                
+                notification.body = "Just remind you about \((Routine["pet"]!)) hair"
+                
+                notification.badge = NSNumber(value: badgeNumber + 1)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
+                    if error != nil {
+                        print(error?.localizedDescription ?? "--")
+                    }
+                })
+
                 
                 
             }
             
             if routineType == "Feeding"{
-                
-                self.view.backgroundColor = UIColor.red
                 
                 let routineToUpdate = dao.getByID(routineOfPetArray[6].objectID)
                 
@@ -101,17 +146,32 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 routineToUpdate.frequency = Routine["frequency"]
                 let data  = Routine["date"]
                 
-                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
                 
                 routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
-                
                 dao.update(routineToUpdate)
+                
+                let dateComponents = self.scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm ,frequency: frequencyString!)
+
+                
+                let requestName = routineType + Routine["pet"]!
+                
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestName])
+                
+                notification.body = "Just remind you about \((Routine["pet"]!)) feeding"
+                
+                notification.badge = NSNumber(value: badgeNumber + 1)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
+                    if error != nil {
+                        print(error?.localizedDescription ?? "--")
+                    }
+                })
+
             }
             
             if routineType == "Recreation"{
-                
-                self.view.backgroundColor = UIColor.red
                 
                 let routineToUpdate = dao.getByID(routineOfPetArray[7].objectID)
                 
@@ -119,12 +179,28 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 routineToUpdate.frequency = Routine["frequency"]
                 let data  = Routine["date"]
                 
-                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
                 
                 routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
-                
                 dao.update(routineToUpdate)
+                
+                let dateComponents = self.scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm ,frequency: frequencyString!)
+                
+                let requestName = routineType + Routine["pet"]!
+                
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestName])
+                
+                notification.body = "Just remind you about \((Routine["pet"]!)) recreation"
+                
+                notification.badge = NSNumber(value: badgeNumber + 1)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
+                UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
+                    if error != nil {
+                        print(error?.localizedDescription ?? "--")
+                    }
+                })
+
                 
             }
             
@@ -135,24 +211,46 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
         
     }
     
-    func teste(){
+    func scheduleForFequency(hour: Int, minute: Int, amPm: String, frequency: String) -> DateComponents {
+        var dateComponent = DateComponents()
+        var fixedHour: Int!
         
-        let dao = CoreDataDAO<Routine>()
-        let routine = dao.getAll()
-        var routineOfPetArray: [Routine] = []
-        var position = 0
+        if amPm == "PM" {
+            fixedHour = hour + 12
+        } else {
+            fixedHour = hour
+        }
         
-        for pets in routine {
-            
-            if pets.pet?.name == self.pet.name {
-                routineOfPetArray.insert(pets, at: position)
-                position += 1
-            }
-            
+        switch frequency {
+        case "Daily":
+            dateComponent.hour = fixedHour
+            dateComponent.minute = minute
+        case "3 times a week":
+            dateComponent.day = 3
+            dateComponent.hour = fixedHour
+            dateComponent.minute = minute
+        case "5 times a week":
+            dateComponent.day = 5
+            dateComponent.hour = fixedHour
+            dateComponent.minute = minute
+        case "Weekly":
+            dateComponent.day = 7
+            dateComponent.hour = fixedHour
+            dateComponent.minute = minute
+        case "Monthly":
+            dateComponent.day = 30
+            dateComponent.hour = fixedHour
+            dateComponent.minute = minute
+        case "Yearly":
+            dateComponent.day = 365
+            dateComponent.hour = fixedHour
+            dateComponent.minute = minute
+        default:
+            dateComponent.minute = 0
         }
         
         
-        print(routineOfPetArray)
+        return dateComponent
     }
     
     
@@ -167,14 +265,10 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
     override func viewDidLoad() {
         super.viewDidLoad()
         WatchConnectivityManager.sharedConnectivityManager.delegate = self
-        
-        let routine = getByPet(pet: self.pet)
-        
+                
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        
-        let data = dateFormatter.string(from: routine[0].date! as Date)
-        
+                
         //let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         
@@ -195,7 +289,6 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
             print("No such sex")
         }
         
-        self.teste()
     }
     
     @IBAction func selectRoutine(_ sender: Any) {
@@ -208,34 +301,34 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
     
     
     
-    func configurePopUpMenu() {
-        // setting menu to view center
-        let tPoint = CGPoint(x: self.view.frame.midX, y: self.view.frame.midY + self.view.frame.midY/3)
-        let tOrigin = self.view.convert(tPoint, from: self.view)
-        
-        // seetting menu attributes
-        var tOptions = Dictionary<String, AnyObject>()
-        tOptions[CIRCLE_MENU_OPENING_DELAY] = 0.1 as AnyObject?
-        tOptions[CIRCLE_MENU_MAX_ANGLE] = 360.0 as AnyObject?
-        tOptions[CIRCLE_MENU_RADIUS] = 100.0 as AnyObject?
-        tOptions[CIRCLE_MENU_DIRECTION] = Int(CircleMenuDirectionUp.rawValue) as AnyObject?
-        tOptions[CIRCLE_MENU_BUTTON_BACKGROUND_NORMAL] = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.4) as AnyObject?
-        tOptions[CIRCLE_MENU_BUTTON_BACKGROUND_ACTIVE] = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.8) as AnyObject?
-        tOptions[CIRCLE_MENU_BUTTON_BORDER] = UIColor.white as AnyObject?
-        tOptions[CIRCLE_MENU_DEPTH] = 2.0 as AnyObject?
-        tOptions[CIRCLE_MENU_BUTTON_RADIUS] = 35.0 as AnyObject?
-        tOptions[CIRCLE_MENU_BUTTON_BORDER_WIDTH] = 2.0 as AnyObject?
-        tOptions[CIRCLE_MENU_TAP_MODE] = true as AnyObject?
-        tOptions[CIRCLE_MENU_LINE_MODE] = false as AnyObject?
-        tOptions[CIRCLE_MENU_BUTTON_TINT] = false as AnyObject?
-        tOptions[CIRCLE_MENU_BACKGROUND_BLUR] = false as AnyObject?
-        
-        
-        self.circleMenuView = CKCircleMenuView(atOrigin: tOrigin, usingOptions: tOptions, withImageArray: self.circleMenuImageArray)
-        self.view.addSubview(self.circleMenuView!)
-        self.circleMenuView!.delegate = self
-        
-    }
+//    func configurePopUpMenu() {
+//        // setting menu to view center
+//        let tPoint = CGPoint(x: self.view.frame.midX, y: self.view.frame.midY + self.view.frame.midY/3)
+//        let tOrigin = self.view.convert(tPoint, from: self.view)
+//        
+//        // seetting menu attributes
+//        var tOptions = Dictionary<String, AnyObject>()
+//        tOptions[CIRCLE_MENU_OPENING_DELAY] = 0.1 as AnyObject?
+//        tOptions[CIRCLE_MENU_MAX_ANGLE] = 360.0 as AnyObject?
+//        tOptions[CIRCLE_MENU_RADIUS] = 100.0 as AnyObject?
+//        tOptions[CIRCLE_MENU_DIRECTION] = Int(CircleMenuDirectionUp.rawValue) as AnyObject?
+//        tOptions[CIRCLE_MENU_BUTTON_BACKGROUND_NORMAL] = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.4) as AnyObject?
+//        tOptions[CIRCLE_MENU_BUTTON_BACKGROUND_ACTIVE] = UIColor.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.8) as AnyObject?
+//        tOptions[CIRCLE_MENU_BUTTON_BORDER] = UIColor.white as AnyObject?
+//        tOptions[CIRCLE_MENU_DEPTH] = 2.0 as AnyObject?
+//        tOptions[CIRCLE_MENU_BUTTON_RADIUS] = 35.0 as AnyObject?
+//        tOptions[CIRCLE_MENU_BUTTON_BORDER_WIDTH] = 2.0 as AnyObject?
+//        tOptions[CIRCLE_MENU_TAP_MODE] = true as AnyObject?
+//        tOptions[CIRCLE_MENU_LINE_MODE] = false as AnyObject?
+//        tOptions[CIRCLE_MENU_BUTTON_TINT] = false as AnyObject?
+//        tOptions[CIRCLE_MENU_BACKGROUND_BLUR] = false as AnyObject?
+//        
+//        
+//        self.circleMenuView = CKCircleMenuView(atOrigin: tOrigin, usingOptions: tOptions, withImageArray: self.circleMenuImageArray)
+//        self.view.addSubview(self.circleMenuView!)
+//        self.circleMenuView!.delegate = self
+//        
+//    }
     
     func circleMenuActivatedButton(with anIndex: Int32) {
         performSegue(withIdentifier: "updateRoutineViewController", sender: anIndex)

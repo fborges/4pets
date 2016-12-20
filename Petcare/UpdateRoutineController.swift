@@ -252,7 +252,6 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
             let dateComponents = scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: frequencyString)
             let calendar = Calendar.autoupdatingCurrent
             routine.date = calendar.date(from: dateComponents) as NSDate? //routineTime
-            
             // setting routine frequency
             routine.frequency = frequencyString
             
@@ -263,12 +262,13 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
             var routineToUpdate = routineDao.getByID(routineArray[positionOfUpdate].objectID)
             routineToUpdate = routine
             routineDao.update(routineToUpdate)
-
+            
+            let requestName = routine.name! + self.pet.name!
             
             // adding notification
             notification.badge = NSNumber(value: badgeNumber + 1)
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-            let request = UNNotificationRequest(identifier: routine.name! , content: notification, trigger: trigger)
+            let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                 if error != nil {
                     print(error?.localizedDescription ?? "--")
@@ -284,8 +284,9 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
     
     override func willMove(toParentViewController parent: UIViewController?) {
         if parent == nil {
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+            let routineNames = ["Bath" + self.pet.name!, "Hair" + self.pet.name!, "Claws" + self.pet.name!, "Teeth" + self.pet.name!, "Vaccination" + self.pet.name!, "Deworming" + self.pet.name!,"Feeding" + self.pet.name!, "Go out" + self.pet.name!]
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [routineNames[0],routineNames[1],routineNames[2],routineNames[3],routineNames[4]
+                ,routineNames[5],routineNames[6],routineNames[7]])
 
             saveOnDAO()
         

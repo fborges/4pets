@@ -15,7 +15,7 @@ import WatchConnectivity
  Watch app the receiver is provided with any new morse codes.
  */
 protocol WatchConnectivityManagerPhoneDelegate: class {
-    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routineType: String, Routine: [String:String])
+    func watchConnectivityManager(_ watchConnectivityManager: WatchConnectivityManager, updateWithRoutine routineType: String, Routine: [String:String], amPM: String)
 }
 
 protocol WatchConnectivityManagerWatchDelegate: class {
@@ -53,14 +53,14 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
     func configureDeviceDetailsWithApplicationContext(applicationContext: [String: Any]) {
         #if os(iOS)
             // Extract relevant values from the application context.
-            guard let routineType = applicationContext["routineType"] as? String, let routine = applicationContext["Routine"] as? [String:String] else {
+            guard let routineType = applicationContext["routineType"] as? String, let routine = applicationContext["Routine"] as? [String:String], let amPM = applicationContext["amPM"] as? String else {
                 // If the expected values are unavailable in the `applicationContext`, inform the delegate using default values.
-                delegate?.watchConnectivityManager(self, updateWithRoutine: "-", Routine: [:])
+                delegate?.watchConnectivityManager(self, updateWithRoutine: "-", Routine: [:], amPM: "-")
                 return
             }
             
             // Inform the delegate.
-            delegate?.watchConnectivityManager(self, updateWithRoutine: routineType, Routine: routine)
+            delegate?.watchConnectivityManager(self, updateWithRoutine: routineType, Routine: routine, amPM: amPM)
         #endif
     }
     

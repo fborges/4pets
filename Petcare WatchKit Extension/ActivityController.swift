@@ -94,10 +94,30 @@ class ActivityController: WKInterfaceController{
         
         let calendar = Calendar.autoupdatingCurrent
         let newDate = calendar.date(byAdding: dateComponent as DateComponents, to: activityDate)
-        activityDate = newDate!
+        
         let dateFormatter = DateFormatter()
         
+        dateFormatter.dateFormat = "HH"
+        
+        let comparator = dateFormatter.string(from: newDate!)
+        
         dateFormatter.dateFormat = "HH:mm:ss"
+        
+        var pass12Hour: String = dateFormatter.string(from: newDate!)
+        
+        if Int(comparator)! > 12{
+            
+            var chars = [Character](pass12Hour.characters)
+            chars[0] = "0"
+            chars[1] = "1"
+            
+            pass12Hour = String(chars)
+
+        }
+        
+        print(pass12Hour)
+        dateFormatter.dateFormat = "HH:mm:ss"
+        activityDate = dateFormatter.date(from: pass12Hour)
         
         self.activityDateLabel.setText(dateFormatter.string(from: activityDate!))
         
@@ -142,10 +162,13 @@ class ActivityController: WKInterfaceController{
             dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
             let type = self.type!
             let routine: [String:String] = ["name":type,"date":dateFormatter.string(from: self.activityDate),"frequency":self.frequency,"pet":self.petName]
-            print(routine["name"]! as String)
+            dateFormatter.dateFormat = "a"
+            let amPM = dateFormatter.string(from: self.activityDate)
+            
             try defaultSession.updateApplicationContext([
                 "routineType":routine["name"]! as String,
-                "Routine":routine
+                "Routine":routine,
+                "amPM":amPM
                 ])
 
         }

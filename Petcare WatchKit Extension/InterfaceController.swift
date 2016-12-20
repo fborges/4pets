@@ -125,8 +125,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate, WatchConnec
 
         if let testDefaults = defaults.array(forKey: "Bath") as? [[String:String]] {
             for pets in testDefaults {
-                print(pets["Pet"])
-                print(petName)
                 if pets["Pet"] == petName {
                     self.test = testDefaults
                     self.test.remove(at: position)
