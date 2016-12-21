@@ -96,9 +96,8 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
     
     func castDateToString(date: NSDate) -> String{
         
-        print(date)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "h:mm a"
         print(dateFormatter.string(from: date as Date))
         return dateFormatter.string(from: date as Date)
     }
@@ -217,6 +216,8 @@ class ConfirmPetViewController: UIViewController,UITableViewDelegate, UITableVie
             
             let dateComponents = scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm! ,frequency: frequencyString)
             let calendar = Calendar.autoupdatingCurrent
+            
+            
             routine.date = calendar.date(from: dateComponents) as NSDate? //routineTime
             
             // setting routine frequency

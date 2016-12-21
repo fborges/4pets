@@ -62,10 +62,11 @@ class ActivityController: WKInterfaceController{
         self.petName = (dict!["Pet"] as? String!)!
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-        
+        dateFormatter.dateFormat = "h:mm a"
+
         self.activityDate = dateFormatter.date(from: data!)
-        dateFormatter.dateFormat = "HH:mm:ss"
+
+        dateFormatter.dateFormat = "h:mm a"
         self.activityDatePartOne = dateFormatter.string(from: activityDate!)
         
         self.dateCountdown = dateFormatter.date(from: activityDatePartOne)
@@ -97,26 +98,14 @@ class ActivityController: WKInterfaceController{
         
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "HH"
+        dateFormatter.dateFormat = "h:mm a"
         
-        let comparator = dateFormatter.string(from: newDate!)
         
-        dateFormatter.dateFormat = "HH:mm:ss"
+        let pass12Hour: String = dateFormatter.string(from: newDate!)
         
-        var pass12Hour: String = dateFormatter.string(from: newDate!)
         
-        if Int(comparator)! > 12{
-            
-            var chars = [Character](pass12Hour.characters)
-            chars[0] = "0"
-            chars[1] = "1"
-            
-            pass12Hour = String(chars)
-
-        }
         
-        print(pass12Hour)
-        dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.dateFormat = "h:mm a"
         activityDate = dateFormatter.date(from: pass12Hour)
         
         self.activityDateLabel.setText(dateFormatter.string(from: activityDate!))
@@ -132,7 +121,7 @@ class ActivityController: WKInterfaceController{
                 
                 if recreations["Pet"] == self.petName {
                     
-                    dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                    dateFormatter.dateFormat = "h:mm a"
                     
                     let recreation = ["Type":self.type, "time":dateFormatter.string(from: newDate!),"frequency":recreations["frequency"]!,
                                       "Pet":self.petName]
@@ -159,10 +148,11 @@ class ActivityController: WKInterfaceController{
             
             let dateFormatter = DateFormatter()
             
-            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+            dateFormatter.dateFormat = "h:mm a"
             let type = self.type!
             let routine: [String:String] = ["name":type,"date":dateFormatter.string(from: self.activityDate),"frequency":self.frequency,"pet":self.petName]
             dateFormatter.dateFormat = "a"
+
             let amPM = dateFormatter.string(from: self.activityDate)
             
             try defaultSession.updateApplicationContext([

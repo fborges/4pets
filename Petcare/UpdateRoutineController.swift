@@ -44,6 +44,13 @@ class UpdateRoutineController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         
+        UNUserNotificationCenter.current().getPendingNotificationRequests(completionHandler: { (notifications) in
+            print("count", notifications.count)
+            for notification in notifications{
+                print(notification.description)
+            }
+        })
+        
         let dao = CoreDataDAO<Routine>()
         let application = UIApplication.shared
         badgeNumber = application.applicationIconBadgeNumber

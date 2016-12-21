@@ -31,21 +31,21 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
         DispatchQueue.main.async {
             
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+            dateFormatter.dateFormat = "h:mm a"
             
             let date  = Routine["date"]
-            
             let data = dateFormatter.date(from: date!) as NSDate?
-            dateFormatter.dateFormat = "HH"
+            dateFormatter.dateFormat = "h"
           
             let hour = Int(dateFormatter.string(from: data as! Date))
+            
 
             dateFormatter.dateFormat = "mm"
             let minute = Int(dateFormatter.string(from: data as! Date))
-
+            
             let amPm = amPM
             let frequencyString = Routine["frequency"]
-            
+
             let notification = UNMutableNotificationContent()
             var badgeNumber: Int!
             
@@ -75,27 +75,30 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 
                 routineToUpdate.name = Routine["name"]
                 routineToUpdate.frequency = Routine["frequency"]
-                let data  = Routine["date"]
                 
-                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                
-                routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
-                dao.update(routineToUpdate)
-                
+    
                 let dateComponents = self.scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm ,frequency: frequencyString!)
                 
+
+                let calendar = Calendar.autoupdatingCurrent
+                dateFormatter.dateFormat = "h:mm a"
                 
+                routineToUpdate.date = calendar.date(from: dateComponents) as NSDate?
+                dao.update(routineToUpdate)
+                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+
                 let requestName = routineType + Routine["pet"]!
-                
-                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestName])
                 
                 notification.body = "Just remind you about \((Routine["pet"]!)) bath"
                 
                 notification.badge = NSNumber(value: badgeNumber + 1)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-                let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
+                let request = UNNotificationRequest(identifier: requestName  , content: notification, trigger: trigger)
+
                 UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                     if error != nil {
+                        self.view.backgroundColor = UIColor.red
+
                         print(error?.localizedDescription ?? "--")
                     }
                 })
@@ -110,26 +113,30 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 
                 routineToUpdate.name = Routine["name"]
                 routineToUpdate.frequency = Routine["frequency"]
-                let data  = Routine["date"]
                 
-                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                
-                routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
-                dao.update(routineToUpdate)
                 
                 let dateComponents = self.scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm ,frequency: frequencyString!)
                 
-                let requestName = routineType + Routine["pet"]!
                 
-                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestName])
+                let calendar = Calendar.autoupdatingCurrent
+                dateFormatter.dateFormat = "h:mm a"
+                
+                routineToUpdate.date = calendar.date(from: dateComponents) as NSDate?
+                dao.update(routineToUpdate)
+                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                
+                let requestName = routineType + Routine["pet"]!
                 
                 notification.body = "Just remind you about \((Routine["pet"]!)) hair"
                 
                 notification.badge = NSNumber(value: badgeNumber + 1)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-                let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
+                let request = UNNotificationRequest(identifier: requestName  , content: notification, trigger: trigger)
+                
                 UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                     if error != nil {
+                        self.view.backgroundColor = UIColor.red
+                        
                         print(error?.localizedDescription ?? "--")
                     }
                 })
@@ -144,27 +151,30 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 
                 routineToUpdate.name = Routine["name"]
                 routineToUpdate.frequency = Routine["frequency"]
-                let data  = Routine["date"]
                 
-                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                
-                routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
-                dao.update(routineToUpdate)
                 
                 let dateComponents = self.scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm ,frequency: frequencyString!)
-
+                
+                
+                let calendar = Calendar.autoupdatingCurrent
+                dateFormatter.dateFormat = "h:mm a"
+                
+                routineToUpdate.date = calendar.date(from: dateComponents) as NSDate?
+                dao.update(routineToUpdate)
+                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
                 
                 let requestName = routineType + Routine["pet"]!
-                
-                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestName])
                 
                 notification.body = "Just remind you about \((Routine["pet"]!)) feeding"
                 
                 notification.badge = NSNumber(value: badgeNumber + 1)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-                let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
+                let request = UNNotificationRequest(identifier: requestName  , content: notification, trigger: trigger)
+                
                 UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                     if error != nil {
+                        self.view.backgroundColor = UIColor.red
+                        
                         print(error?.localizedDescription ?? "--")
                     }
                 })
@@ -177,26 +187,30 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
                 
                 routineToUpdate.name = Routine["name"]
                 routineToUpdate.frequency = Routine["frequency"]
-                let data  = Routine["date"]
                 
-                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-                
-                routineToUpdate.date = dateFormatter.date(from: data!) as NSDate?
-                dao.update(routineToUpdate)
                 
                 let dateComponents = self.scheduleForFequency(hour: hour!, minute: minute!, amPm: amPm ,frequency: frequencyString!)
                 
-                let requestName = routineType + Routine["pet"]!
                 
-                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [requestName])
+                let calendar = Calendar.autoupdatingCurrent
+                dateFormatter.dateFormat = "h:mm a"
+                
+                routineToUpdate.date = calendar.date(from: dateComponents) as NSDate?
+                dao.update(routineToUpdate)
+                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+                
+                let requestName = routineType + Routine["pet"]!
                 
                 notification.body = "Just remind you about \((Routine["pet"]!)) recreation"
                 
                 notification.badge = NSNumber(value: badgeNumber + 1)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-                let request = UNNotificationRequest(identifier: requestName , content: notification, trigger: trigger)
+                let request = UNNotificationRequest(identifier: requestName  , content: notification, trigger: trigger)
+                
                 UNUserNotificationCenter.current().add(request, withCompletionHandler:{ (error) in
                     if error != nil {
+                        self.view.backgroundColor = UIColor.red
+                        
                         print(error?.localizedDescription ?? "--")
                     }
                 })
@@ -264,6 +278,9 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        
         WatchConnectivityManager.sharedConnectivityManager.delegate = self
                 
         let dateFormatter = DateFormatter()
@@ -346,7 +363,13 @@ class PetDashboardViewController: UIViewController, CKCircleMenuDelegate, WatchC
     }
     
     
-    
+    func formDate() -> DateComponents {
+         var dateComponent = DateComponents()
+        dateComponent.hour = 09
+        dateComponent.minute = 18
+        
+        return dateComponent
+    }
     
     
 }
