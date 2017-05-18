@@ -1,4 +1,4 @@
-# Petcare
+# 4Pets
 
 [![GitHub
 version](https://badge.fury.io/gh/feliborgez%2Fpetcare-ios.svg)](https://badge.fury.io/gh/feliborgez%2Fpetcare-ios)
@@ -12,8 +12,8 @@ version](https://badge.fury.io/gh/feliborgez%2Fpetcare-ios.svg)](https://badge.f
 
 ### Info
 
-This application is being developed at
-[BEPiD](https://github.com/bepid-ifce), a brazilian program for iOS development, hosted by [IFCE](http://ifce.edu.br) 
+This application was developed at
+[BEPiD](https://github.com/bepid-ifce), hosted by [IFCE](http://ifce.edu.br) 
 
 
 ### Idea 
@@ -51,7 +51,7 @@ him but we love him, and i'm sure you too.
 
 ### Stage
 
-`In development`
+`Being maintained`
 
 ### Who to blame
 
